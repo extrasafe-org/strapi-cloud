@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_header_as",
+  "info": {
+    "displayName": "Header-A",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "HeaderLogoA": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.logo"
+    }
+  }
+}

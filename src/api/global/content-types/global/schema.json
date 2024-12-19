@@ -20,7 +20,11 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
     },
     "siteDescription": {
       "type": "text",
@@ -30,6 +34,12 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "Header": {
+      "displayName": "Header-A",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.header-a"
     }
   }
 }

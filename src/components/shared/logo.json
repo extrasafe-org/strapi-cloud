@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_shared_logos",
+  "info": {
+    "displayName": "Logo",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "alternativeText": {
+      "type": "string"
+    },
+    "NavigationMenu": {
+      "displayName": "Menu",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.menu"
+    },
+    "MenuItem1": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.menu-item"
+    },
+    "MenuItem2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.menu-item"
+    },
+    "MenuItem3": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.menu-item"
+    },
+    "ButtonText": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.button"
+    }
+  }
+}
