@@ -609,6 +609,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiLandingPageALandingPageA extends Struct.SingleTypeSchema {
   collectionName: 'landing_page_as';
   info: {
+    description: '';
     displayName: 'Landing Page  - A';
     pluralName: 'landing-page-as';
     singularName: 'landing-page-a';
@@ -628,6 +629,7 @@ export interface ApiLandingPageALandingPageA extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    StartMeetingButton: Schema.Attribute.Component<'shared.button', true>;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
