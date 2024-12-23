@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "country_groups",
+  "info": {
+    "singularName": "country-group",
+    "pluralName": "country-groups",
+    "displayName": "CountryGroup"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Countries": {
+      "type": "json"
+    },
+    "ab_test_config": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ab-test-config.ab-test-config",
+      "inversedBy": "country_groups"
+    }
+  }
+}

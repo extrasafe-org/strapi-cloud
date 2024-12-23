@@ -369,6 +369,43 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAbTestConfigAbTestConfig
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'ab_test_configs';
+  info: {
+    description: '';
+    displayName: 'ABTestConfig';
+    pluralName: 'ab-test-configs';
+    singularName: 'ab-test-config';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Country: Schema.Attribute.String;
+    country_groups: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::country-group.country-group'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    CustomRules: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ab-test-config.ab-test-config'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    VariantAProbability: Schema.Attribute.Decimal;
+    VariantBProbability: Schema.Attribute.Decimal;
+  };
+}
+
 export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
@@ -496,6 +533,40 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCountryGroupCountryGroup
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'country_groups';
+  info: {
+    displayName: 'CountryGroup';
+    pluralName: 'country-groups';
+    singularName: 'country-group';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ab_test_config: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::ab-test-config.ab-test-config'
+    >;
+    Countries: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::country-group.country-group'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1073,10 +1144,12 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::ab-test-config.ab-test-config': ApiAbTestConfigAbTestConfig;
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::country-group.country-group': ApiCountryGroupCountryGroup;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-page-a.landing-page-a': ApiLandingPageALandingPageA;
       'plugin::content-releases.release': PluginContentReleasesRelease;
