@@ -21,13 +21,10 @@
       "target": "api::country-group.country-group",
       "mappedBy": "ab_test_config"
     },
-    "VariantAProbability": {
-      "type": "decimal"
-    },
-    "VariantBProbability": {
-      "type": "decimal"
-    },
     "CustomRules": {
+      "type": "json"
+    },
+    "ProbabilitesForVariants": {
       "type": "json"
     }
   }

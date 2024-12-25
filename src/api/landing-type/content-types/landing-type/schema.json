@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_types",
+  "info": {
+    "singularName": "landing-type",
+    "pluralName": "landing-types",
+    "displayName": "LandingType",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "variant": {
+      "type": "string"
+    },
+    "landing_types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::landing-type.landing-type",
+      "mappedBy": "landing_variant"
+    },
+    "landing_variant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::landing-type.landing-type",
+      "inversedBy": "landing_types"
+    }
+  }
+}

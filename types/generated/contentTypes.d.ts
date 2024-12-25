@@ -397,12 +397,11 @@ export interface ApiAbTestConfigAbTestConfig
       'api::ab-test-config.ab-test-config'
     > &
       Schema.Attribute.Private;
+    ProbabilitesForVariants: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    VariantAProbability: Schema.Attribute.Decimal;
-    VariantBProbability: Schema.Attribute.Decimal;
   };
 }
 
@@ -634,6 +633,45 @@ export interface ApiLandingPageALandingPageA extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
+  collectionName: 'landing_types';
+  info: {
+    description: '';
+    displayName: 'LandingType';
+    pluralName: 'landing-types';
+    singularName: 'landing-type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    landing_types: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landing-type.landing-type'
+    >;
+    landing_variant: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::landing-type.landing-type'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landing-type.landing-type'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    variant: Schema.Attribute.String;
   };
 }
 
@@ -1154,6 +1192,7 @@ declare module '@strapi/strapi' {
       'api::country-group.country-group': ApiCountryGroupCountryGroup;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-page-a.landing-page-a': ApiLandingPageALandingPageA;
+      'api::landing-type.landing-type': ApiLandingTypeLandingType;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
