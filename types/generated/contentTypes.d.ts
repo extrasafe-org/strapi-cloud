@@ -382,11 +382,7 @@ export interface ApiAbTestConfigAbTestConfig
     draftAndPublish: true;
   };
   attributes: {
-    Country: Schema.Attribute.String;
-    country_groups: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::country-group.country-group'
-    >;
+    Countries: Schema.Attribute.JSON;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -532,40 +528,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCountryGroupCountryGroup
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'country_groups';
-  info: {
-    displayName: 'CountryGroup';
-    pluralName: 'country-groups';
-    singularName: 'country-group';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    ab_test_config: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::ab-test-config.ab-test-config'
-    >;
-    Countries: Schema.Attribute.JSON;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::country-group.country-group'
-    > &
-      Schema.Attribute.Private;
-    Name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1189,7 +1151,6 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
-      'api::country-group.country-group': ApiCountryGroupCountryGroup;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-page-a.landing-page-a': ApiLandingPageALandingPageA;
       'api::landing-type.landing-type': ApiLandingTypeLandingType;
