@@ -123,7 +123,7 @@ export interface SharedTemplate extends Struct.ComponentSchema {
   collectionName: 'components_shared_templates';
   info: {
     description: '';
-    displayName: 'Probabilities';
+    displayName: 'Priority';
     icon: 'bulletList';
   };
   attributes: {
@@ -131,7 +131,7 @@ export interface SharedTemplate extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
         {
-          max: 100;
+          max: 10000;
           min: 0;
         },
         number

@@ -597,7 +597,14 @@ export interface ApiAbTestConfigAbTestConfig
     > &
       Schema.Attribute.Private;
     Name: Schema.Attribute.String;
-    Probabilities: Schema.Attribute.DynamicZone<['shared.template']>;
+    Priority: Schema.Attribute.DynamicZone<['shared.template']> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 10000;
+          min: 0;
+        },
+        number
+      >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

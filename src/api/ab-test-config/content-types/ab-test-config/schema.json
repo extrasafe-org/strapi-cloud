@@ -219,11 +219,13 @@
       "target": "api::landing-type.landing-type",
       "mappedBy": "ab_test_config"
     },
-    "Probabilities": {
+    "Priority": {
       "type": "dynamiczone",
       "components": [
         "shared.template"
-      ]
+      ],
+      "max": 10000,
+      "min": 0
     },
     "Name": {
       "type": "string"
