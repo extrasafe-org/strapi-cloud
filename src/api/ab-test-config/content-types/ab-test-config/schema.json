@@ -213,11 +213,11 @@
       ],
       "customField": "plugin::multi-select.multi-select"
     },
-    "landing_type": {
+    "landing_types": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::landing-type.landing-type",
-      "inversedBy": "ab_test_config"
+      "mappedBy": "ab_test_config"
     },
     "Probabilities": {
       "type": "dynamiczone",

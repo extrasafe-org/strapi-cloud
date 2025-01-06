@@ -18,16 +18,16 @@
     "description": {
       "type": "text"
     },
-    "ab_test_config": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::ab-test-config.ab-test-config",
-      "mappedBy": "landing_type"
-    },
     "Template": {
       "type": "component",
       "repeatable": true,
       "component": "shared.template-landing"
+    },
+    "ab_test_config": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ab-test-config.ab-test-config",
+      "inversedBy": "landing_types"
     }
   }
 }

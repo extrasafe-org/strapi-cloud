@@ -586,8 +586,8 @@ export interface ApiAbTestConfigAbTestConfig
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    landing_type: Schema.Attribute.Relation<
-      'oneToOne',
+    landing_types: Schema.Attribute.Relation<
+      'oneToMany',
       'api::landing-type.landing-type'
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -784,7 +784,7 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
   };
   attributes: {
     ab_test_config: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::ab-test-config.ab-test-config'
     >;
     createdAt: Schema.Attribute.DateTime;
