@@ -119,6 +119,37 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTemplate extends Struct.ComponentSchema {
+  collectionName: 'components_shared_templates';
+  info: {
+    description: '';
+    displayName: 'Probabilities';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Value: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+  };
+}
+
+export interface SharedTemplateLanding extends Struct.ComponentSchema {
+  collectionName: 'components_shared_template_landings';
+  info: {
+    displayName: 'TemplateLanding';
+  };
+  attributes: {
+    Template: Schema.Attribute.Enumeration<['With Video', 'Without Video']>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -132,6 +163,8 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.template': SharedTemplate;
+      'shared.template-landing': SharedTemplateLanding;
     }
   }
 }

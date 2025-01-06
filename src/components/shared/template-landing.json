@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_template_landings",
+  "info": {
+    "displayName": "TemplateLanding"
+  },
+  "options": {},
+  "attributes": {
+    "Template": {
+      "type": "enumeration",
+      "enum": [
+        "With Video",
+        "Without Video"
+      ]
+    }
+  }
+}

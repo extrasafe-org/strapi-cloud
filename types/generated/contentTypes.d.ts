@@ -382,18 +382,222 @@ export interface ApiAbTestConfigAbTestConfig
     draftAndPublish: true;
   };
   attributes: {
-    Countries: Schema.Attribute.JSON;
+    Countries: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'All:select_all',
+          'Afghanistan',
+          'Albania',
+          'Algeria',
+          'Andorra',
+          'Angola',
+          'Antigua and Barbuda',
+          'Argentina',
+          'Armenia',
+          'Australia',
+          'Austria',
+          'Azerbaijan',
+          'Bahamas',
+          'Bahrain',
+          'Bangladesh',
+          'Barbados',
+          'Belarus',
+          'Belgium',
+          'Belize',
+          'Benin',
+          'Bhutan',
+          'Bolivia',
+          'Bosnia and Herzegovina',
+          'Botswana',
+          'Brazil',
+          'Brunei',
+          'Bulgaria',
+          'Burkina Faso',
+          'Burundi',
+          'Cabo Verde',
+          'Cambodia',
+          'Cameroon',
+          'Canada',
+          'Central African Republic',
+          'Chad',
+          'Chile',
+          'China',
+          'Colombia',
+          'Comoros',
+          'Congo (Congo-Brazzaville)',
+          'Costa Rica',
+          'Croatia',
+          'Cuba',
+          'Cyprus',
+          'Czechia (Czech Republic)',
+          'Denmark',
+          'Djibouti',
+          'Dominica',
+          'Dominican Republic',
+          'Ecuador',
+          'Egypt',
+          'El Salvador',
+          'Equatorial Guinea',
+          'Eritrea',
+          'Estonia',
+          'Eswatini (fmr. Swaziland)',
+          'Ethiopia',
+          'Fiji',
+          'Finland',
+          'France',
+          'Gabon',
+          'Gambia',
+          'Georgia',
+          'Germany',
+          'Ghana',
+          'Greece',
+          'Grenada',
+          'Guatemala',
+          'Guinea',
+          'Guinea-Bissau',
+          'Guyana',
+          'Haiti',
+          'Holy See',
+          'Honduras',
+          'Hungary',
+          'Iceland',
+          'India',
+          'Indonesia',
+          'Iran',
+          'Iraq',
+          'Ireland',
+          'Israel',
+          'Italy',
+          'Jamaica',
+          'Japan',
+          'Jordan',
+          'Kazakhstan',
+          'Kenya',
+          'Kiribati',
+          'Korea (North)',
+          'Korea (South)',
+          'Kuwait',
+          'Kyrgyzstan',
+          'Laos',
+          'Latvia',
+          'Lebanon',
+          'Lesotho',
+          'Liberia',
+          'Libya',
+          'Liechtenstein',
+          'Lithuania',
+          'Luxembourg',
+          'Madagascar',
+          'Malawi',
+          'Malaysia',
+          'Maldives',
+          'Mali',
+          'Malta',
+          'Marshall Islands',
+          'Mauritania',
+          'Mauritius',
+          'Mexico',
+          'Micronesia',
+          'Moldova',
+          'Monaco',
+          'Mongolia',
+          'Montenegro',
+          'Morocco',
+          'Mozambique',
+          'Myanmar (formerly Burma)',
+          'Namibia',
+          'Nauru',
+          'Nepal',
+          'Netherlands',
+          'New Zealand',
+          'Nicaragua',
+          'Niger',
+          'Nigeria',
+          'North Macedonia',
+          'Norway',
+          'Oman',
+          'Pakistan',
+          'Palau',
+          'Palestine State',
+          'Panama',
+          'Papua New Guinea',
+          'Paraguay',
+          'Peru',
+          'Philippines',
+          'Poland',
+          'Portugal',
+          'Qatar',
+          'Romania',
+          'Russia',
+          'Rwanda',
+          'Saint Kitts and Nevis',
+          'Saint Lucia',
+          'Saint Vincent and the Grenadines',
+          'Samoa',
+          'San Marino',
+          'Sao Tome and Principe',
+          'Saudi Arabia',
+          'Senegal',
+          'Serbia',
+          'Seychelles',
+          'Sierra Leone',
+          'Singapore',
+          'Slovakia',
+          'Slovenia',
+          'Solomon Islands',
+          'Somalia',
+          'South Africa',
+          'South Sudan',
+          'Spain',
+          'Sri Lanka',
+          'Sudan',
+          'Suriname',
+          'Sweden',
+          'Switzerland',
+          'Syria',
+          'Tajikistan',
+          'Tanzania',
+          'Thailand',
+          'Timor-Leste',
+          'Togo',
+          'Tonga',
+          'Trinidad and Tobago',
+          'Tunisia',
+          'Turkey',
+          'Turkmenistan',
+          'Tuvalu',
+          'Uganda',
+          'Ukraine',
+          'United Arab Emirates',
+          'United Kingdom',
+          'United States of America',
+          'Uruguay',
+          'Uzbekistan',
+          'Vanuatu',
+          'Venezuela',
+          'Vietnam',
+          'Yemen',
+          'Zambia',
+          'Zimbabwe',
+        ]
+      > &
+      Schema.Attribute.DefaultTo<'[all]'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    CustomRules: Schema.Attribute.JSON;
+    landing_type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::landing-type.landing-type'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::ab-test-config.ab-test-config'
     > &
       Schema.Attribute.Private;
-    ProbabilitesForVariants: Schema.Attribute.JSON;
+    Name: Schema.Attribute.String;
+    Probabilities: Schema.Attribute.DynamicZone<['shared.template']>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -567,42 +771,11 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiLandingPageALandingPageA extends Struct.SingleTypeSchema {
-  collectionName: 'landing_page_as';
-  info: {
-    description: '';
-    displayName: 'Landing Page  - A';
-    pluralName: 'landing-page-as';
-    singularName: 'landing-page-a';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::landing-page-a.landing-page-a'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    StartMeetingButton: Schema.Attribute.Component<'shared.button', true>;
-    Title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
   collectionName: 'landing_types';
   info: {
     description: '';
-    displayName: 'LandingType';
+    displayName: 'LandingPage';
     pluralName: 'landing-types';
     singularName: 'landing-type';
   };
@@ -610,18 +783,14 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    ab_test_config: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::ab-test-config.ab-test-config'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    landing_types: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::landing-type.landing-type'
-    >;
-    landing_variant: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::landing-type.landing-type'
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -629,11 +798,11 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Template: Schema.Attribute.Component<'shared.template-landing', true>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    variant: Schema.Attribute.String;
   };
 }
 
@@ -1152,7 +1321,6 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
-      'api::landing-page-a.landing-page-a': ApiLandingPageALandingPageA;
       'api::landing-type.landing-type': ApiLandingTypeLandingType;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

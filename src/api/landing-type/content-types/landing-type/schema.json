@@ -4,7 +4,7 @@
   "info": {
     "singularName": "landing-type",
     "pluralName": "landing-types",
-    "displayName": "LandingType",
+    "displayName": "LandingPage",
     "description": ""
   },
   "options": {
@@ -18,20 +18,16 @@
     "description": {
       "type": "text"
     },
-    "variant": {
-      "type": "string"
-    },
-    "landing_types": {
+    "ab_test_config": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::landing-type.landing-type",
-      "mappedBy": "landing_variant"
+      "relation": "oneToOne",
+      "target": "api::ab-test-config.ab-test-config",
+      "mappedBy": "landing_type"
     },
-    "landing_variant": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::landing-type.landing-type",
-      "inversedBy": "landing_types"
+    "Template": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.template-landing"
     }
   }
 }
