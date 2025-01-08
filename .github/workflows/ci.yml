@@ -1,44 +1,44 @@
-name: CI/CD for Strapi plugin build
+name: Build and Commit Plugin Dist
+
+permissions:
+  contents: write
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+    paths:
+      - 'src/plugins/multi-select/**'
+    paths-ignore:
+      - 'src/plugins/multi-select/dist/**'
+  workflow_dispatch:
 
 jobs:
   build:
-    name: Build and Test Strapi Application
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code
-      - name: Checkout Code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20 # Match the version range in your `engines` field
-          cache: 'npm'
+          node-version: '18'
 
-      # Step 3: Install root dependencies
-      - name: Install Root Dependencies
-        run: npm ci
+      - name: Install dependencies
+        run: npm install
 
-      # Step 4: Build the plugin
-      - name: Install and Build Plugin
-        working-directory: src/plugins/multi-select
+      - name: Build plugin
+        run: npm run build:plugin
+
+      - name: Commit and push changes
+        if: ${{ github.actor != 'github-actions[bot]' }}
         run: |
-          npm ci
-          npm run build
-
-      # Step 5: Save the dist directory as an artifact
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: multi-select-dist
-          path: src/plugins/multi-select/dist
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git add src/plugins/multi-select/dist
+          git commit -m "Build plugin and update dist directory" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
