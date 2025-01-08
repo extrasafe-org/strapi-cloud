@@ -12,7 +12,7 @@
     "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
     "strapi": "strapi",
-    "postinstall": "if [ \"$NODE_ENV\" != \"production\" ]; then npm run build:plugin:dev; else npm run build:plugin:prod; fi"
+    "postinstall": "npm run build:plugin:prod"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.3.0",
