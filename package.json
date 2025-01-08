@@ -4,14 +4,14 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "build": "strapi build",
+    "build": "strapi build ",
+    "build:plugin": "cd src/plugins/multi-select && npm ci && npm run build",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
     "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
     "strapi": "strapi",
-    "postinstall": "npm run build:plugin",
-    "build:plugin": "cd src/plugins/multi-select && npm install && npm run build"
+    "postinstall": "npm run build:plugin"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.3.0",
@@ -26,8 +26,14 @@
     "strapi-plugin-multi-select": "^2.1.1",
     "styled-components": "^6.0.0"
   },
+   "devDependencies": {
+    "@types/cli-progress": "^3.11.6",
+    "@types/koa__router": "^8.0.0",
+    "@types/node-schedule": "^2.0.0",
+    "typescript": "^5.2.2"
+  },
   "engines": {
-    "node": ">=18.0.0 <=20.x.x",
+    "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
   }
 }
