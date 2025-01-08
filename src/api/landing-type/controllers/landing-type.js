@@ -14,6 +14,7 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
         ab_test_config: {
           populate: '*', // Use '*' for dynamic components
         },
+        Template: true,
       },
     });
 
@@ -42,6 +43,7 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
         ab_test_config: {
           populate: '*', // Use '*' for dynamic components
         },
+        Template: true,
       },
     });
 
