@@ -7,10 +7,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'src/plugins/multi-select/**'
-    paths-ignore:
-      - 'src/plugins/multi-select/dist/**'
   workflow_dispatch:
 
 jobs:
