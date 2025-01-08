@@ -1,0 +1,63 @@
+name: Build and Deploy to Strapi Cloud
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write  
+  deployments: write  
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+		
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      
+      - name: Check if the commit is from GitHub Actions bot
+        id: check_actor
+        run: |
+          if [ "${{ github.actor }}" == "github-actions[bot]" ]; then
+            echo "This commit was made by GitHub Actions. Skipping the workflow."
+            exit 0
+          fi
+
+      # Step 3: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+
+     
+      - name: Install dependencies
+        run: npm install
+
+     
+      - name: Build plugin
+        run: npm run build:plugin
+
+   
+      - name: Build Strapi
+        run: npm run build
+
+      
+      - name: Commit build artifacts
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/plugins/multi-select/dist
+          git commit -m "Add plugin build artifacts" || echo "No changes to commit"
+
+      
+      - name: Push changes
+        run: git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+     
