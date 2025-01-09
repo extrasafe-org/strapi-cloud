@@ -215,9 +215,9 @@
     },
     "landing_types": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::landing-type.landing-type",
-      "mappedBy": "ab_test_config"
+      "mappedBy": "ab_test_configs"
     },
     "Priority": {
       "type": "dynamiczone",

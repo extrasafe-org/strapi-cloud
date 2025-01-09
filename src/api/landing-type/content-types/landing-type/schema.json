@@ -23,9 +23,9 @@
       "repeatable": true,
       "component": "shared.template-landing"
     },
-    "ab_test_config": {
+    "ab_test_configs": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::ab-test-config.ab-test-config",
       "inversedBy": "landing_types"
     }
