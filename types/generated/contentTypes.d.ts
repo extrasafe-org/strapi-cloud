@@ -596,7 +596,6 @@ export interface ApiAbTestConfigAbTestConfig
       'api::ab-test-config.ab-test-config'
     > &
       Schema.Attribute.Private;
-    Name: Schema.Attribute.String;
     Priority: Schema.Attribute.DynamicZone<['shared.template']> &
       Schema.Attribute.SetMinMax<
         {
@@ -794,6 +793,7 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::ab-test-config.ab-test-config'
     >;
+    Button_Text: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -804,8 +804,13 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
       'api::landing-type.landing-type'
     > &
       Schema.Attribute.Private;
+    Main_Description: Schema.Attribute.Text;
+    Main_SubTitle: Schema.Attribute.String;
+    Main_Title: Schema.Attribute.String;
+    Pre_Footer_Text: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Template: Schema.Attribute.Component<'shared.template-landing', true>;
+    Text_In_Border: Schema.Attribute.Text;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

@@ -28,6 +28,24 @@
       "relation": "manyToMany",
       "target": "api::ab-test-config.ab-test-config",
       "inversedBy": "landing_types"
+    },
+    "Main_Title": {
+      "type": "string"
+    },
+    "Main_SubTitle": {
+      "type": "string"
+    },
+    "Main_Description": {
+      "type": "text"
+    },
+    "Button_Text": {
+      "type": "string"
+    },
+    "Text_In_Border": {
+      "type": "text"
+    },
+    "Pre_Footer_Text": {
+      "type": "string"
     }
   }
 }
