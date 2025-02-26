@@ -1,5 +1,50 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksBlockBigHeading extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_big_headings';
+  info: {
+    displayName: 'block-big-heading';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksBlockHeading extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_headings';
+  info: {
+    displayName: 'block-heading';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksBlockList extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_lists';
+  info: {
+    description: '';
+    displayName: 'block-list';
+  };
+  attributes: {
+    list_item: Schema.Attribute.Component<'shared.test-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksQuote extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_quotes';
+  info: {
+    description: '';
+    displayName: 'Block-quote';
+  };
+  attributes: {
+    quote: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -150,9 +195,24 @@ export interface SharedTemplateLanding extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTestItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_test_items';
+  info: {
+    displayName: 'test_item';
+    icon: 'alien';
+  };
+  attributes: {
+    some_item: Schema.Attribute.Text;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.block-big-heading': BlocksBlockBigHeading;
+      'blocks.block-heading': BlocksBlockHeading;
+      'blocks.block-list': BlocksBlockList;
+      'blocks.quote': BlocksQuote;
       'shared.button': SharedButton;
       'shared.header-a': SharedHeaderA;
       'shared.logo': SharedLogo;
@@ -165,6 +225,7 @@ declare module '@strapi/strapi' {
       'shared.slider': SharedSlider;
       'shared.template': SharedTemplate;
       'shared.template-landing': SharedTemplateLanding;
+      'shared.test-item': SharedTestItem;
     }
   }
 }

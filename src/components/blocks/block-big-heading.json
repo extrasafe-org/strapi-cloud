@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_block_big_headings",
+  "info": {
+    "displayName": "block-big-heading"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

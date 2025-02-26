@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_block_lists",
+  "info": {
+    "displayName": "block-list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "list_item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.test-item"
+    }
+  }
+}
