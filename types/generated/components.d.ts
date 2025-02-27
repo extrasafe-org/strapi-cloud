@@ -22,6 +22,16 @@ export interface BlocksBlockHeading extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksBlockImage extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_images';
+  info: {
+    displayName: 'Block-image';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
 export interface BlocksBlockList extends Struct.ComponentSchema {
   collectionName: 'components_blocks_block_lists';
   info: {
@@ -29,7 +39,7 @@ export interface BlocksBlockList extends Struct.ComponentSchema {
     displayName: 'block-list';
   };
   attributes: {
-    list_item: Schema.Attribute.Component<'shared.test-item', true>;
+    list_item: Schema.Attribute.Component<'shared.list-item', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -63,6 +73,16 @@ export interface SharedHeaderA extends Struct.ComponentSchema {
   };
   attributes: {
     HeaderLogoA: Schema.Attribute.Component<'shared.logo', true>;
+  };
+}
+
+export interface SharedListItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_list_items';
+  info: {
+    displayName: 'ListItem';
+  };
+  attributes: {
+    item_text: Schema.Attribute.Text;
   };
 }
 
@@ -195,26 +215,17 @@ export interface SharedTemplateLanding extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedTestItem extends Struct.ComponentSchema {
-  collectionName: 'components_shared_test_items';
-  info: {
-    displayName: 'test_item';
-    icon: 'alien';
-  };
-  attributes: {
-    some_item: Schema.Attribute.Text;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blocks.block-big-heading': BlocksBlockBigHeading;
       'blocks.block-heading': BlocksBlockHeading;
+      'blocks.block-image': BlocksBlockImage;
       'blocks.block-list': BlocksBlockList;
       'blocks.quote': BlocksQuote;
       'shared.button': SharedButton;
       'shared.header-a': SharedHeaderA;
+      'shared.list-item': SharedListItem;
       'shared.logo': SharedLogo;
       'shared.media': SharedMedia;
       'shared.menu': SharedMenu;
@@ -225,7 +236,6 @@ declare module '@strapi/strapi' {
       'shared.slider': SharedSlider;
       'shared.template': SharedTemplate;
       'shared.template-landing': SharedTemplateLanding;
-      'shared.test-item': SharedTestItem;
     }
   }
 }

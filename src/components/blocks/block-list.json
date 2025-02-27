@@ -10,9 +10,10 @@
       "type": "string"
     },
     "list_item": {
+      "displayName": "ListItem",
       "type": "component",
       "repeatable": true,
-      "component": "shared.test-item"
+      "component": "shared.list-item"
     }
   }
 }

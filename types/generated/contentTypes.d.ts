@@ -732,9 +732,10 @@ export interface ApiBlogArticleBlogArticle extends Struct.CollectionTypeSchema {
     content: Schema.Attribute.DynamicZone<
       [
         'blocks.quote',
-        'blocks.block-list',
         'blocks.block-heading',
         'blocks.block-big-heading',
+        'blocks.block-list',
+        'blocks.block-image',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

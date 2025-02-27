@@ -66,9 +66,10 @@
       "type": "dynamiczone",
       "components": [
         "blocks.quote",
-        "blocks.block-list",
         "blocks.block-heading",
-        "blocks.block-big-heading"
+        "blocks.block-big-heading",
+        "blocks.block-list",
+        "blocks.block-image"
       ]
     },
     "is_production": {

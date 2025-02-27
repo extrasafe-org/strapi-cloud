@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blocks_block_images",
+  "info": {
+    "displayName": "Block-image"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
