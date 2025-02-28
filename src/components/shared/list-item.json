@@ -1,12 +1,14 @@
 {
   "collectionName": "components_shared_list_items",
   "info": {
-    "displayName": "ListItem"
+    "displayName": "ListItem",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "item_text": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }

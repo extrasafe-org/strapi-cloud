@@ -79,10 +79,11 @@ export interface SharedHeaderA extends Struct.ComponentSchema {
 export interface SharedListItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_list_items';
   info: {
+    description: '';
     displayName: 'ListItem';
   };
   attributes: {
-    item_text: Schema.Attribute.Text;
+    item_text: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
