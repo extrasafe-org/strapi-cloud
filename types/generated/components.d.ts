@@ -3,21 +3,23 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface BlocksBlockBigHeading extends Struct.ComponentSchema {
   collectionName: 'components_blocks_block_big_headings';
   info: {
+    description: '';
     displayName: 'block-big-heading';
   };
   attributes: {
-    text: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
 export interface BlocksBlockHeading extends Struct.ComponentSchema {
   collectionName: 'components_blocks_block_headings';
   info: {
+    description: '';
     displayName: 'block-heading';
   };
   attributes: {
-    text: Schema.Attribute.Text;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };
 }
@@ -39,7 +41,8 @@ export interface BlocksBlockList extends Struct.ComponentSchema {
     displayName: 'block-list';
   };
   attributes: {
-    list_item: Schema.Attribute.Component<'shared.list-item', true>;
+    list_item: Schema.Attribute.Component<'shared.list-item', true> &
+      Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };
 }
@@ -51,7 +54,7 @@ export interface BlocksQuote extends Struct.ComponentSchema {
     displayName: 'Block-quote';
   };
   attributes: {
-    quote: Schema.Attribute.Text;
+    quote: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 

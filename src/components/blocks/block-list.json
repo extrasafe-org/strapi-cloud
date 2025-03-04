@@ -13,7 +13,8 @@
       "displayName": "ListItem",
       "type": "component",
       "repeatable": true,
-      "component": "shared.list-item"
+      "component": "shared.list-item",
+      "required": true
     }
   }
 }

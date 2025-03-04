@@ -1,15 +1,18 @@
 {
   "collectionName": "components_blocks_block_big_headings",
   "info": {
-    "displayName": "block-big-heading"
+    "displayName": "block-big-heading",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "text": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }
