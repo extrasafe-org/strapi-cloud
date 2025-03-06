@@ -14,7 +14,16 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
         ab_test_configs: { // Corrected to match schema
           populate: '*', // Use '*' for dynamic components
         },
-        Template: true,
+     Template: true,
+        icons_list: {
+          populate: {
+            icons_list_item: {
+              populate: {
+                image: true,
+              },
+            },
+          },
+        },
       },
     });
 
