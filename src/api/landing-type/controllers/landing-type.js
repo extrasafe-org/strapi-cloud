@@ -11,10 +11,10 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
     // Fetch data with population
     const entities = await strapi.entityService.findMany('api::landing-type.landing-type', {
       populate: {
-        ab_test_configs: { // Corrected to match schema
-          populate: '*', // Use '*' for dynamic components
+        ab_test_configs: {
+          populate: '*',
         },
-     Template: true,
+        Template: true,
         icons_list: {
           populate: {
             icons_list_item: {
@@ -49,10 +49,19 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
     // Fetch data with population
     const entity = await strapi.entityService.findOne('api::landing-type.landing-type', id, {
       populate: {
-        ab_test_configs: { // Corrected to match schema
-          populate: '*', // Use '*' for dynamic components
+        ab_test_configs: {
+          populate: '*',
         },
         Template: true,
+        icons_list: {
+          populate: {
+            icons_list_item: {
+              populate: {
+                image: true, 
+              },
+            },
+          },
+        },
       },
     });
 
