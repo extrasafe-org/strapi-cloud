@@ -891,6 +891,7 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    icons_list: Schema.Attribute.Component<'landing.icons-list', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -900,7 +901,6 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     Main_Description: Schema.Attribute.Text;
     Main_SubTitle: Schema.Attribute.String;
     Main_Title: Schema.Attribute.String;
-    Pre_Footer_Text: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Template: Schema.Attribute.Component<'shared.template-landing', true>;
     Text_In_Border: Schema.Attribute.Text;
@@ -908,6 +908,8 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Video_URL: Schema.Attribute.Text & Schema.Attribute.Required;
+    Vodeo_Section_Title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 

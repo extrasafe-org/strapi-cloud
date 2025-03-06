@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_icons_list_items",
+  "info": {
+    "displayName": "icons_list_item"
+  },
+  "options": {},
+  "attributes": {
+    "icon_text": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_landing_icons_lists",
+  "info": {
+    "displayName": "IconsList"
+  },
+  "options": {},
+  "attributes": {
+    "icons_list_item": {
+      "displayName": "icons_list_item",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.icons-list-item",
+      "required": true
+    }
+  }
+}

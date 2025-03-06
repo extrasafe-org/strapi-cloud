@@ -58,6 +58,20 @@ export interface BlocksQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface LandingIconsList extends Struct.ComponentSchema {
+  collectionName: 'components_landing_icons_lists';
+  info: {
+    displayName: 'IconsList';
+  };
+  attributes: {
+    icons_list_item: Schema.Attribute.Component<
+      'shared.icons-list-item',
+      true
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -76,6 +90,17 @@ export interface SharedHeaderA extends Struct.ComponentSchema {
   };
   attributes: {
     HeaderLogoA: Schema.Attribute.Component<'shared.logo', true>;
+  };
+}
+
+export interface SharedIconsListItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_icons_list_items';
+  info: {
+    displayName: 'icons_list_item';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    icon_text: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -227,8 +252,10 @@ declare module '@strapi/strapi' {
       'blocks.block-image': BlocksBlockImage;
       'blocks.block-list': BlocksBlockList;
       'blocks.quote': BlocksQuote;
+      'landing.icons-list': LandingIconsList;
       'shared.button': SharedButton;
       'shared.header-a': SharedHeaderA;
+      'shared.icons-list-item': SharedIconsListItem;
       'shared.list-item': SharedListItem;
       'shared.logo': SharedLogo;
       'shared.media': SharedMedia;
