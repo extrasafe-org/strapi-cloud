@@ -17,8 +17,13 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
         Template: true,
         icons_list: {
           populate: {
-            icons_list_item: {
-              populate: '*'
+             icons_list_item: {
+              fields: ['id', 'icon_text'], 
+              populate: {
+                icon: {
+                  fields: ['url'], 
+                },
+              },
             },
           },
         },
@@ -54,7 +59,12 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
         icons_list: {
           populate: {
             icons_list_item: {
-              populate: '*'
+              fields: ['id', 'icon_text'], 
+              populate: {
+                icon: {
+                  fields: ['url'], 
+                },
+              },
             },
           },
         },
