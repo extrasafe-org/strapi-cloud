@@ -22,6 +22,9 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
             },
           },
         },
+           hero_section_media: {
+          populate: '*'
+        }
       },
     });
 
@@ -58,6 +61,9 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
             },
           },
         },
+        hero_section_media: {
+          populate: '*'
+        }
       },
     });
 
