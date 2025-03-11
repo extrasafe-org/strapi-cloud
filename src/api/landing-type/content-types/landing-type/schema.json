@@ -30,19 +30,24 @@
       "inversedBy": "landing_types"
     },
     "Main_Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Main_SubTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Main_Description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "Button_Text": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Text_In_Border": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "Video_Section_Title": {
       "type": "string",
@@ -56,6 +61,15 @@
       "type": "component",
       "repeatable": false,
       "component": "landing.icons-list"
+    },
+    "hero_section_media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     }
   }
 }

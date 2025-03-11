@@ -886,11 +886,13 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::ab-test-config.ab-test-config'
     >;
-    Button_Text: Schema.Attribute.String;
+    Button_Text: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    hero_section_media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
     icons_list: Schema.Attribute.Component<'landing.icons-list', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -898,12 +900,12 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
       'api::landing-type.landing-type'
     > &
       Schema.Attribute.Private;
-    Main_Description: Schema.Attribute.Text;
-    Main_SubTitle: Schema.Attribute.String;
-    Main_Title: Schema.Attribute.String;
+    Main_Description: Schema.Attribute.Text & Schema.Attribute.Required;
+    Main_SubTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    Main_Title: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     Template: Schema.Attribute.Component<'shared.template-landing', true>;
-    Text_In_Border: Schema.Attribute.Text;
+    Text_In_Border: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
