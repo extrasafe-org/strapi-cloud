@@ -7,7 +7,7 @@ export interface BlocksBlockBigHeading extends Struct.ComponentSchema {
     displayName: 'block-big-heading';
   };
   attributes: {
-    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -19,7 +19,7 @@ export interface BlocksBlockHeading extends Struct.ComponentSchema {
     displayName: 'block-heading';
   };
   attributes: {
-    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
