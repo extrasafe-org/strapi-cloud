@@ -70,7 +70,8 @@
         "blocks.block-heading",
         "blocks.block-big-heading",
         "blocks.block-list",
-        "blocks.block-image"
+        "blocks.block-image",
+        "blocks.block-youtube"
       ]
     },
     "is_production": {

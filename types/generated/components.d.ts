@@ -47,6 +47,16 @@ export interface BlocksBlockList extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksBlockYoutube extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_youtubes';
+  info: {
+    displayName: 'Block-youtube';
+  };
+  attributes: {
+    url: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface BlocksQuote extends Struct.ComponentSchema {
   collectionName: 'components_blocks_quotes';
   info: {
@@ -251,6 +261,7 @@ declare module '@strapi/strapi' {
       'blocks.block-heading': BlocksBlockHeading;
       'blocks.block-image': BlocksBlockImage;
       'blocks.block-list': BlocksBlockList;
+      'blocks.block-youtube': BlocksBlockYoutube;
       'blocks.quote': BlocksQuote;
       'landing.icons-list': LandingIconsList;
       'shared.button': SharedButton;

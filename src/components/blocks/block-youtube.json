@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_block_youtubes",
+  "info": {
+    "displayName": "Block-youtube"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
