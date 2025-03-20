@@ -54,13 +54,14 @@
       "required": true
     },
     "Video_URL": {
-      "type": "text",
+      "type": "string",
       "required": true
     },
     "icons_list": {
       "type": "component",
       "repeatable": false,
-      "component": "landing.icons-list"
+      "component": "landing.icons-list",
+      "required": true
     },
     "hero_section_media": {
       "type": "media",
@@ -70,6 +71,9 @@
         "images",
         "videos"
       ]
+    },
+    "hello": {
+      "type": "string"
     }
   }
 }

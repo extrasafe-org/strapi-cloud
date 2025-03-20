@@ -892,9 +892,11 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    hello: Schema.Attribute.String;
     hero_section_media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
-    icons_list: Schema.Attribute.Component<'landing.icons-list', false>;
+    icons_list: Schema.Attribute.Component<'landing.icons-list', false> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -912,7 +914,7 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Video_Section_Title: Schema.Attribute.String & Schema.Attribute.Required;
-    Video_URL: Schema.Attribute.Text & Schema.Attribute.Required;
+    Video_URL: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
