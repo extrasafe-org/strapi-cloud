@@ -72,8 +72,12 @@
         "videos"
       ]
     },
-    "hello": {
-      "type": "string"
+    "features_list": {
+      "displayName": "features_list",
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.features-list",
+      "required": true
     }
   }
 }

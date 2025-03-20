@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_landing_features_lists",
+  "info": {
+    "displayName": "features_list"
+  },
+  "options": {},
+  "attributes": {
+    "features_list_item": {
+      "displayName": "features_list_item",
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.features-list-item",
+      "required": true
+    }
+  }
+}

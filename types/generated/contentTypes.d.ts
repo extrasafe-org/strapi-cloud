@@ -892,7 +892,8 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    hello: Schema.Attribute.String;
+    features_list: Schema.Attribute.Component<'landing.features-list', false> &
+      Schema.Attribute.Required;
     hero_section_media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
     icons_list: Schema.Attribute.Component<'landing.icons-list', false> &

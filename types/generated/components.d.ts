@@ -68,6 +68,34 @@ export interface BlocksQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface LandingFeaturesList extends Struct.ComponentSchema {
+  collectionName: 'components_landing_features_lists';
+  info: {
+    displayName: 'features_list';
+  };
+  attributes: {
+    features_list_item: Schema.Attribute.Component<
+      'landing.features-list-item',
+      true
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface LandingFeaturesListItem extends Struct.ComponentSchema {
+  collectionName: 'components_landing_features_list_items';
+  info: {
+    displayName: 'features_list_item';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface LandingIconsList extends Struct.ComponentSchema {
   collectionName: 'components_landing_icons_lists';
   info: {
@@ -263,6 +291,8 @@ declare module '@strapi/strapi' {
       'blocks.block-list': BlocksBlockList;
       'blocks.block-youtube': BlocksBlockYoutube;
       'blocks.quote': BlocksQuote;
+      'landing.features-list': LandingFeaturesList;
+      'landing.features-list-item': LandingFeaturesListItem;
       'landing.icons-list': LandingIconsList;
       'shared.button': SharedButton;
       'shared.header-a': SharedHeaderA;
