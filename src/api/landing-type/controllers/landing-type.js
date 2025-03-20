@@ -32,6 +32,13 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
             },
           },
         },
+        faq_list: {
+          populate: {
+          faq_list_item: {
+              populate: '*'
+            },
+          },
+        },
       },
     });
 
@@ -68,9 +75,16 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
             },
           },
         },
-           features_list: {
+        features_list: {
           populate: {
             features_list_item: {
+              populate: '*'
+            },
+          },
+        },
+         faq_list: {
+          populate: {
+            faq_list_item: {
               populate: '*'
             },
           },
