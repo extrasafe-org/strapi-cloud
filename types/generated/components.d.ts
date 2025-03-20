@@ -85,12 +85,15 @@ export interface LandingFeaturesList extends Struct.ComponentSchema {
 export interface LandingFeaturesListItem extends Struct.ComponentSchema {
   collectionName: 'components_landing_features_list_items';
   info: {
+    description: '';
     displayName: 'features_list_item';
   };
   attributes: {
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
-    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };

@@ -1,13 +1,15 @@
 {
   "collectionName": "components_landing_features_list_items",
   "info": {
-    "displayName": "features_list_item"
+    "displayName": "features_list_item",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "slug": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "title": {
       "type": "string",
@@ -18,13 +20,13 @@
       "required": true
     },
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     }
   }
 }
