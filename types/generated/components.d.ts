@@ -68,6 +68,28 @@ export interface BlocksQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface LandingFaqList extends Struct.ComponentSchema {
+  collectionName: 'components_landing_faq_lists';
+  info: {
+    displayName: 'faq_list';
+  };
+  attributes: {
+    faq_list_item: Schema.Attribute.Component<'landing.faq-list-item', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface LandingFaqListItem extends Struct.ComponentSchema {
+  collectionName: 'components_landing_faq_list_items';
+  info: {
+    displayName: 'faq_list_item';
+  };
+  attributes: {
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface LandingFeaturesList extends Struct.ComponentSchema {
   collectionName: 'components_landing_features_lists';
   info: {
@@ -294,6 +316,8 @@ declare module '@strapi/strapi' {
       'blocks.block-list': BlocksBlockList;
       'blocks.block-youtube': BlocksBlockYoutube;
       'blocks.quote': BlocksQuote;
+      'landing.faq-list': LandingFaqList;
+      'landing.faq-list-item': LandingFaqListItem;
       'landing.features-list': LandingFeaturesList;
       'landing.features-list-item': LandingFeaturesListItem;
       'landing.icons-list': LandingIconsList;

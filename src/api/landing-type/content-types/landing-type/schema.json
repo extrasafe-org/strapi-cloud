@@ -78,6 +78,13 @@
       "repeatable": false,
       "component": "landing.features-list",
       "required": true
+    },
+    "faq_list": {
+      "displayName": "faq_list",
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.faq-list",
+      "required": true
     }
   }
 }

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_landing_faq_lists",
+  "info": {
+    "displayName": "faq_list"
+  },
+  "options": {},
+  "attributes": {
+    "faq_list_item": {
+      "displayName": "faq_list_item",
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.faq-list-item",
+      "required": true
+    }
+  }
+}

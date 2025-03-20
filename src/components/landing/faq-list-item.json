@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_landing_faq_list_items",
+  "info": {
+    "displayName": "faq_list_item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
