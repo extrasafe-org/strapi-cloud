@@ -68,6 +68,62 @@ export interface BlocksQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsDownloadItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_download_items';
+  info: {
+    displayName: 'DownloadItem';
+  };
+  attributes: {
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsDownloadList extends Struct.ComponentSchema {
+  collectionName: 'components_components_download_lists';
+  info: {
+    displayName: 'DownloadList';
+  };
+  attributes: {
+    DownloadsItem: Schema.Attribute.Component<'components.download-item', true>;
+  };
+}
+
+export interface ComponentsIconsBlockItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_icons_block_items';
+  info: {
+    displayName: 'IconsBlockItem';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsImageBlock extends Struct.ComponentSchema {
+  collectionName: 'components_components_image_blocks';
+  info: {
+    displayName: 'ImageBlock';
+  };
+  attributes: {};
+}
+
+export interface ComponentsListBlock extends Struct.ComponentSchema {
+  collectionName: 'components_components_list_blocks';
+  info: {
+    description: '';
+    displayName: 'ListBlock';
+  };
+  attributes: {
+    IconsBlockItem: Schema.Attribute.Component<
+      'components.icons-block-item',
+      true
+    > &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface LandingFaqList extends Struct.ComponentSchema {
   collectionName: 'components_landing_faq_lists';
   info: {
@@ -132,6 +188,82 @@ export interface LandingIconsList extends Struct.ComponentSchema {
       true
     > &
       Schema.Attribute.Required;
+  };
+}
+
+export interface SectionBannerSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_banner_sections';
+  info: {
+    displayName: 'BannerSection';
+  };
+  attributes: {
+    bottom_text: Schema.Attribute.String;
+    linkedin_link: Schema.Attribute.String;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    x_link: Schema.Attribute.String;
+    youtube_link: Schema.Attribute.String;
+  };
+}
+
+export interface SectionBannerWithButtonSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_banner_with_button_sections';
+  info: {
+    displayName: 'BannerWithButtonSection';
+  };
+  attributes: {
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionBrowserLiteHero extends Struct.ComponentSchema {
+  collectionName: 'components_section_browser_lite_heroes';
+  info: {
+    description: '';
+    displayName: 'BrowserLiteHero';
+  };
+  attributes: {
+    bottomText: Schema.Attribute.Text & Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionComingNextSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_coming_next_sections';
+  info: {
+    description: '';
+    displayName: 'IconsListSection';
+  };
+  attributes: {
+    app_store_link: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    google_play_link: Schema.Attribute.String & Schema.Attribute.Required;
+    IconsBlock: Schema.Attribute.Component<'components.list-block', false> &
+      Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_media_with_text_sections';
+  info: {
+    displayName: 'MediaWithTextSection';
+  };
+  attributes: {
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -316,11 +448,21 @@ declare module '@strapi/strapi' {
       'blocks.block-list': BlocksBlockList;
       'blocks.block-youtube': BlocksBlockYoutube;
       'blocks.quote': BlocksQuote;
+      'components.download-item': ComponentsDownloadItem;
+      'components.download-list': ComponentsDownloadList;
+      'components.icons-block-item': ComponentsIconsBlockItem;
+      'components.image-block': ComponentsImageBlock;
+      'components.list-block': ComponentsListBlock;
       'landing.faq-list': LandingFaqList;
       'landing.faq-list-item': LandingFaqListItem;
       'landing.features-list': LandingFeaturesList;
       'landing.features-list-item': LandingFeaturesListItem;
       'landing.icons-list': LandingIconsList;
+      'section.banner-section': SectionBannerSection;
+      'section.banner-with-button-section': SectionBannerWithButtonSection;
+      'section.browser-lite-hero': SectionBrowserLiteHero;
+      'section.coming-next-section': SectionComingNextSection;
+      'section.media-with-text-section': SectionMediaWithTextSection;
       'shared.button': SharedButton;
       'shared.header-a': SharedHeaderA;
       'shared.icons-list-item': SharedIconsListItem;

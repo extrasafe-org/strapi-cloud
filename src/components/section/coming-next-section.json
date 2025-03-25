@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_section_coming_next_sections",
+  "info": {
+    "displayName": "IconsListSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "IconsBlock": {
+      "displayName": "ListBlock",
+      "type": "component",
+      "repeatable": false,
+      "component": "components.list-block",
+      "required": true
+    },
+    "app_store_link": {
+      "type": "string",
+      "required": true
+    },
+    "google_play_link": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_list_blocks",
+  "info": {
+    "displayName": "ListBlock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "IconsBlockItem": {
+      "displayName": "IconsBlockItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.icons-block-item",
+      "required": true
+    }
+  }
+}

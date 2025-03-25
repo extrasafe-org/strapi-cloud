@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_section_banner_sections",
+  "info": {
+    "displayName": "BannerSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "x_link": {
+      "type": "string",
+      "required": false
+    },
+    "youtube_link": {
+      "type": "string",
+      "required": false
+    },
+    "linkedin_link": {
+      "type": "string"
+    },
+    "bottom_text": {
+      "type": "string"
+    }
+  }
+}

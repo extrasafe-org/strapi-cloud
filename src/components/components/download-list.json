@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_components_download_lists",
+  "info": {
+    "displayName": "DownloadList"
+  },
+  "options": {},
+  "attributes": {
+    "DownloadsItem": {
+      "displayName": "DownloadItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.download-item"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_browser_lite_heroes",
+  "info": {
+    "displayName": "BrowserLiteHero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "bottomText": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

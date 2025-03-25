@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_components_download_items",
+  "info": {
+    "displayName": "DownloadItem"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
