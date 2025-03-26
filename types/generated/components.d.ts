@@ -227,7 +227,7 @@ export interface SectionBrowserLiteHero extends Struct.ComponentSchema {
     displayName: 'BrowserLiteHero';
   };
   attributes: {
-    bottomText: Schema.Attribute.Text & Schema.Attribute.Required;
+    bottom_text: Schema.Attribute.Text & Schema.Attribute.Required;
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;

@@ -19,7 +19,7 @@
         "videos"
       ]
     },
-    "bottomText": {
+    "bottom_text": {
       "type": "text",
       "required": true
     }
