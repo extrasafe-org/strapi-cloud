@@ -241,9 +241,9 @@ export interface SectionComingNextSection extends Struct.ComponentSchema {
     displayName: 'IconsListSection';
   };
   attributes: {
-    app_store_link: Schema.Attribute.String & Schema.Attribute.Required;
+    app_store_link: Schema.Attribute.String;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
-    google_play_link: Schema.Attribute.String & Schema.Attribute.Required;
+    google_play_link: Schema.Attribute.String;
     IconsBlock: Schema.Attribute.Component<'components.list-block', false> &
       Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;

@@ -27,11 +27,11 @@
     },
     "app_store_link": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "google_play_link": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "image": {
       "type": "media",
