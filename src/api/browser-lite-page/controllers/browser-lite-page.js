@@ -36,7 +36,7 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
   
       ctx.throw(500, 'Internal Server Error', {
         details: error.message,
-        stack: error.stack,
+        // stack: error.stack,
       });
     }
   },
