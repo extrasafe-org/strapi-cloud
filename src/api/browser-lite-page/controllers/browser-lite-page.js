@@ -34,9 +34,9 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
       return this.transformResponse(sanitizedEntity);
     } catch (error) {
   
-      ctx.throw(500, 'Internal Server Error', {
+      ctx.throw(500, 'Internal Server Error2', {
         details: error.message,
-        // stack: error.stack,
+        stack: error.stack,
       });
     }
   },
