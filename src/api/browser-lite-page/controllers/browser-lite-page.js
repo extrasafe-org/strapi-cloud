@@ -9,10 +9,12 @@ const { createCoreController } = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::browser-lite-page.browser-lite-page', ({ strapi }) => ({
   async find(ctx) {
     try {
+ 
       const { locale = 'en' } = ctx.query;
 
+    
       const entity = await strapi.entityService.findOne('api::browser-lite-page.browser-lite-page', {
-        locale, 
+        locale,
         populate: {
           HeroSection: { populate: '*' },
           IconsListSection: { populate: '*' },
@@ -23,15 +25,19 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
       });
 
       if (!entity) {
-        return ctx.throw(404, 'Not Found');
+        return ctx.throw(404, `No content found for locale "${locale}"`);
       }
 
+      
       const { createdBy, updatedBy, ...sanitizedEntity } = entity;
 
       return this.transformResponse(sanitizedEntity);
     } catch (error) {
-      console.error('Error in find method:', error);
-      ctx.throw(500, 'Internal Server Error', { details: error.message });
+  
+      ctx.throw(500, 'Internal Server Error', {
+        details: error.message,
+        stack: error.stack,
+      });
     }
   },
 }));
