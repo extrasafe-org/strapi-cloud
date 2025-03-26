@@ -1,51 +1,41 @@
 // 'use strict';
 
-// /**
-//  * browser-lite-page controller
-//  */
-
 // const { createCoreController } = require('@strapi/strapi').factories;
 
-// module.exports = createCoreController('api::browser-lite-page.browser-lite-page', ({ strapi }) => ({
-//   async find(ctx) {
-//     try {
- 
-//       const { locale = 'en' } = ctx.query;
-
-    
-//       const entity = await strapi.entityService.findOne('api::browser-lite-page.browser-lite-page', {
-//         locale,
-//         populate: {
-//           HeroSection: { populate: '*' },
-//           IconsListSection: { populate: '*' },
-//           BannerSection: { populate: '*' },
-//           MediaWithTextSection: { populate: '*' },
-//           BannerWithButtonSection: { populate: '*' },
-//         },
-//       });
-
-//       if (!entity) {
-//         return ctx.throw(404, `No content found for locale "${locale}"`);
-//       }
-
-      
-//       const { createdBy, updatedBy, ...sanitizedEntity } = entity;
-
-//       return this.transformResponse(sanitizedEntity);
-//     } catch (error) {
-  
-//       ctx.throw(500, 'Internal Server Error2', {
-//         details: error.message,
-//         stack: error.stack,
-//       });
-//     }
-//   },
-// }));
+// module.exports = createCoreController('api::browser-lite-page.browser-lite-page');
 
 'use strict';
 
-
+/**
+ * browser-lite-page controller
+ */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::browser-lite-page.browser-lite-page');
+module.exports = createCoreController('api::browser-lite-page.browser-lite-page', ({ strapi }) => ({
+  async find(ctx) {
+    try {
+      // Выполняем запрос к Single Type с полной популяцией всех вложенных данных
+      const entity = await strapi.entityService.findOne('api::browser-lite-page.browser-lite-page', {
+        populate: '*', // Подтягиваем все доступные поля и вложенные данные
+      });
+
+      // Если запись не найдена, возвращаем 404
+      if (!entity) {
+        return ctx.throw(404, 'No content found');
+      }
+
+      // Убираем системные поля
+      const { createdBy, updatedBy, ...sanitizedEntity } = entity;
+
+      // Форматируем ответ
+      return this.transformResponse(sanitizedEntity);
+    } catch (error) {
+      // Возвращаем подробности ошибки для отладки
+      ctx.throw(500, 'Internal Server Error', {
+        details: error.message,
+        stack: error.stack,
+      });
+    }
+  },
+}));
