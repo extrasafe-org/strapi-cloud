@@ -30,7 +30,6 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
               IconsBlock: {
                 populate: '*'
               },
-              },
               media: {
                  populate: '*'
               },
