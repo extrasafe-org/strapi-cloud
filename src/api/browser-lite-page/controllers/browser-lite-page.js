@@ -28,10 +28,7 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
             populate: 
             {
               IconsBlock: {
-                populate: {
-                icon: {
-                 populate: '*'
-              },
+                populate: '*'
               },
               },
               media: {
@@ -43,7 +40,11 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
             populate: '*',
           },
           MediaWithTextSection: {
-            populate: '*',
+            populate: {
+              media: {
+                 populate: '*'
+              },
+            },
           },
           BannerWithButtonSection: {
             populate: '*',
