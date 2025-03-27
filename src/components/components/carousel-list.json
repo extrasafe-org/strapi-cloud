@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_carousel_lists",
+  "info": {
+    "displayName": "CarouselList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

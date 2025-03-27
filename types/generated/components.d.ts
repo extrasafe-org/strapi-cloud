@@ -68,6 +68,19 @@ export interface BlocksQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsCarouselList extends Struct.ComponentSchema {
+  collectionName: 'components_components_carousel_lists';
+  info: {
+    displayName: 'CarouselList';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsDownloadItem extends Struct.ComponentSchema {
   collectionName: 'components_components_download_items';
   info: {
@@ -229,6 +242,18 @@ export interface SectionBrowserLiteHero extends Struct.ComponentSchema {
   attributes: {
     bottom_text: Schema.Attribute.Text & Schema.Attribute.Required;
     media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionCarouselSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_carousel_sections';
+  info: {
+    displayName: 'CarouselSection';
+  };
+  attributes: {
+    CarouselList: Schema.Attribute.Component<'components.carousel-list', true> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -449,6 +474,7 @@ declare module '@strapi/strapi' {
       'blocks.block-list': BlocksBlockList;
       'blocks.block-youtube': BlocksBlockYoutube;
       'blocks.quote': BlocksQuote;
+      'components.carousel-list': ComponentsCarouselList;
       'components.download-item': ComponentsDownloadItem;
       'components.download-list': ComponentsDownloadList;
       'components.icons-block-item': ComponentsIconsBlockItem;
@@ -462,6 +488,7 @@ declare module '@strapi/strapi' {
       'section.banner-section': SectionBannerSection;
       'section.banner-with-button-section': SectionBannerWithButtonSection;
       'section.browser-lite-hero': SectionBrowserLiteHero;
+      'section.carousel-section': SectionCarouselSection;
       'section.coming-next-section': SectionComingNextSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
       'shared.button': SharedButton;

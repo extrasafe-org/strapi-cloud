@@ -88,6 +88,17 @@
       },
       "component": "section.banner-with-button-section",
       "required": true
+    },
+    "CarouselSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.carousel-section",
+      "required": true
     }
   }
 }
