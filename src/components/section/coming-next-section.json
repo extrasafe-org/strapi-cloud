@@ -33,12 +33,13 @@
       "type": "string",
       "required": false
     },
-    "image": {
+    "media": {
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": [
-        "images"
+        "images",
+        "videos"
       ]
     }
   }

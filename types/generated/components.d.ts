@@ -246,7 +246,8 @@ export interface SectionComingNextSection extends Struct.ComponentSchema {
     google_play_link: Schema.Attribute.String;
     IconsBlock: Schema.Attribute.Component<'components.list-block', false> &
       Schema.Attribute.Required;
-    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
