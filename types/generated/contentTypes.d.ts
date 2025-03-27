@@ -893,14 +893,14 @@ export interface ApiBrowserLitePageBrowserLitePage
           localized: true;
         };
       }>;
-    metaDescription: Schema.Attribute.Text &
+    meta_description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    metaTitle: Schema.Attribute.String &
+    meta_title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

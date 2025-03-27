@@ -38,7 +38,7 @@
       "component": "section.coming-next-section",
       "required": true
     },
-    "metaTitle": {
+    "meta_title": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -47,7 +47,7 @@
       "type": "string",
       "required": true
     },
-    "metaDescription": {
+    "meta_description": {
       "pluginOptions": {
         "i18n": {
           "localized": true

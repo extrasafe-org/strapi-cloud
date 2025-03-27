@@ -21,7 +21,7 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
             populate: '*',
           },
           IconsListSection: {
-            populate: '*'
+            populate: '*',
           //   {
           //     icons_block_item: {
           //     populate: '*'
