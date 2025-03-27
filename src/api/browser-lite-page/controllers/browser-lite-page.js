@@ -23,15 +23,15 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
           IconsListSection: {
             populate: '*',
           },
-          BannerSection: {
-            populate: '*',
-          },
-          MediaWithTextSection: {
-            populate: '*',
-          },
-          BannerWithButtonSection: {
-            populate: '*',
-          },
+          // BannerSection: {
+          //   populate: '*',
+          // },
+          // MediaWithTextSection: {
+          //   populate: '*',
+          // },
+          // BannerWithButtonSection: {
+          //   populate: '*',
+          // },
         },
       });
 
