@@ -18,7 +18,11 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
       const entity = await strapi.service('api::browser-lite-page.browser-lite-page').find({
         populate: {
           HeroSection: {
-            populate: '*',
+            populate: {
+                  media: {
+                 populate: '*'
+              },
+            },
           },
           IconsListSection: {
             populate: 
