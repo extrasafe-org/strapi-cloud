@@ -222,11 +222,10 @@ export interface SectionBannerSection extends Struct.ComponentSchema {
 export interface SectionBannerWithButtonSection extends Struct.ComponentSchema {
   collectionName: 'components_section_banner_with_button_sections';
   info: {
+    description: '';
     displayName: 'BannerWithButtonSection';
   };
   attributes: {
-    button_link: Schema.Attribute.String;
-    button_text: Schema.Attribute.String;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;

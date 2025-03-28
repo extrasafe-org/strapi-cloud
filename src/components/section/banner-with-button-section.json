@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_banner_with_button_sections",
   "info": {
-    "displayName": "BannerWithButtonSection"
+    "displayName": "BannerWithButtonSection",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -16,12 +17,6 @@
     "text": {
       "type": "text",
       "required": true
-    },
-    "button_text": {
-      "type": "string"
-    },
-    "button_link": {
-      "type": "string"
     }
   }
 }
