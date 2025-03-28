@@ -207,15 +207,13 @@ export interface LandingIconsList extends Struct.ComponentSchema {
 export interface SectionBannerSection extends Struct.ComponentSchema {
   collectionName: 'components_section_banner_sections';
   info: {
+    description: '';
     displayName: 'BannerSection';
   };
   attributes: {
     bottom_text: Schema.Attribute.String;
-    linkedin_link: Schema.Attribute.String;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    x_link: Schema.Attribute.String;
-    youtube_link: Schema.Attribute.String;
   };
 }
 
