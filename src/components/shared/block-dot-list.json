@@ -1,12 +1,13 @@
 {
   "collectionName": "components_shared_block_dot_lists",
   "info": {
-    "displayName": "block_dot_list"
+    "displayName": "block_dot_list",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "text": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

@@ -329,10 +329,11 @@ export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
 export interface SharedBlockDotList extends Struct.ComponentSchema {
   collectionName: 'components_shared_block_dot_lists';
   info: {
+    description: '';
     displayName: 'block_dot_list';
   };
   attributes: {
-    text: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
   };
 }
 
