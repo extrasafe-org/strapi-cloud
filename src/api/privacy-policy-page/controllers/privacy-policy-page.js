@@ -10,7 +10,11 @@ module.exports = createCoreController('api::privacy-policy-page.privacy-policy-p
   async find(ctx) {
     try {
       const entity = await strapi.service('api::privacy-policy-page.privacy-policy-page').find({
-        populate: '*',
+          populate: {
+              blocks: {
+                  populate: '*'
+            }
+        },
       });
 
       if (!entity) {
