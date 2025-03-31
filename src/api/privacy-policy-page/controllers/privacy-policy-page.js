@@ -12,11 +12,7 @@ module.exports = createCoreController('api::privacy-policy-page.privacy-policy-p
       const entity = await strapi.service('api::privacy-policy-page.privacy-policy-page').find({
           populate: {
               blocks: {
-                 populate: {
-              list_block: {
-                populate: '*', 
-              },
-            },
+                 populate: '*'
             }
         },
       });
