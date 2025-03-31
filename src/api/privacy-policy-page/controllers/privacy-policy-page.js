@@ -13,7 +13,7 @@ module.exports = createCoreController('api::privacy-policy-page.privacy-policy-p
           populate: {
               blocks: {
                  populate: {
-              block_dot_list: {
+              list_block: {
                 populate: '*', 
               },
             },

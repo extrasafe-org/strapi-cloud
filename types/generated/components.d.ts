@@ -32,7 +32,7 @@ export interface BlocksBlockDotListWithTitle extends Struct.ComponentSchema {
     displayName: 'Block-dot-list-with-title';
   };
   attributes: {
-    block_dot_list: Schema.Attribute.Component<'shared.block-list', true>;
+    list_block: Schema.Attribute.Component<'shared.list-block', true>;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
@@ -382,6 +382,18 @@ export interface SharedIconsListItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedListBlock extends Struct.ComponentSchema {
+  collectionName: 'components_shared_list_blocks';
+  info: {
+    description: '';
+    displayName: 'list_block';
+  };
+  attributes: {
+    block_dot_list: Schema.Attribute.Component<'shared.block-dot-list', true>;
+    subtitle: Schema.Attribute.String;
+  };
+}
+
 export interface SharedListItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_list_items';
   info: {
@@ -556,6 +568,7 @@ declare module '@strapi/strapi' {
       'shared.button': SharedButton;
       'shared.header-a': SharedHeaderA;
       'shared.icons-list-item': SharedIconsListItem;
+      'shared.list-block': SharedListBlock;
       'shared.list-item': SharedListItem;
       'shared.logo': SharedLogo;
       'shared.media': SharedMedia;

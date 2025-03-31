@@ -12,11 +12,11 @@
     "text": {
       "type": "text"
     },
-    "block_dot_list": {
-      "displayName": "block_list",
+    "list_block": {
+      "displayName": "list_block",
       "type": "component",
       "repeatable": true,
-      "component": "shared.block-list"
+      "component": "shared.list-block"
     }
   }
 }
