@@ -1075,6 +1075,42 @@ export interface ApiPrivacyPolicyPagePrivacyPolicyPage
   };
 }
 
+export interface ApiTermsOfUsePageTermsOfUsePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'terms_of_use_pages';
+  info: {
+    description: '';
+    displayName: 'TermsOfUsePage';
+    pluralName: 'terms-of-use-pages';
+    singularName: 'terms-of-use-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      ['blocks.block-with-top-border', 'blocks.block-dot-list-with-title']
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::terms-of-use-page.terms-of-use-page'
+    > &
+      Schema.Attribute.Private;
+    meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
+    meta_title: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1594,6 +1630,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::landing-type.landing-type': ApiLandingTypeLandingType;
       'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
+      'api::terms-of-use-page.terms-of-use-page': ApiTermsOfUsePageTermsOfUsePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
