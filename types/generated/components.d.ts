@@ -12,6 +12,30 @@ export interface BlocksBlockBigHeading extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksBlockDotList extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_dot_lists';
+  info: {
+    description: '';
+    displayName: 'Block-dot-list';
+  };
+  attributes: {
+    block_dot_list: Schema.Attribute.Component<'shared.block-dot-list', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksBlockDotListWithTitle extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_dot_list_with_titles';
+  info: {
+    displayName: 'Block-dot-list-with-title';
+  };
+  attributes: {
+    block_dot_list: Schema.Attribute.Component<'shared.block-dot-list', true>;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksBlockHeading extends Struct.ComponentSchema {
   collectionName: 'components_blocks_block_headings';
   info: {
@@ -44,6 +68,17 @@ export interface BlocksBlockList extends Struct.ComponentSchema {
     list_item: Schema.Attribute.Component<'shared.list-item', true> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksBlockWithTopBorder extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_with_top_borders';
+  info: {
+    displayName: 'Block-with-top-border';
+  };
+  attributes: {
+    isBold: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
@@ -291,6 +326,16 @@ export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBlockDotList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_block_dot_lists';
+  info: {
+    displayName: 'block_dot_list';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -467,9 +512,12 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blocks.block-big-heading': BlocksBlockBigHeading;
+      'blocks.block-dot-list': BlocksBlockDotList;
+      'blocks.block-dot-list-with-title': BlocksBlockDotListWithTitle;
       'blocks.block-heading': BlocksBlockHeading;
       'blocks.block-image': BlocksBlockImage;
       'blocks.block-list': BlocksBlockList;
+      'blocks.block-with-top-border': BlocksBlockWithTopBorder;
       'blocks.block-youtube': BlocksBlockYoutube;
       'blocks.quote': BlocksQuote;
       'components.carousel-list': ComponentsCarouselList;
@@ -489,6 +537,7 @@ declare module '@strapi/strapi' {
       'section.carousel-section': SectionCarouselSection;
       'section.coming-next-section': SectionComingNextSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
+      'shared.block-dot-list': SharedBlockDotList;
       'shared.button': SharedButton;
       'shared.header-a': SharedHeaderA;
       'shared.icons-list-item': SharedIconsListItem;

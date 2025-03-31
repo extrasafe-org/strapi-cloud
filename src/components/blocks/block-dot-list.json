@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blocks_block_dot_lists",
+  "info": {
+    "displayName": "Block-dot-list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "block_dot_list": {
+      "displayName": "block_dot_list",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.block-dot-list",
+      "required": true
+    }
+  }
+}
