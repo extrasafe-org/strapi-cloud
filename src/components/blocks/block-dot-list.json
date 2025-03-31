@@ -12,6 +12,9 @@
       "repeatable": true,
       "component": "shared.block-dot-list",
       "required": true
+    },
+    "list_subtitle": {
+      "type": "string"
     }
   }
 }

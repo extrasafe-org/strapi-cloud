@@ -1,7 +1,8 @@
 {
   "collectionName": "components_blocks_block_dot_list_with_titles",
   "info": {
-    "displayName": "Block-dot-list-with-title"
+    "displayName": "Block-dot-list-with-title",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -12,9 +13,10 @@
       "type": "text"
     },
     "block_dot_list": {
+      "displayName": "block_list",
       "type": "component",
       "repeatable": true,
-      "component": "shared.block-dot-list"
+      "component": "shared.block-list"
     }
   }
 }

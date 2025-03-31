@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_block_lists",
+  "info": {
+    "displayName": "block_list"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "block_dot_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.block-dot-list"
+    }
+  }
+}

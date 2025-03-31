@@ -21,16 +21,18 @@ export interface BlocksBlockDotList extends Struct.ComponentSchema {
   attributes: {
     block_dot_list: Schema.Attribute.Component<'shared.block-dot-list', true> &
       Schema.Attribute.Required;
+    list_subtitle: Schema.Attribute.String;
   };
 }
 
 export interface BlocksBlockDotListWithTitle extends Struct.ComponentSchema {
   collectionName: 'components_blocks_block_dot_list_with_titles';
   info: {
+    description: '';
     displayName: 'Block-dot-list-with-title';
   };
   attributes: {
-    block_dot_list: Schema.Attribute.Component<'shared.block-dot-list', true>;
+    block_dot_list: Schema.Attribute.Component<'shared.block-list', true>;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
@@ -337,6 +339,17 @@ export interface SharedBlockDotList extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBlockList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_block_lists';
+  info: {
+    displayName: 'block_list';
+  };
+  attributes: {
+    block_dot_list: Schema.Attribute.Component<'shared.block-dot-list', true>;
+    subtitle: Schema.Attribute.String;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -539,6 +552,7 @@ declare module '@strapi/strapi' {
       'section.coming-next-section': SectionComingNextSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
       'shared.block-dot-list': SharedBlockDotList;
+      'shared.block-list': SharedBlockList;
       'shared.button': SharedButton;
       'shared.header-a': SharedHeaderA;
       'shared.icons-list-item': SharedIconsListItem;
