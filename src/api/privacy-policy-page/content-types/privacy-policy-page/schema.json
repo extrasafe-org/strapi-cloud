@@ -4,7 +4,8 @@
   "info": {
     "singularName": "privacy-policy-page",
     "pluralName": "privacy-policy-pages",
-    "displayName": "PrivacyPolicyPage"
+    "displayName": "PrivacyPolicyPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,6 +22,14 @@
         "blocks.block-with-top-border",
         "blocks.block-dot-list-with-title"
       ],
+      "required": true
+    },
+    "meta_title": {
+      "type": "string",
+      "required": true
+    },
+    "meta_description": {
+      "type": "text",
       "required": true
     }
   }

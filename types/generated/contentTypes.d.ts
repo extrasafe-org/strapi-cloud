@@ -1043,6 +1043,7 @@ export interface ApiPrivacyPolicyPagePrivacyPolicyPage
   extends Struct.SingleTypeSchema {
   collectionName: 'privacy_policy_pages';
   info: {
+    description: '';
     displayName: 'PrivacyPolicyPage';
     pluralName: 'privacy-policy-pages';
     singularName: 'privacy-policy-page';
@@ -1064,6 +1065,8 @@ export interface ApiPrivacyPolicyPagePrivacyPolicyPage
       'api::privacy-policy-page.privacy-policy-page'
     > &
       Schema.Attribute.Private;
+    meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
+    meta_title: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
