@@ -1069,6 +1069,8 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     MediaSection: Schema.Attribute.Component<'section.media-section', false> &
       Schema.Attribute.Required;
+    meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
+    meta_title: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

@@ -31,6 +31,14 @@
       "repeatable": false,
       "component": "section.faq-section",
       "required": true
+    },
+    "meta_title": {
+      "type": "string",
+      "required": true
+    },
+    "meta_description": {
+      "type": "text",
+      "required": true
     }
   }
 }
