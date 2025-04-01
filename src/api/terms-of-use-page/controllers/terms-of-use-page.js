@@ -9,7 +9,7 @@ const { createCoreController } = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::terms-of-use-page.terms-of-use-page', ({ strapi }) => ({
   async find(ctx) {
     try {
-      const entity = await strapi.service('api::privacy-policy-page.privacy-policy-page').find({
+      const entity = await strapi.service('api::terms-of-use-page.terms-of-use-page').find({
     populate: {
           blocks: {
             on: {
