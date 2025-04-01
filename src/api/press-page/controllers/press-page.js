@@ -23,10 +23,18 @@ module.exports = createCoreController('api::press-page.press-page', ({ strapi })
             },
           },
            FeaturesSection: {
-            populate: '*',
+               populate: {
+                   FeaturesList: {
+                    populate: '*'
+                }
+            },
           },
           FaqSection: {
-            populate:  '*',
+            populate:  {
+                   FaqList: {
+                    populate: '*'
+                }
+            },
           },
         },
       });
