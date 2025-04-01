@@ -327,10 +327,11 @@ export interface SectionComingNextSection extends Struct.ComponentSchema {
 export interface SectionFaqSection extends Struct.ComponentSchema {
   collectionName: 'components_section_faq_sections';
   info: {
+    description: '';
     displayName: 'FaqSection';
   };
   attributes: {
-    faq_list: Schema.Attribute.Component<'landing.faq-list-item', true> &
+    FaqList: Schema.Attribute.Component<'landing.faq-list-item', true> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };
@@ -343,7 +344,7 @@ export interface SectionFeaturesSection extends Struct.ComponentSchema {
     displayName: 'FeaturesSection';
   };
   attributes: {
-    features_list: Schema.Attribute.Component<'shared.features-list', true> &
+    FeaturesList: Schema.Attribute.Component<'shared.features-list', true> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };
@@ -352,10 +353,11 @@ export interface SectionFeaturesSection extends Struct.ComponentSchema {
 export interface SectionMediaSection extends Struct.ComponentSchema {
   collectionName: 'components_section_media_sections';
   info: {
+    description: '';
     displayName: 'MediaSection';
   };
   attributes: {
-    media_list: Schema.Attribute.Component<'shared.media-list', false> &
+    MediaListBlock: Schema.Attribute.Component<'shared.media-list', false> &
       Schema.Attribute.Required;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
@@ -498,13 +500,11 @@ export interface SharedMedia extends Struct.ComponentSchema {
 export interface SharedMediaList extends Struct.ComponentSchema {
   collectionName: 'components_shared_media_lists';
   info: {
+    description: '';
     displayName: 'media_list';
   };
   attributes: {
-    media_list_items: Schema.Attribute.Component<
-      'shared.media-list-item',
-      true
-    > &
+    MediaList: Schema.Attribute.Component<'shared.media-list-item', true> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };

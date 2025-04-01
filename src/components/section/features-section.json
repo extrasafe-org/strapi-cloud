@@ -9,7 +9,7 @@
     "title": {
       "type": "string"
     },
-    "features_list": {
+    "FeaturesList": {
       "type": "component",
       "repeatable": true,
       "component": "shared.features-list",

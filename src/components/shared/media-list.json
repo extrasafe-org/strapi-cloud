@@ -1,14 +1,15 @@
 {
   "collectionName": "components_shared_media_lists",
   "info": {
-    "displayName": "media_list"
+    "displayName": "media_list",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "media_list_items": {
+    "MediaList": {
       "displayName": "media_list_item",
       "type": "component",
       "repeatable": true,

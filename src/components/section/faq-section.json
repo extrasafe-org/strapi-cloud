@@ -1,14 +1,15 @@
 {
   "collectionName": "components_section_faq_sections",
   "info": {
-    "displayName": "FaqSection"
+    "displayName": "FaqSection",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "faq_list": {
+    "FaqList": {
       "type": "component",
       "repeatable": true,
       "component": "landing.faq-list-item",
