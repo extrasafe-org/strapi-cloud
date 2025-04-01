@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_media_lists",
+  "info": {
+    "displayName": "media_list"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "media_list_items": {
+      "displayName": "media_list_item",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.media-list-item",
+      "required": true
+    }
+  }
+}

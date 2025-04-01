@@ -174,6 +174,17 @@ export interface ComponentsListBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsMediaList extends Struct.ComponentSchema {
+  collectionName: 'components_components_media_lists';
+  info: {
+    displayName: 'MediaList';
+  };
+  attributes: {
+    media_list: Schema.Attribute.Component<'shared.media-list', true> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface LandingFaqList extends Struct.ComponentSchema {
   collectionName: 'components_landing_faq_lists';
   info: {
@@ -313,6 +324,44 @@ export interface SectionComingNextSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_faq_sections';
+  info: {
+    displayName: 'FaqSection';
+  };
+  attributes: {
+    faq_list: Schema.Attribute.Component<'landing.faq-list-item', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionFeaturesSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_sections';
+  info: {
+    description: '';
+    displayName: 'FeaturesSection';
+  };
+  attributes: {
+    features_list: Schema.Attribute.Component<'shared.features-list', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionMediaSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_media_sections';
+  info: {
+    displayName: 'MediaSection';
+  };
+  attributes: {
+    media_list: Schema.Attribute.Component<'shared.media-list', false> &
+      Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
   collectionName: 'components_section_media_with_text_sections';
   info: {
@@ -357,6 +406,19 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
   attributes: {
     Text: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFeaturesList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_features_lists';
+  info: {
+    displayName: 'features_list';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -430,6 +492,35 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedMediaList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_media_lists';
+  info: {
+    displayName: 'media_list';
+  };
+  attributes: {
+    media_list_items: Schema.Attribute.Component<
+      'shared.media-list-item',
+      true
+    > &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedMediaListItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_media_list_items';
+  info: {
+    displayName: 'media_list_item';
+  };
+  attributes: {
+    date: Schema.Attribute.Date;
+    logo: Schema.Attribute.Media<'images'>;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
@@ -552,6 +643,7 @@ declare module '@strapi/strapi' {
       'components.icons-block-item': ComponentsIconsBlockItem;
       'components.image-block': ComponentsImageBlock;
       'components.list-block': ComponentsListBlock;
+      'components.media-list': ComponentsMediaList;
       'landing.faq-list': LandingFaqList;
       'landing.faq-list-item': LandingFaqListItem;
       'landing.features-list': LandingFeaturesList;
@@ -562,16 +654,22 @@ declare module '@strapi/strapi' {
       'section.browser-lite-hero': SectionBrowserLiteHero;
       'section.carousel-section': SectionCarouselSection;
       'section.coming-next-section': SectionComingNextSection;
+      'section.faq-section': SectionFaqSection;
+      'section.features-section': SectionFeaturesSection;
+      'section.media-section': SectionMediaSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
       'shared.block-dot-list': SharedBlockDotList;
       'shared.block-list': SharedBlockList;
       'shared.button': SharedButton;
+      'shared.features-list': SharedFeaturesList;
       'shared.header-a': SharedHeaderA;
       'shared.icons-list-item': SharedIconsListItem;
       'shared.list-block': SharedListBlock;
       'shared.list-item': SharedListItem;
       'shared.logo': SharedLogo;
       'shared.media': SharedMedia;
+      'shared.media-list': SharedMediaList;
+      'shared.media-list-item': SharedMediaListItem;
       'shared.menu': SharedMenu;
       'shared.menu-item': SharedMenuItem;
       'shared.quote': SharedQuote;

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_media_sections",
+  "info": {
+    "displayName": "MediaSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "media_list": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.media-list",
+      "required": true
+    }
+  }
+}

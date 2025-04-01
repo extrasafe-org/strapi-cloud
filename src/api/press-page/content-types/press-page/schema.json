@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "press_pages",
+  "info": {
+    "singularName": "press-page",
+    "pluralName": "press-pages",
+    "displayName": "PressPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MediaSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.media-section",
+      "required": true
+    },
+    "FeaturesSection": {
+      "displayName": "FeaturesSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "section.features-section",
+      "required": true
+    },
+    "FaqSection": {
+      "displayName": "FaqSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "section.faq-section",
+      "required": true
+    }
+  }
+}

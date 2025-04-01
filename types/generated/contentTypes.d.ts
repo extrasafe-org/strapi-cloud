@@ -1039,6 +1039,43 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
+  collectionName: 'press_pages';
+  info: {
+    description: '';
+    displayName: 'PressPage';
+    pluralName: 'press-pages';
+    singularName: 'press-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required;
+    FeaturesSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::press-page.press-page'
+    > &
+      Schema.Attribute.Private;
+    MediaSection: Schema.Attribute.Component<'section.media-section', false> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPrivacyPolicyPagePrivacyPolicyPage
   extends Struct.SingleTypeSchema {
   collectionName: 'privacy_policy_pages';
@@ -1629,6 +1666,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-type.landing-type': ApiLandingTypeLandingType;
+      'api::press-page.press-page': ApiPressPagePressPage;
       'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::terms-of-use-page.terms-of-use-page': ApiTermsOfUsePageTermsOfUsePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
