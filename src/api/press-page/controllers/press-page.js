@@ -12,7 +12,11 @@ module.exports = createCoreController('api::press-page.press-page', ({ strapi })
       const entity = await strapi.service('api::press-page.press-page').find({
         populate: {
           MediaSection: {
-            populate: '*',
+                populate: {
+                  MediaList: {
+                    populate: '*',
+                }
+            },
           },
            FeaturesSection: {
             populate: '*',
