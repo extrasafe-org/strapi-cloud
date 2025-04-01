@@ -13,8 +13,12 @@ module.exports = createCoreController('api::press-page.press-page', ({ strapi })
         populate: {
           MediaSection: {
                 populate: {
-                  MediaList: {
-                    populate: '*',
+                  MediaListBlock: {
+                        populate: {
+                          MediaList: {
+                            populate: '*'
+                        }
+                    },
                 }
             },
           },
