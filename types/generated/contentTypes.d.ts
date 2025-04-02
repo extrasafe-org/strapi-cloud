@@ -1012,6 +1012,8 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     description: Schema.Attribute.Text;
     faq_list: Schema.Attribute.Component<'landing.faq-list', false> &
       Schema.Attribute.Required;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required;
     features_list: Schema.Attribute.Component<'landing.features-list', false> &
       Schema.Attribute.Required;
     hero_section_media: Schema.Attribute.Media<'images' | 'videos'> &
