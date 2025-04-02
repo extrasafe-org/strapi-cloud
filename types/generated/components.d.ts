@@ -513,10 +513,12 @@ export interface SharedMediaList extends Struct.ComponentSchema {
 export interface SharedMediaListItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_media_list_items';
   info: {
+    description: '';
     displayName: 'media_list_item';
   };
   attributes: {
     date: Schema.Attribute.Date;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
     logo: Schema.Attribute.Media<'images'>;
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;

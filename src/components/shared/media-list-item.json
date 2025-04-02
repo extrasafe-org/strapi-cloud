@@ -1,18 +1,19 @@
 {
   "collectionName": "components_shared_media_list_items",
   "info": {
-    "displayName": "media_list_item"
+    "displayName": "media_list_item",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "title": {
       "type": "text",
@@ -22,11 +23,16 @@
       "type": "date"
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "link": {
+      "type": "string",
+      "required": true
     }
   }
 }
