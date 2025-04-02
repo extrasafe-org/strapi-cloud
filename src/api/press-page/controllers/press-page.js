@@ -31,7 +31,7 @@ module.exports = createCoreController('api::press-page.press-page', ({ strapi })
           },
           FaqSection: {
             populate:  {
-                   FaqList: {
+                   faq_list_item: {
                     populate: '*'
                 }
             },
