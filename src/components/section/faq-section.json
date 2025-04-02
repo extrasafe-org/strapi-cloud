@@ -9,7 +9,7 @@
     "title": {
       "type": "string"
     },
-    "FaqList": {
+    "faq_list_item": {
       "type": "component",
       "repeatable": true,
       "component": "landing.faq-list-item",

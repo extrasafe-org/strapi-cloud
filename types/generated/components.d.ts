@@ -331,7 +331,7 @@ export interface SectionFaqSection extends Struct.ComponentSchema {
     displayName: 'FaqSection';
   };
   attributes: {
-    FaqList: Schema.Attribute.Component<'landing.faq-list-item', true> &
+    faq_list_item: Schema.Attribute.Component<'landing.faq-list-item', true> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };
