@@ -737,6 +737,7 @@ export interface ApiBlogArticleBlogArticle extends Struct.CollectionTypeSchema {
         'blocks.block-list',
         'blocks.block-image',
         'blocks.block-youtube',
+        'blocks.block-social-post',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

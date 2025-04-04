@@ -71,7 +71,8 @@
         "blocks.block-big-heading",
         "blocks.block-list",
         "blocks.block-image",
-        "blocks.block-youtube"
+        "blocks.block-youtube",
+        "blocks.block-social-post"
       ]
     },
     "is_production": {

@@ -73,6 +73,16 @@ export interface BlocksBlockList extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksBlockSocialPost extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_social_posts';
+  info: {
+    displayName: 'Block-social-post';
+  };
+  attributes: {
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface BlocksBlockWithTopBorder extends Struct.ComponentSchema {
   collectionName: 'components_blocks_block_with_top_borders';
   info: {
@@ -636,6 +646,7 @@ declare module '@strapi/strapi' {
       'blocks.block-heading': BlocksBlockHeading;
       'blocks.block-image': BlocksBlockImage;
       'blocks.block-list': BlocksBlockList;
+      'blocks.block-social-post': BlocksBlockSocialPost;
       'blocks.block-with-top-border': BlocksBlockWithTopBorder;
       'blocks.block-youtube': BlocksBlockYoutube;
       'blocks.quote': BlocksQuote;

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_block_social_posts",
+  "info": {
+    "displayName": "Block-social-post"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
