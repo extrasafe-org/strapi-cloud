@@ -22,6 +22,12 @@
     "bottom_text": {
       "type": "text",
       "required": true
+    },
+    "icons_list": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.icons-list",
+      "required": true
     }
   }
 }

@@ -19,9 +19,16 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
         populate: {
           HeroSection: {
             populate: {
-                  media: {
+                media: {
                  populate: '*'
               },
+                   icons_list: {
+          populate: {
+            icons_list_item: {
+              populate: '*'
+            },
+          },
+        },
             },
           },
            CarouselSection: {

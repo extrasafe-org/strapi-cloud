@@ -297,6 +297,8 @@ export interface SectionBrowserLiteHero extends Struct.ComponentSchema {
   };
   attributes: {
     bottom_text: Schema.Attribute.Text & Schema.Attribute.Required;
+    icons_list: Schema.Attribute.Component<'landing.icons-list', false> &
+      Schema.Attribute.Required;
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
