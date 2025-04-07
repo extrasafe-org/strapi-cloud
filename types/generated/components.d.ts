@@ -463,7 +463,8 @@ export interface SharedListBlock extends Struct.ComponentSchema {
     displayName: 'list_block';
   };
   attributes: {
-    block_dot_list: Schema.Attribute.Component<'shared.block-dot-list', true>;
+    block_dot_list: Schema.Attribute.Component<'shared.block-dot-list', true> &
+      Schema.Attribute.Required;
     subtitle: Schema.Attribute.String;
   };
 }

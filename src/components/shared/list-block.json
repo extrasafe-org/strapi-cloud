@@ -12,7 +12,8 @@
     "block_dot_list": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.block-dot-list"
+      "component": "shared.block-dot-list",
+      "required": true
     }
   }
 }

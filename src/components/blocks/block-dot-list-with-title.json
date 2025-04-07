@@ -16,7 +16,8 @@
       "displayName": "list_block",
       "type": "component",
       "repeatable": true,
-      "component": "shared.list-block"
+      "component": "shared.list-block",
+      "required": false
     }
   }
 }
