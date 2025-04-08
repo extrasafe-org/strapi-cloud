@@ -365,11 +365,12 @@ export interface SectionFeaturesSection extends Struct.ComponentSchema {
 export interface SectionLinkedinSocialSection extends Struct.ComponentSchema {
   collectionName: 'components_section_linkedin_social_sections';
   info: {
+    description: '';
     displayName: 'LinkedinSocialSection';
   };
   attributes: {
     title: Schema.Attribute.String;
-    widget_id: Schema.Attribute.String;
+    widget_id: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -407,22 +408,24 @@ export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
 export interface SectionXSocialSection extends Struct.ComponentSchema {
   collectionName: 'components_section_x_social_sections';
   info: {
+    description: '';
     displayName: 'XSocialSection';
   };
   attributes: {
     title: Schema.Attribute.String;
-    widget_id: Schema.Attribute.String;
+    widget_id: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
 export interface SectionYoutubeSocialSection extends Struct.ComponentSchema {
   collectionName: 'components_section_youtube_social_sections';
   info: {
+    description: '';
     displayName: 'YoutubeSocialSection';
   };
   attributes: {
     title: Schema.Attribute.String;
-    widget_id: Schema.Attribute.String;
+    widget_id: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
