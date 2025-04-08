@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_youtube_social_sections",
+  "info": {
+    "displayName": "YoutubeSocialSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "widget_id": {
+      "type": "string"
+    }
+  }
+}

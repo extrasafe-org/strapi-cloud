@@ -362,6 +362,17 @@ export interface SectionFeaturesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionLinkedinSocialSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_linkedin_social_sections';
+  info: {
+    displayName: 'LinkedinSocialSection';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    widget_id: Schema.Attribute.String;
+  };
+}
+
 export interface SectionMediaSection extends Struct.ComponentSchema {
   collectionName: 'components_section_media_sections';
   info: {
@@ -390,6 +401,28 @@ export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionXSocialSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_x_social_sections';
+  info: {
+    displayName: 'XSocialSection';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    widget_id: Schema.Attribute.String;
+  };
+}
+
+export interface SectionYoutubeSocialSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_youtube_social_sections';
+  info: {
+    displayName: 'YoutubeSocialSection';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    widget_id: Schema.Attribute.String;
   };
 }
 
@@ -685,8 +718,11 @@ declare module '@strapi/strapi' {
       'section.coming-next-section': SectionComingNextSection;
       'section.faq-section': SectionFaqSection;
       'section.features-section': SectionFeaturesSection;
+      'section.linkedin-social-section': SectionLinkedinSocialSection;
       'section.media-section': SectionMediaSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
+      'section.x-social-section': SectionXSocialSection;
+      'section.youtube-social-section': SectionYoutubeSocialSection;
       'shared.block-dot-list': SharedBlockDotList;
       'shared.block-list': SharedBlockList;
       'shared.button': SharedButton;

@@ -39,6 +39,24 @@
     "meta_description": {
       "type": "text",
       "required": true
+    },
+    "LinkedinSocialSection": {
+      "displayName": "LinkedinSocialSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "section.linkedin-social-section"
+    },
+    "XSocialSection": {
+      "displayName": "XSocialSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "section.x-social-section"
+    },
+    "YoutubeSocialSection": {
+      "displayName": "YoutubeSocialSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "section.youtube-social-section"
     }
   }
 }

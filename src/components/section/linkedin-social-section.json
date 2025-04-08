@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_linkedin_social_sections",
+  "info": {
+    "displayName": "LinkedinSocialSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "widget_id": {
+      "type": "string"
+    }
+  }
+}
