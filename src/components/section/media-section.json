@@ -17,6 +17,13 @@
       "repeatable": false,
       "component": "shared.media-list",
       "required": true
+    },
+    "DownloadList": {
+      "displayName": "DownloadList",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.download-list",
+      "required": true
     }
   }
 }

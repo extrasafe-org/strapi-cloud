@@ -369,6 +369,8 @@ export interface SectionMediaSection extends Struct.ComponentSchema {
     displayName: 'MediaSection';
   };
   attributes: {
+    DownloadList: Schema.Attribute.Component<'shared.download-list', true> &
+      Schema.Attribute.Required;
     MediaListBlock: Schema.Attribute.Component<'shared.media-list', false> &
       Schema.Attribute.Required;
     text: Schema.Attribute.Text;
@@ -420,6 +422,17 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
   attributes: {
     Text: Schema.Attribute.String;
+  };
+}
+
+export interface SharedDownloadList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_download_lists';
+  info: {
+    displayName: 'DownloadList';
+  };
+  attributes: {
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    link_text: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -677,6 +690,7 @@ declare module '@strapi/strapi' {
       'shared.block-dot-list': SharedBlockDotList;
       'shared.block-list': SharedBlockList;
       'shared.button': SharedButton;
+      'shared.download-list': SharedDownloadList;
       'shared.features-list': SharedFeaturesList;
       'shared.header-a': SharedHeaderA;
       'shared.icons-list-item': SharedIconsListItem;

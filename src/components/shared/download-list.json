@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_download_lists",
+  "info": {
+    "displayName": "DownloadList"
+  },
+  "options": {},
+  "attributes": {
+    "link_text": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

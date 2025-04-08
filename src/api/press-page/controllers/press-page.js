@@ -19,7 +19,10 @@ module.exports = createCoreController('api::press-page.press-page', ({ strapi })
                             populate: '*'
                         }
                     },
-                }
+              },
+                   DownloadList: {
+                            populate: '*'
+                        }
             },
           },
            FeaturesSection: {
