@@ -32,6 +32,15 @@ module.exports = createCoreController('api::press-page.press-page', ({ strapi })
                 }
             },
           },
+           XSocialSection: {
+            populate:  '*',
+          },
+              LinkedinSocialSection: {
+            populate:  '*',
+          },
+                 YoutubeSocialSection: {
+            populate:  '*',
+          },
           FaqSection: {
             populate:  {
                    faq_list_item: {
