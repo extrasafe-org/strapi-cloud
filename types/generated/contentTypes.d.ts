@@ -1035,7 +1035,7 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Video_Section_Title: Schema.Attribute.String & Schema.Attribute.Required;
+    Video_Section_Title: Schema.Attribute.String;
     Video_URL: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

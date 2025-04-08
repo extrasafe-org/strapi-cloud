@@ -51,7 +51,7 @@
     },
     "Video_Section_Title": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "Video_URL": {
       "type": "string",
