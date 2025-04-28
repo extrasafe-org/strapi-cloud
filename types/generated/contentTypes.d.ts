@@ -1010,7 +1010,7 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
     faq_list: Schema.Attribute.Component<'landing.faq-list', false> &
       Schema.Attribute.Required;
     features_list: Schema.Attribute.Component<'landing.features-list', false> &
@@ -1031,7 +1031,7 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     Template: Schema.Attribute.Component<'shared.template-landing', true>;
     Text_In_Border: Schema.Attribute.Text & Schema.Attribute.Required;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
