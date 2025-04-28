@@ -436,7 +436,7 @@ export interface SharedBlockDotList extends Struct.ComponentSchema {
     displayName: 'block_dot_list';
   };
   attributes: {
-    text: Schema.Attribute.Text;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
