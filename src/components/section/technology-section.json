@@ -9,18 +9,14 @@
     "title": {
       "type": "string"
     },
-    "subtitle": {
-      "type": "string",
-      "required": false
-    },
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "IconsBlockItem": {
       "type": "component",

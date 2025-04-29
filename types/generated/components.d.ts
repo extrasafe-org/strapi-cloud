@@ -419,7 +419,6 @@ export interface SectionTechnologySection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
-    subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
