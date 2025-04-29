@@ -34,7 +34,7 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
         },
         faq_list: {
           populate: {
-          faq_list_item: {
+            faq_list_item: {
               populate: '*'
             },
           },
@@ -42,7 +42,7 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
 
         TechnologySection: {
           populate: {
-          IconsBlockItem: {
+            IconsBlockItem: {
               populate: '*'
             },
           },
@@ -90,18 +90,21 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
             },
           },
         },
-         faq_list: {
+        faq_list: {
           populate: {
             faq_list_item: {
               populate: '*'
             },
           },
         },
-             TechnologySection: {
+        TechnologySection: {
           populate: {
-          IconsBlockItem: {
+            IconsBlockItem: {
               populate: '*'
             },
+            media: {
+              populate: '*'
+            }
           },
         },
         hero_section_media: {
