@@ -408,6 +408,7 @@ export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
 export interface SectionTechnologySection extends Struct.ComponentSchema {
   collectionName: 'components_section_technology_sections';
   info: {
+    description: '';
     displayName: 'TechnologySection';
   };
   attributes: {
@@ -418,6 +419,7 @@ export interface SectionTechnologySection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }

@@ -1,12 +1,17 @@
 {
   "collectionName": "components_section_technology_sections",
   "info": {
-    "displayName": "TechnologySection"
+    "displayName": "TechnologySection",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false
     },
     "media": {
       "allowedTypes": [
