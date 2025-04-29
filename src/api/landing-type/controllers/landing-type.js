@@ -97,6 +97,13 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
             },
           },
         },
+             TechnologySection: {
+          populate: {
+          IconsBlockItem: {
+              populate: '*'
+            },
+          },
+        },
         hero_section_media: {
           populate: '*'
         }

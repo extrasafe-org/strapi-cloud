@@ -19,27 +19,27 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
         populate: {
           HeroSection: {
             populate: {
-                media: {
-                 populate: '*'
+              media: {
+                populate: '*'
               },
-                   icons_list: {
-          populate: {
-            icons_list_item: {
-              populate: '*'
+              icons_list: {
+                populate: {
+                  icons_list_item: {
+                    populate: '*'
+                  },
+                },
+              },
             },
           },
-        },
-            },
-          },
-           CarouselSection: {
+          CarouselSection: {
             populate: {
-                  CarouselList: {
-                 populate: '*'
+              CarouselList: {
+                populate: '*'
               },
             },
           },
           IconsListSection: {
-            populate: 
+            populate:
             {
               IconsBlock: {
                 populate: {
@@ -49,9 +49,9 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
                 }
               },
               media: {
-                 populate: '*'
+                populate: '*'
               },
-           }
+            }
           },
           BannerSection: {
             populate: '*',
@@ -59,7 +59,7 @@ module.exports = createCoreController('api::browser-lite-page.browser-lite-page'
           MediaWithTextSection: {
             populate: {
               media: {
-                 populate: '*'
+                populate: '*'
               },
             },
           },
