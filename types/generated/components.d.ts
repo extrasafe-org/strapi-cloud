@@ -405,6 +405,23 @@ export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionTechnologySection extends Struct.ComponentSchema {
+  collectionName: 'components_section_technology_sections';
+  info: {
+    displayName: 'TechnologySection';
+  };
+  attributes: {
+    IconsBlockItem: Schema.Attribute.Component<
+      'components.icons-block-item',
+      true
+    > &
+      Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionXSocialSection extends Struct.ComponentSchema {
   collectionName: 'components_section_x_social_sections';
   info: {
@@ -724,6 +741,7 @@ declare module '@strapi/strapi' {
       'section.linkedin-social-section': SectionLinkedinSocialSection;
       'section.media-section': SectionMediaSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
+      'section.technology-section': SectionTechnologySection;
       'section.x-social-section': SectionXSocialSection;
       'section.youtube-social-section': SectionYoutubeSocialSection;
       'shared.block-dot-list': SharedBlockDotList;

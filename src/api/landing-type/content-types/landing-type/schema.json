@@ -87,6 +87,12 @@
       "repeatable": false,
       "component": "landing.faq-list",
       "required": true
+    },
+    "TechnologySection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.technology-section",
+      "required": true
     }
   }
 }

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_technology_sections",
+  "info": {
+    "displayName": "TechnologySection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "IconsBlockItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.icons-block-item",
+      "required": true
+    }
+  }
+}

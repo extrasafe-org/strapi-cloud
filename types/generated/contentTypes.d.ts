@@ -1029,6 +1029,11 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     Main_SubTitle: Schema.Attribute.String & Schema.Attribute.Required;
     Main_Title: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    TechnologySection: Schema.Attribute.Component<
+      'section.technology-section',
+      false
+    > &
+      Schema.Attribute.Required;
     Template: Schema.Attribute.Component<'shared.template-landing', true>;
     Text_In_Border: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
