@@ -93,6 +93,13 @@
       "repeatable": false,
       "component": "section.technology-section",
       "required": true
+    },
+    "StepsSection": {
+      "displayName": "StepsSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "section.steps-section",
+      "required": true
     }
   }
 }

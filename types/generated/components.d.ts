@@ -405,6 +405,22 @@ export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionStepsSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_steps_sections';
+  info: {
+    displayName: 'StepsSection';
+  };
+  attributes: {
+    IconsBlockItem: Schema.Attribute.Component<
+      'components.icons-block-item',
+      true
+    > &
+      Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionTechnologySection extends Struct.ComponentSchema {
   collectionName: 'components_section_technology_sections';
   info: {
@@ -742,6 +758,7 @@ declare module '@strapi/strapi' {
       'section.linkedin-social-section': SectionLinkedinSocialSection;
       'section.media-section': SectionMediaSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
+      'section.steps-section': SectionStepsSection;
       'section.technology-section': SectionTechnologySection;
       'section.x-social-section': SectionXSocialSection;
       'section.youtube-social-section': SectionYoutubeSocialSection;

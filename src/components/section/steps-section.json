@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_steps_sections",
+  "info": {
+    "displayName": "StepsSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "IconsBlockItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.icons-block-item",
+      "required": true
+    }
+  }
+}
