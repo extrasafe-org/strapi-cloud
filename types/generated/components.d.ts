@@ -408,13 +408,11 @@ export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
 export interface SectionStepsSection extends Struct.ComponentSchema {
   collectionName: 'components_section_steps_sections';
   info: {
+    description: '';
     displayName: 'StepsSection';
   };
   attributes: {
-    IconsBlockItem: Schema.Attribute.Component<
-      'components.icons-block-item',
-      true
-    > &
+    CarouselList: Schema.Attribute.Component<'components.carousel-list', true> &
       Schema.Attribute.Required;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;

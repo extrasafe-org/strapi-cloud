@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_steps_sections",
   "info": {
-    "displayName": "StepsSection"
+    "displayName": "StepsSection",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,10 +12,10 @@
     "subtitle": {
       "type": "string"
     },
-    "IconsBlockItem": {
+    "CarouselList": {
       "type": "component",
       "repeatable": true,
-      "component": "components.icons-block-item",
+      "component": "components.carousel-list",
       "required": true
     }
   }

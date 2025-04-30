@@ -52,7 +52,7 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
         },
            StepsSection: {
           populate: {
-            IconsBlockItem: {
+            CarouselList: {
               populate: '*'
             },
           },
@@ -119,7 +119,7 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
         },
         StepsSection: {
           populate: {
-            IconsBlockItem: {
+            CarouselList: {
               populate: '*'
             },
           },
