@@ -45,6 +45,16 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
             IconsBlockItem: {
               populate: '*'
             },
+            media: {
+              populate: '*'
+            }
+          },
+        },
+           StepsSection: {
+          populate: {
+            IconsBlockItem: {
+              populate: '*'
+            },
           },
         },
       },
@@ -105,6 +115,13 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
             media: {
               populate: '*'
             }
+          },
+        },
+        StepsSection: {
+          populate: {
+            IconsBlockItem: {
+              populate: '*'
+            },
           },
         },
         hero_section_media: {
