@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_sharing_pages",
+  "info": {
+    "singularName": "screen-sharing-page",
+    "pluralName": "screen-sharing-pages",
+    "displayName": "ScreenSharingPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_title": {
+      "type": "string",
+      "required": true
+    },
+    "meta_description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
