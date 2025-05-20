@@ -89,7 +89,7 @@
       "required": true,
       "component": "section.steps-section"
     },
-    "FeaturesSection": {
+    "SecondCardsListSection": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -98,7 +98,18 @@
         }
       },
       "required": true,
-      "component": "section.features-section"
+      "component": "section.cards-list-section"
+    },
+    "SecondFeaturesSection": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.second-features-section"
     },
     "FaqSection": {
       "type": "component",

@@ -1234,16 +1234,6 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
           localized: true;
         };
       }>;
-    FeaturesSection: Schema.Attribute.Component<
-      'section.features-section',
-      false
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1284,6 +1274,26 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    SecondCardsListSection: Schema.Attribute.Component<
+      'section.cards-list-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.second-features-section',
+      true
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     SecureSection: Schema.Attribute.Component<'section.secure-section', false> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
