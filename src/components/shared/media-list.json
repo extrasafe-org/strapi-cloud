@@ -8,6 +8,12 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "MediaList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.media-list-item",
+      "required": true
     }
   }
 }

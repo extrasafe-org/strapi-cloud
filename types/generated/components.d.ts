@@ -681,6 +681,8 @@ export interface SharedMediaList extends Struct.ComponentSchema {
     displayName: 'media_list';
   };
   attributes: {
+    MediaList: Schema.Attribute.Component<'shared.media-list-item', true> &
+      Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };
 }
