@@ -1164,6 +1164,52 @@ export interface ApiScreenSharingPageScreenSharingPage
   };
 }
 
+export interface ApiSecureVideoCallPageSecureVideoCallPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'secure_video_call_pages';
+  info: {
+    displayName: 'SecureVideoCallPage';
+    pluralName: 'secure-video-call-pages';
+    singularName: 'secure-video-call-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::secure-video-call-page.secure-video-call-page'
+    >;
+    meta_description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTermsOfUsePageTermsOfUsePage
   extends Struct.SingleTypeSchema {
   collectionName: 'terms_of_use_pages';
@@ -1721,6 +1767,7 @@ declare module '@strapi/strapi' {
       'api::press-page.press-page': ApiPressPagePressPage;
       'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::screen-sharing-page.screen-sharing-page': ApiScreenSharingPageScreenSharingPage;
+      'api::secure-video-call-page.secure-video-call-page': ApiSecureVideoCallPageSecureVideoCallPage;
       'api::terms-of-use-page.terms-of-use-page': ApiTermsOfUsePageTermsOfUsePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
