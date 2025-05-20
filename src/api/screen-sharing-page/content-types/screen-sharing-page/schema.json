@@ -4,7 +4,8 @@
   "info": {
     "singularName": "screen-sharing-page",
     "pluralName": "screen-sharing-pages",
-    "displayName": "ScreenSharingPage"
+    "displayName": "ScreenSharingPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,54 @@
     "meta_description": {
       "type": "string",
       "required": true
+    },
+    "MediaHeroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.media-hero-section",
+      "required": true
+    },
+    "icons_list": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "landing.icons-list"
+    },
+    "MediaSidedSection": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "section.media-sided-section"
+    },
+    "SecondMediaSidedSection": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "section.media-sided-section"
+    },
+    "StepsSection": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "section.steps-section"
+    },
+    "CardsListSection": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "section.cards-list-section"
+    },
+    "FeaturesSection": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "section.features-section"
+    },
+    "FaqSection": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "section.faq-section"
     }
   }
 }

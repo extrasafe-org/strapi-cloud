@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_section_media_hero_sections",
+  "info": {
+    "displayName": "MediaHeroSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text"
+    },
+    "has_call_button": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    }
+  }
+}

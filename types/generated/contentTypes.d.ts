@@ -1138,6 +1138,7 @@ export interface ApiScreenSharingPageScreenSharingPage
   extends Struct.SingleTypeSchema {
   collectionName: 'screen_sharing_pages';
   info: {
+    description: '';
     displayName: 'ScreenSharingPage';
     pluralName: 'screen-sharing-pages';
     singularName: 'screen-sharing-page';
@@ -1146,18 +1147,49 @@ export interface ApiScreenSharingPageScreenSharingPage
     draftAndPublish: true;
   };
   attributes: {
+    CardsListSection: Schema.Attribute.Component<
+      'section.cards-list-section',
+      false
+    > &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required;
+    FeaturesSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    icons_list: Schema.Attribute.Component<'landing.icons-list', false> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::screen-sharing-page.screen-sharing-page'
     > &
       Schema.Attribute.Private;
+    MediaHeroSection: Schema.Attribute.Component<
+      'section.media-hero-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    MediaSidedSection: Schema.Attribute.Component<
+      'section.media-sided-section',
+      false
+    > &
+      Schema.Attribute.Required;
     meta_description: Schema.Attribute.String & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    SecondMediaSidedSection: Schema.Attribute.Component<
+      'section.media-sided-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

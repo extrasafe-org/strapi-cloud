@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_section_media_sided_sections",
+  "info": {
+    "displayName": "MediaSidedSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "is_media_right_aligned": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

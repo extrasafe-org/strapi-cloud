@@ -305,6 +305,19 @@ export interface SectionBrowserLiteHero extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsListSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_list_sections';
+  info: {
+    description: '';
+    displayName: 'CardsListSection';
+  };
+  attributes: {
+    CardsList: Schema.Attribute.Component<'shared.card', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionCarouselSection extends Struct.ComponentSchema {
   collectionName: 'components_section_carousel_sections';
   info: {
@@ -374,6 +387,23 @@ export interface SectionLinkedinSocialSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionMediaHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_media_hero_sections';
+  info: {
+    description: '';
+    displayName: 'MediaHeroSection';
+  };
+  attributes: {
+    has_call_button: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionMediaSection extends Struct.ComponentSchema {
   collectionName: 'components_section_media_sections';
   info: {
@@ -386,6 +416,22 @@ export interface SectionMediaSection extends Struct.ComponentSchema {
     MediaListBlock: Schema.Attribute.Component<'shared.media-list', false> &
       Schema.Attribute.Required;
     text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionMediaSidedSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_media_sided_sections';
+  info: {
+    displayName: 'MediaSidedSection';
+  };
+  attributes: {
+    is_media_right_aligned: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };
 }
@@ -490,6 +536,18 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
   attributes: {
     Text: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cards';
+  info: {
+    displayName: 'card';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -749,12 +807,15 @@ declare module '@strapi/strapi' {
       'section.banner-section': SectionBannerSection;
       'section.banner-with-button-section': SectionBannerWithButtonSection;
       'section.browser-lite-hero': SectionBrowserLiteHero;
+      'section.cards-list-section': SectionCardsListSection;
       'section.carousel-section': SectionCarouselSection;
       'section.coming-next-section': SectionComingNextSection;
       'section.faq-section': SectionFaqSection;
       'section.features-section': SectionFeaturesSection;
       'section.linkedin-social-section': SectionLinkedinSocialSection;
+      'section.media-hero-section': SectionMediaHeroSection;
       'section.media-section': SectionMediaSection;
+      'section.media-sided-section': SectionMediaSidedSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
       'section.steps-section': SectionStepsSection;
       'section.technology-section': SectionTechnologySection;
@@ -763,6 +824,7 @@ declare module '@strapi/strapi' {
       'shared.block-dot-list': SharedBlockDotList;
       'shared.block-list': SharedBlockList;
       'shared.button': SharedButton;
+      'shared.card': SharedCard;
       'shared.download-list': SharedDownloadList;
       'shared.features-list': SharedFeaturesList;
       'shared.header-a': SharedHeaderA;
