@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_section_media_list_block_sections",
+  "info": {
+    "displayName": "MediaListBlockSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "MediaList": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "shared.media-list-item"
+    }
+  }
+}

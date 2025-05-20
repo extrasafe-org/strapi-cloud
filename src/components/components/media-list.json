@@ -1,16 +1,9 @@
 {
   "collectionName": "components_components_media_lists",
   "info": {
-    "displayName": "MediaList"
+    "displayName": "MediaList",
+    "description": ""
   },
   "options": {},
-  "attributes": {
-    "media_list": {
-      "displayName": "media_list",
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.media-list",
-      "required": true
-    }
-  }
+  "attributes": {}
 }

@@ -8,13 +8,6 @@
   "attributes": {
     "title": {
       "type": "string"
-    },
-    "MediaList": {
-      "displayName": "media_list_item",
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.media-list-item",
-      "required": true
     }
   }
 }

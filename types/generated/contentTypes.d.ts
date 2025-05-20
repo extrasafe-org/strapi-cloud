@@ -1200,6 +1200,7 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
   extends Struct.SingleTypeSchema {
   collectionName: 'secure_video_call_pages';
   info: {
+    description: '';
     displayName: 'SecureVideoCallPage';
     pluralName: 'secure-video-call-pages';
     singularName: 'secure-video-call-page';
@@ -1213,14 +1214,61 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
     };
   };
   attributes: {
+    CardsListSection: Schema.Attribute.Component<
+      'section.cards-list-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FeaturesSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::secure-video-call-page.secure-video-call-page'
     >;
+    MediaHeroSection: Schema.Attribute.Component<
+      'section.media-hero-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    MediaListBlockSection: Schema.Attribute.Component<
+      'section.media-list-block-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     meta_description: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -1236,6 +1284,20 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    SecureSection: Schema.Attribute.Component<'section.secure-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

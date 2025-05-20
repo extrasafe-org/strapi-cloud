@@ -4,7 +4,8 @@
   "info": {
     "singularName": "secure-video-call-page",
     "pluralName": "secure-video-call-pages",
-    "displayName": "SecureVideoCallPage"
+    "displayName": "SecureVideoCallPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,6 +33,83 @@
       },
       "type": "string",
       "required": true
+    },
+    "MediaHeroSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.media-hero-section"
+    },
+    "CardsListSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.cards-list-section"
+    },
+    "SecureSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.secure-section"
+    },
+    "MediaListBlockSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.media-list-block-section"
+    },
+    "StepsSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.steps-section"
+    },
+    "FeaturesSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.features-section"
+    },
+    "FaqSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.faq-section"
     }
   }
 }
