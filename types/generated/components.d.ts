@@ -462,6 +462,19 @@ export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionSecondFeaturesSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_second_features_sections';
+  info: {
+    description: '';
+    displayName: 'SecondFeaturesSection';
+  };
+  attributes: {
+    features_list: Schema.Attribute.Component<'landing.features-list', false> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionSecureSection extends Struct.ComponentSchema {
   collectionName: 'components_section_secure_sections';
   info: {
@@ -843,6 +856,7 @@ declare module '@strapi/strapi' {
       'section.media-section': SectionMediaSection;
       'section.media-sided-section': SectionMediaSidedSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
+      'section.second-features-section': SectionSecondFeaturesSection;
       'section.secure-section': SectionSecureSection;
       'section.steps-section': SectionStepsSection;
       'section.technology-section': SectionTechnologySection;

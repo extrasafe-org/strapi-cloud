@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_second_features_sections",
+  "info": {
+    "displayName": "SecondFeaturesSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "features_list": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.features-list",
+      "required": true
+    }
+  }
+}

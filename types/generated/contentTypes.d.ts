@@ -1157,11 +1157,6 @@ export interface ApiScreenSharingPageScreenSharingPage
       Schema.Attribute.Private;
     FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
       Schema.Attribute.Required;
-    FeaturesSection: Schema.Attribute.Component<
-      'section.features-section',
-      false
-    > &
-      Schema.Attribute.Required;
     icons_list: Schema.Attribute.Component<'landing.icons-list', false> &
       Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1183,6 +1178,11 @@ export interface ApiScreenSharingPageScreenSharingPage
     meta_description: Schema.Attribute.String & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.second-features-section',
+      false
+    > &
+      Schema.Attribute.Required;
     SecondMediaSidedSection: Schema.Attribute.Component<
       'section.media-sided-section',
       false

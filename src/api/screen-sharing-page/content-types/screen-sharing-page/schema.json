@@ -56,11 +56,12 @@
       "required": true,
       "component": "section.cards-list-section"
     },
-    "FeaturesSection": {
+    "SecondFeaturesSection": {
+      "displayName": "SecondFeaturesSection",
       "type": "component",
       "repeatable": false,
-      "required": true,
-      "component": "section.features-section"
+      "component": "section.second-features-section",
+      "required": true
     },
     "FaqSection": {
       "type": "component",
