@@ -9,8 +9,11 @@ const { createCoreController } = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::screen-sharing-page.screen-sharing-page', ({ strapi }) => ({
   async find(ctx) {
     try {
-      const entity = await strapi.service('api::browser-lite-page.browser-lite-page').find({
+      const entity = await strapi.service('api::screen-sharing-page.screen-sharing-page').find({
         populate: {
+          MediaHeroSection: {
+            populate: '*'
+          }
         },
       });
 
