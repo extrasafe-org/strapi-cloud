@@ -13,7 +13,28 @@ module.exports = createCoreController('api::screen-sharing-page.screen-sharing-p
         populate: {
           MediaHeroSection: {
             populate: '*'
-          }
+          },
+          icons_list: {
+             populate: '*'
+          },
+          MediaSidedSection: {
+             populate: '*'
+          },
+          SecondMediaSidedSection: {
+             populate: '*'
+          },
+          StepsSection: {
+             populate: '*'
+          },
+          CardsListSection: {
+             populate: '*'
+          },
+          SecondFeaturesSection: {
+             populate: '*'
+          },
+          FaqSection: {
+             populate: '*'
+          },
         },
       });
 
