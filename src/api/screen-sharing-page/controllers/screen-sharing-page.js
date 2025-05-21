@@ -15,7 +15,11 @@ module.exports = createCoreController('api::screen-sharing-page.screen-sharing-p
             populate: '*'
           },
           icons_list: {
-             populate: '*'
+            populate: {
+                  icons_list_item: {
+                    populate: '*'
+                  },
+            }
           },
           MediaSidedSection: {
              populate: '*'
@@ -23,14 +27,30 @@ module.exports = createCoreController('api::screen-sharing-page.screen-sharing-p
           SecondMediaSidedSection: {
              populate: '*'
           },
-          StepsSection: {
-             populate: '*'
+        StepsSection: {
+          populate: {
+            CarouselList: {
+              populate: '*'
+            },
           },
+        },
           CardsListSection: {
-             populate: '*'
+            populate: {
+              CardsList: {
+                   populate: '*'
+               }
+             }
           },
           SecondFeaturesSection: {
-             populate: '*'
+            populate: {
+                       features_list: {
+          populate: {
+            features_list_item: {
+              populate: '*'
+            },
+          },
+        },
+             }
           },
           FaqSection: {
              populate: '*'
