@@ -6,4 +6,30 @@
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::secure-video-call-page.secure-video-call-page');
+module.exports = createCoreController('api::secure-video-call-page.secure-video-call-page', ({ strapi }) => ({
+  async find(ctx) {
+    try {
+      const entity = await strapi.service('api::secure-video-call-page.secure-video-call-page').find({
+          populate: '*'
+      });
+
+      if (!entity) {
+        return ctx.throw(404, 'No content found');
+      }
+
+      const sanitizedEntity = {
+        id: entity.id,
+        ...entity,
+        createdBy: undefined,
+        updatedBy: undefined,
+      };
+
+      return this.transformResponse(sanitizedEntity);
+    } catch (error) {
+      ctx.throw(500, 'Internal Server Error', {
+        details: error.message,
+        stack: error.stack,
+      });
+    }
+  },
+}));
