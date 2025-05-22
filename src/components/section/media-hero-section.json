@@ -14,11 +14,6 @@
       "type": "text",
       "required": true
     },
-    "has_call_button": {
-      "type": "boolean",
-      "required": true,
-      "default": true
-    },
     "media": {
       "type": "media",
       "multiple": false,
@@ -27,6 +22,10 @@
         "images",
         "videos"
       ]
+    },
+    "button_text": {
+      "type": "string",
+      "required": false
     }
   }
 }
