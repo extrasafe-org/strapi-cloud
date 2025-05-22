@@ -397,7 +397,7 @@ export interface SectionMediaHeroSection extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<true>;
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
-    text: Schema.Attribute.Text;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

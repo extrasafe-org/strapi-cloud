@@ -11,7 +11,8 @@
       "required": true
     },
     "text": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "has_call_button": {
       "type": "boolean",

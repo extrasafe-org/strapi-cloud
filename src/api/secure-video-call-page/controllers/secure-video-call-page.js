@@ -10,7 +10,52 @@ module.exports = createCoreController('api::secure-video-call-page.secure-video-
   async find(ctx) {
     try {
       const entity = await strapi.service('api::secure-video-call-page.secure-video-call-page').find({
-          populate: '*'
+          populate: {
+            MediaHeroSection: {
+              populate: '*'
+              },
+            CardsListSection: {
+            populate: {
+              CardsList: {
+                   populate: '*'
+               }
+             }
+              },
+              SecureSection: {
+              populate: '*'
+              },
+            MediaListBlockSection: {
+              populate: '*'
+              },
+               StepsSection: {
+          populate: {
+            CarouselList: {
+              populate: '*'
+            },
+          },
+              },
+                      SecondCardsListSection: {
+            populate: {
+              CardsList: {
+                   populate: '*'
+               }
+             }
+              },
+                          SecondFeaturesSection: {
+            populate: {
+                       features_list: {
+          populate: {
+            features_list_item: {
+              populate: '*'
+            },
+          },
+        },
+             }
+              },
+                             FaqSection: {
+             populate: '*'
+          },
+          }
       });
 
       if (!entity) {
