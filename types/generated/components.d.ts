@@ -392,6 +392,7 @@ export interface SectionMediaHeroSection extends Struct.ComponentSchema {
     displayName: 'MediaHeroSection';
   };
   attributes: {
+    button_text: Schema.Attribute.String;
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
