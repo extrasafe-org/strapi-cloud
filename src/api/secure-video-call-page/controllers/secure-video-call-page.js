@@ -25,7 +25,11 @@ module.exports = createCoreController('api::secure-video-call-page.secure-video-
               populate: '*'
               },
             MediaListBlockSection: {
-              populate: '*'
+                   populate: {
+                          MediaList: {
+                            populate: '*'
+                        }
+                    },
               },
                StepsSection: {
           populate: {
