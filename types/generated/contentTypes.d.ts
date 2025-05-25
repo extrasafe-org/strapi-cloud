@@ -1286,7 +1286,7 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
       }>;
     SecondFeaturesSection: Schema.Attribute.Component<
       'section.second-features-section',
-      true
+      false
     > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

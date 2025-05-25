@@ -403,9 +403,11 @@ export interface SectionMediaHeroSection extends Struct.ComponentSchema {
 export interface SectionMediaListBlockSection extends Struct.ComponentSchema {
   collectionName: 'components_section_media_list_block_sections';
   info: {
+    description: '';
     displayName: 'MediaListBlockSection';
   };
   attributes: {
+    bottom_text: Schema.Attribute.Text;
     MediaList: Schema.Attribute.Component<'shared.media-list-item', true> &
       Schema.Attribute.Required;
     text: Schema.Attribute.String & Schema.Attribute.Required;
@@ -708,8 +710,7 @@ export interface SharedMediaListItem extends Struct.ComponentSchema {
     date: Schema.Attribute.Date;
     link: Schema.Attribute.String & Schema.Attribute.Required;
     logo: Schema.Attribute.Media<'images'>;
-    media: Schema.Attribute.Media<'images' | 'videos'> &
-      Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
