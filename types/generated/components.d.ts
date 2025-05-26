@@ -360,6 +360,20 @@ export interface SectionFaqSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionFaqTabSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_faq_tab_sections';
+  info: {
+    displayName: 'FaqTabSection';
+  };
+  attributes: {
+    FaqLeft: Schema.Attribute.Component<'landing.faq-list-item', true> &
+      Schema.Attribute.Required;
+    FaqRight: Schema.Attribute.Component<'landing.faq-list-item', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionFeaturesSection extends Struct.ComponentSchema {
   collectionName: 'components_section_features_sections';
   info: {
@@ -369,6 +383,18 @@ export interface SectionFeaturesSection extends Struct.ComponentSchema {
   attributes: {
     FeaturesList: Schema.Attribute.Component<'shared.features-list', true> &
       Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionFormSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_form_sections';
+  info: {
+    displayName: 'FormSection';
+  };
+  attributes: {
+    button_text: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -848,7 +874,9 @@ declare module '@strapi/strapi' {
       'section.carousel-section': SectionCarouselSection;
       'section.coming-next-section': SectionComingNextSection;
       'section.faq-section': SectionFaqSection;
+      'section.faq-tab-section': SectionFaqTabSection;
       'section.features-section': SectionFeaturesSection;
+      'section.form-section': SectionFormSection;
       'section.linkedin-social-section': SectionLinkedinSocialSection;
       'section.media-hero-section': SectionMediaHeroSection;
       'section.media-list-block-section': SectionMediaListBlockSection;

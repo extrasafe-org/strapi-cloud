@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "support_pages",
+  "info": {
+    "singularName": "support-page",
+    "pluralName": "support-pages",
+    "displayName": "SupportPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_title": {
+      "type": "string",
+      "required": true
+    },
+    "meta_description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

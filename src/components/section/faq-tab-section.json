@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_section_faq_tab_sections",
+  "info": {
+    "displayName": "FaqTabSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "FaqLeft": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.faq-list-item",
+      "required": true
+    },
+    "FaqRight": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.faq-list-item",
+      "required": true
+    }
+  }
+}

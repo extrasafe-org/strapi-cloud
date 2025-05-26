@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "secure_pages",
+  "info": {
+    "singularName": "secure-page",
+    "pluralName": "secure-pages",
+    "displayName": "SecurePage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_title": {
+      "type": "string",
+      "required": true
+    },
+    "meta_description": {
+      "type": "text",
+      "required": true
+    },
+    "FaqTabSection": {
+      "displayName": "FaqTabSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "section.faq-tab-section",
+      "required": true
+    },
+    "FormSection": {
+      "displayName": "FormSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "section.form-section",
+      "required": true
+    }
+  }
+}

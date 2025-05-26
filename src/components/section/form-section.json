@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_form_sections",
+  "info": {
+    "displayName": "FormSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "button_text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

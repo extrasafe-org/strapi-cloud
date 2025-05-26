@@ -1196,6 +1196,43 @@ export interface ApiScreenSharingPageScreenSharingPage
   };
 }
 
+export interface ApiSecurePageSecurePage extends Struct.SingleTypeSchema {
+  collectionName: 'secure_pages';
+  info: {
+    description: '';
+    displayName: 'SecurePage';
+    pluralName: 'secure-pages';
+    singularName: 'secure-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqTabSection: Schema.Attribute.Component<
+      'section.faq-tab-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    FormSection: Schema.Attribute.Component<'section.form-section', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::secure-page.secure-page'
+    > &
+      Schema.Attribute.Private;
+    meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
+    meta_title: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSecureVideoCallPageSecureVideoCallPage
   extends Struct.SingleTypeSchema {
   collectionName: 'secure_video_call_pages';
@@ -1308,6 +1345,35 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSupportPageSupportPage extends Struct.SingleTypeSchema {
+  collectionName: 'support_pages';
+  info: {
+    displayName: 'SupportPage';
+    pluralName: 'support-pages';
+    singularName: 'support-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::support-page.support-page'
+    > &
+      Schema.Attribute.Private;
+    meta_description: Schema.Attribute.String & Schema.Attribute.Required;
+    meta_title: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1871,7 +1937,9 @@ declare module '@strapi/strapi' {
       'api::press-page.press-page': ApiPressPagePressPage;
       'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::screen-sharing-page.screen-sharing-page': ApiScreenSharingPageScreenSharingPage;
+      'api::secure-page.secure-page': ApiSecurePageSecurePage;
       'api::secure-video-call-page.secure-video-call-page': ApiSecureVideoCallPageSecureVideoCallPage;
+      'api::support-page.support-page': ApiSupportPageSupportPage;
       'api::terms-of-use-page.terms-of-use-page': ApiTermsOfUsePageTermsOfUsePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
