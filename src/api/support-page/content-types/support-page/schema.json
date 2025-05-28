@@ -4,7 +4,8 @@
   "info": {
     "singularName": "support-page",
     "pluralName": "support-pages",
-    "displayName": "SupportPage"
+    "displayName": "SupportPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,7 +22,7 @@
     },
     "FaqTabSection": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "section.faq-tab-section",
       "required": true
     },

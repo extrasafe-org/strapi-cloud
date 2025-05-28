@@ -1317,6 +1317,7 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
 export interface ApiSupportPageSupportPage extends Struct.SingleTypeSchema {
   collectionName: 'support_pages';
   info: {
+    description: '';
     displayName: 'SupportPage';
     pluralName: 'support-pages';
     singularName: 'support-page';
@@ -1328,7 +1329,10 @@ export interface ApiSupportPageSupportPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    FaqTabSection: Schema.Attribute.Component<'section.faq-tab-section', true> &
+    FaqTabSection: Schema.Attribute.Component<
+      'section.faq-tab-section',
+      false
+    > &
       Schema.Attribute.Required;
     FormSection: Schema.Attribute.Component<'section.form-section', false> &
       Schema.Attribute.Required;
