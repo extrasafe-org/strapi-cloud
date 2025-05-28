@@ -16,8 +16,20 @@
       "required": true
     },
     "meta_description": {
-      "type": "string",
+      "type": "text",
       "required": true
+    },
+    "FaqTabSection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "section.faq-tab-section",
+      "required": true
+    },
+    "FormSection": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "section.form-section"
     }
   }
 }

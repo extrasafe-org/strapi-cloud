@@ -1365,13 +1365,17 @@ export interface ApiSupportPageSupportPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    FaqTabSection: Schema.Attribute.Component<'section.faq-tab-section', true> &
+      Schema.Attribute.Required;
+    FormSection: Schema.Attribute.Component<'section.form-section', false> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::support-page.support-page'
     > &
       Schema.Attribute.Private;
-    meta_description: Schema.Attribute.String & Schema.Attribute.Required;
+    meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
