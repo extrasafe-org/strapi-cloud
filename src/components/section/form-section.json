@@ -17,7 +17,7 @@
       "required": true
     },
     "successfully_submission_text": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

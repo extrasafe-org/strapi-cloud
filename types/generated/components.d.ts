@@ -409,7 +409,7 @@ export interface SectionFormSection extends Struct.ComponentSchema {
   };
   attributes: {
     button_text: Schema.Attribute.String & Schema.Attribute.Required;
-    successfully_submission_text: Schema.Attribute.String;
+    successfully_submission_text: Schema.Attribute.Text;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
