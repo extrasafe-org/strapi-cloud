@@ -27,14 +27,6 @@
         "images",
         "videos"
       ]
-    },
-    "path": {
-      "type": "enumeration",
-      "enum": [
-        "screen-sharing",
-        "secure-video-call",
-        "null"
-      ]
     }
   }
 }
