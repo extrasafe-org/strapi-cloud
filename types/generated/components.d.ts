@@ -238,6 +238,9 @@ export interface LandingFeaturesListItem extends Struct.ComponentSchema {
   attributes: {
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
+    path: Schema.Attribute.Enumeration<
+      ['screen-sharing', 'secure-video-call', 'null']
+    >;
     slug: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
