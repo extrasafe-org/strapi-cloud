@@ -12,7 +12,14 @@ module.exports = createCoreController('api::support-page.support-page', ({ strap
       const entity = await strapi.service('api::support-page.support-page').find({
         populate: {
           FaqTabSection: {
-             populate: '*'
+                populate: {
+                  FaqLeft: {
+                       populate: '*'
+                  },
+                         FaqRight: {
+                       populate: '*'
+                 }
+             }
               },
             FormSection: {
              populate: '*'
