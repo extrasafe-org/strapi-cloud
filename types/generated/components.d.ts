@@ -390,10 +390,12 @@ export interface SectionFeaturesSection extends Struct.ComponentSchema {
 export interface SectionFormSection extends Struct.ComponentSchema {
   collectionName: 'components_section_form_sections';
   info: {
+    description: '';
     displayName: 'FormSection';
   };
   attributes: {
     button_text: Schema.Attribute.String & Schema.Attribute.Required;
+    successfully_submission_text: Schema.Attribute.String;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
