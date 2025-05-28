@@ -13,7 +13,10 @@ module.exports = createCoreController('api::support-page.support-page', ({ strap
         populate: {
           FaqTabSection: {
              populate: '*'
-          },
+              },
+            FormSection: {
+             populate: '*'
+              },
         },
       });
 
