@@ -104,6 +104,19 @@ export interface BlocksBlockYoutube extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksFaqLeft extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_faq_lefts';
+  info: {
+    description: '';
+    displayName: 'FaqTabBlock';
+  };
+  attributes: {
+    faq_list_item: Schema.Attribute.Component<'landing.faq-list-item', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface BlocksQuote extends Struct.ComponentSchema {
   collectionName: 'components_blocks_quotes';
   info: {
@@ -363,12 +376,13 @@ export interface SectionFaqSection extends Struct.ComponentSchema {
 export interface SectionFaqTabSection extends Struct.ComponentSchema {
   collectionName: 'components_section_faq_tab_sections';
   info: {
+    description: '';
     displayName: 'FaqTabSection';
   };
   attributes: {
-    FaqLeft: Schema.Attribute.Component<'landing.faq-list-item', true> &
+    FaqLeft: Schema.Attribute.Component<'blocks.faq-left', false> &
       Schema.Attribute.Required;
-    FaqRight: Schema.Attribute.Component<'landing.faq-list-item', true> &
+    FaqRight: Schema.Attribute.Component<'blocks.faq-left', false> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };
@@ -856,6 +870,7 @@ declare module '@strapi/strapi' {
       'blocks.block-social-post': BlocksBlockSocialPost;
       'blocks.block-with-top-border': BlocksBlockWithTopBorder;
       'blocks.block-youtube': BlocksBlockYoutube;
+      'blocks.faq-left': BlocksFaqLeft;
       'blocks.quote': BlocksQuote;
       'components.carousel-list': ComponentsCarouselList;
       'components.download-item': ComponentsDownloadItem;
