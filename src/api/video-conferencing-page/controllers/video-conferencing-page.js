@@ -28,7 +28,7 @@ module.exports = createCoreController('api::video-conferencing-page.video-confer
                           }
                         }
                     },
-                    FeaturesSection: {
+                    WideSliderSection: {
                         populate: {
                             FeaturesList: {
                              populate: '*'

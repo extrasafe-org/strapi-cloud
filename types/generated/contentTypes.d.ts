@@ -1425,16 +1425,6 @@ export interface ApiVideoConferencingPageVideoConferencingPage
           localized: true;
         };
       }>;
-    FeaturesSection: Schema.Attribute.Component<
-      'section.features-section',
-      false
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1485,6 +1475,16 @@ export interface ApiVideoConferencingPageVideoConferencingPage
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    WideSliderSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 

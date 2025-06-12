@@ -49,7 +49,7 @@
       "component": "section.cards-list-section",
       "required": true
     },
-    "FeaturesSection": {
+    "WideSliderSection": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
