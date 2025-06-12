@@ -28,49 +28,24 @@ module.exports = createCoreController('api::video-conferencing-page.video-confer
                           }
                         }
                     },
+                    FeaturesSection: {
+                        populate: {
+                            FeaturesList: {
+                             populate: '*'
+                         }
+                     },
+                    },
+                    SecondFeaturesSection: {
+                        populate: {
+                            FeaturesList: {
+                             populate: '*'
+                         }
+                     },
+                    },
+                    FaqSection: {
+                        populate: '*'
+                      },
                 }
-                // populate: {
-                    // StepsSection: {
-                    //     populate: {
-                    //       CarouselList: {
-                    //         populate: '*'
-                    //       },
-                    //     },
-                    // },
-            
-                    // CardsListSection: {
-                    //     populate: {
-                    //       CardsList: {
-                    //         populate: '*'
-                    //       }
-                    //     }
-                    // },
-                //     FeaturesSection: {
-                //         populate: {
-                //           features_list: {
-                //             populate: {
-                //               features_list_item: {
-                //                 populate: '*'
-                //               },
-                //             },
-                //           },
-                //         }
-                //     },
-                //     SecondFeaturesSection: {
-                //         populate: {
-                //           features_list: {
-                //             populate: {
-                //               features_list_item: {
-                //                 populate: '*'
-                //               },
-                //             },
-                //           },
-                //         }
-                //     },
-                //     FaqSection: {
-                //         populate: '*'
-                //       },
-                // },
             });
 
             if (!entity) {
