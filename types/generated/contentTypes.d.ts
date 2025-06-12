@@ -1405,16 +1405,43 @@ export interface ApiVideoConferencingPageVideoConferencingPage
     };
   };
   attributes: {
+    CardsListSection: Schema.Attribute.Component<
+      'section.cards-list-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FeaturesSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::video-conferencing-page.video-conferencing-page'
     >;
     MediaHeroSection: Schema.Attribute.Component<
-      'section.media-hero-section-with-subtitle',
+      'section.media-hero-section',
       false
     > &
       Schema.Attribute.Required &
@@ -1424,6 +1451,16 @@ export interface ApiVideoConferencingPageVideoConferencingPage
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

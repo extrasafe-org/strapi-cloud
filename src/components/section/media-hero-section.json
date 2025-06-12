@@ -25,6 +25,9 @@
     },
     "button_text": {
       "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
     }
   }
 }

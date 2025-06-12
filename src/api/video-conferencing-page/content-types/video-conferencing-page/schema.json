@@ -35,7 +35,51 @@
           "localized": true
         }
       },
-      "component": "section.media-hero-section-with-subtitle",
+      "component": "section.media-hero-section",
+      "required": true
+    },
+    "CardsListSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.cards-list-section",
+      "required": true
+    },
+    "FeaturesSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.features-section",
+      "required": true
+    },
+    "SecondFeaturesSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.features-section"
+    },
+    "FaqSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.faq-section",
       "required": true
     }
   }
