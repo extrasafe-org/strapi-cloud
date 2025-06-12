@@ -15,6 +15,9 @@
       "repeatable": true,
       "component": "shared.card",
       "required": true
+    },
+    "text": {
+      "type": "text"
     }
   }
 }

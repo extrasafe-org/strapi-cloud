@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_section_media_hero_section_with_subtitles",
+  "info": {
+    "displayName": "MediaHeroSectionWithSubtitle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "button_text": {
+      "type": "string"
+    }
+  }
+}

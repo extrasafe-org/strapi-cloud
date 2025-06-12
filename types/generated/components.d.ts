@@ -325,6 +325,7 @@ export interface SectionCardsListSection extends Struct.ComponentSchema {
   attributes: {
     CardsList: Schema.Attribute.Component<'shared.card', true> &
       Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -437,6 +438,23 @@ export interface SectionMediaHeroSection extends Struct.ComponentSchema {
     button_text: Schema.Attribute.String;
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionMediaHeroSectionWithSubtitle
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_media_hero_section_with_subtitles';
+  info: {
+    description: '';
+    displayName: 'MediaHeroSectionWithSubtitle';
+  };
+  attributes: {
+    button_text: Schema.Attribute.String;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -896,6 +914,7 @@ declare module '@strapi/strapi' {
       'section.form-section': SectionFormSection;
       'section.linkedin-social-section': SectionLinkedinSocialSection;
       'section.media-hero-section': SectionMediaHeroSection;
+      'section.media-hero-section-with-subtitle': SectionMediaHeroSectionWithSubtitle;
       'section.media-list-block-section': SectionMediaListBlockSection;
       'section.media-section': SectionMediaSection;
       'section.media-sided-section': SectionMediaSidedSection;

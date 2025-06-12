@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "video_conferencing_pages",
+  "info": {
+    "singularName": "video-conferencing-page",
+    "pluralName": "video-conferencing-pages",
+    "displayName": "VideoConferencingPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "StepsSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.steps-section",
+      "required": true
+    },
+    "MediaHeroSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.media-hero-section-with-subtitle",
+      "required": true
+    }
+  }
+}

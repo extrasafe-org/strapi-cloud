@@ -1387,6 +1387,56 @@ export interface ApiTermsOfUsePageTermsOfUsePage
   };
 }
 
+export interface ApiVideoConferencingPageVideoConferencingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'video_conferencing_pages';
+  info: {
+    description: '';
+    displayName: 'VideoConferencingPage';
+    pluralName: 'video-conferencing-pages';
+    singularName: 'video-conferencing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::video-conferencing-page.video-conferencing-page'
+    >;
+    MediaHeroSection: Schema.Attribute.Component<
+      'section.media-hero-section-with-subtitle',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1911,6 +1961,7 @@ declare module '@strapi/strapi' {
       'api::secure-video-call-page.secure-video-call-page': ApiSecureVideoCallPageSecureVideoCallPage;
       'api::support-page.support-page': ApiSupportPageSupportPage;
       'api::terms-of-use-page.terms-of-use-page': ApiTermsOfUsePageTermsOfUsePage;
+      'api::video-conferencing-page.video-conferencing-page': ApiVideoConferencingPageVideoConferencingPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
