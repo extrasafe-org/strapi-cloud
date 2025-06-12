@@ -21,6 +21,13 @@ module.exports = createCoreController('api::video-conferencing-page.video-confer
                           },
                         },
                     },
+                    CardsListSection: {
+                        populate: {
+                          CardsList: {
+                            populate: '*'
+                          }
+                        }
+                    },
                 }
                 // populate: {
                     // StepsSection: {
@@ -31,13 +38,13 @@ module.exports = createCoreController('api::video-conferencing-page.video-confer
                     //     },
                     // },
             
-                //     CardsListSection: {
-                //         populate: {
-                //           CardsList: {
-                //             populate: '*'
-                //           }
-                //         }
-                //     },
+                    // CardsListSection: {
+                    //     populate: {
+                    //       CardsList: {
+                    //         populate: '*'
+                    //       }
+                    //     }
+                    // },
                 //     FeaturesSection: {
                 //         populate: {
                 //           features_list: {
