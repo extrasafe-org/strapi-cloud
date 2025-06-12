@@ -10,7 +10,11 @@ module.exports = createCoreController('api::video-conferencing-page.video-confer
     async find(ctx) {
         try {
             const entity = await strapi.service('api::video-conferencing-page.video-conferencing-page').find({
-                populate: '*'
+                populate: {
+                    MediaHeroSection: {
+                        populate: '*'
+                    },
+                }
                 // populate: {
                 //     StepsSection: {
                 //         populate: {
@@ -19,9 +23,7 @@ module.exports = createCoreController('api::video-conferencing-page.video-confer
                 //           },
                 //         },
                 //     },
-                //     MediaHeroSection: {
-                //         populate: '*'
-                //     },
+            
                 //     CardsListSection: {
                 //         populate: {
                 //           CardsList: {
