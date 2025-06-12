@@ -10,50 +10,51 @@ module.exports = createCoreController('api::video-conferencing-page.video-confer
     async find(ctx) {
         try {
             const entity = await strapi.service('api::video-conferencing-page.video-conferencing-page').find({
-                populate: {
-                    StepsSection: {
-                        populate: {
-                          CarouselList: {
-                            populate: '*'
-                          },
-                        },
-                    },
-                    MediaHeroSection: {
-                        populate: '*'
-                    },
-                    CardsListSection: {
-                        populate: {
-                          CardsList: {
-                            populate: '*'
-                          }
-                        }
-                    },
-                    FeaturesSection: {
-                        populate: {
-                          features_list: {
-                            populate: {
-                              features_list_item: {
-                                populate: '*'
-                              },
-                            },
-                          },
-                        }
-                    },
-                    SecondFeaturesSection: {
-                        populate: {
-                          features_list: {
-                            populate: {
-                              features_list_item: {
-                                populate: '*'
-                              },
-                            },
-                          },
-                        }
-                    },
-                    FaqSection: {
-                        populate: '*'
-                      },
-                },
+                populate: '*'
+                // populate: {
+                //     StepsSection: {
+                //         populate: {
+                //           CarouselList: {
+                //             populate: '*'
+                //           },
+                //         },
+                //     },
+                //     MediaHeroSection: {
+                //         populate: '*'
+                //     },
+                //     CardsListSection: {
+                //         populate: {
+                //           CardsList: {
+                //             populate: '*'
+                //           }
+                //         }
+                //     },
+                //     FeaturesSection: {
+                //         populate: {
+                //           features_list: {
+                //             populate: {
+                //               features_list_item: {
+                //                 populate: '*'
+                //               },
+                //             },
+                //           },
+                //         }
+                //     },
+                //     SecondFeaturesSection: {
+                //         populate: {
+                //           features_list: {
+                //             populate: {
+                //               features_list_item: {
+                //                 populate: '*'
+                //               },
+                //             },
+                //           },
+                //         }
+                //     },
+                //     FaqSection: {
+                //         populate: '*'
+                //       },
+                // },
             });
 
             if (!entity) {
