@@ -1450,6 +1450,20 @@ export interface ApiVideoConferencingPageVideoConferencingPage
           localized: true;
         };
       }>;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     SecondFeaturesSection: Schema.Attribute.Component<
       'section.features-section',
