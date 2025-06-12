@@ -14,15 +14,22 @@ module.exports = createCoreController('api::video-conferencing-page.video-confer
                     MediaHeroSection: {
                         populate: '*'
                     },
+                    StepsSection: {
+                        populate: {
+                          CarouselList: {
+                            populate: '*'
+                          },
+                        },
+                    },
                 }
                 // populate: {
-                //     StepsSection: {
-                //         populate: {
-                //           CarouselList: {
-                //             populate: '*'
-                //           },
-                //         },
-                //     },
+                    // StepsSection: {
+                    //     populate: {
+                    //       CarouselList: {
+                    //         populate: '*'
+                    //       },
+                    //     },
+                    // },
             
                 //     CardsListSection: {
                 //         populate: {
