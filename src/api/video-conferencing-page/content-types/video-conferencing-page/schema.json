@@ -60,17 +60,6 @@
       "component": "section.features-section",
       "required": true
     },
-    "SecondFeaturesSection": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true,
-      "component": "section.features-section"
-    },
     "FaqSection": {
       "type": "component",
       "repeatable": false,
@@ -99,6 +88,17 @@
       },
       "type": "text",
       "required": true
+    },
+    "SecondFeaturesSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.second-features-section"
     }
   }
 }

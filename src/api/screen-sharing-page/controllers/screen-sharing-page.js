@@ -16,44 +16,44 @@ module.exports = createCoreController('api::screen-sharing-page.screen-sharing-p
           },
           icons_list: {
             populate: {
-                  icons_list_item: {
-                    populate: '*'
-                  },
+              icons_list_item: {
+                populate: '*'
+              },
             }
           },
           MediaSidedSection: {
-             populate: '*'
+            populate: '*'
           },
           SecondMediaSidedSection: {
-             populate: '*'
+            populate: '*'
           },
-        StepsSection: {
-          populate: {
-            CarouselList: {
-              populate: '*'
+          StepsSection: {
+            populate: {
+              CarouselList: {
+                populate: '*'
+              },
             },
           },
-        },
           CardsListSection: {
             populate: {
               CardsList: {
-                   populate: '*'
-               }
-             }
+                populate: '*'
+              }
+            }
           },
           SecondFeaturesSection: {
             populate: {
-                       features_list: {
-          populate: {
-            features_list_item: {
-              populate: '*'
-            },
-          },
-        },
-             }
+              features_list: {
+                populate: {
+                  features_list_item: {
+                    populate: '*'
+                  },
+                },
+              },
+            }
           },
           FaqSection: {
-             populate: '*'
+            populate: '*'
           },
         },
       });

@@ -1466,7 +1466,7 @@ export interface ApiVideoConferencingPageVideoConferencingPage
       }>;
     publishedAt: Schema.Attribute.DateTime;
     SecondFeaturesSection: Schema.Attribute.Component<
-      'section.features-section',
+      'section.second-features-section',
       false
     > &
       Schema.Attribute.Required &

@@ -37,11 +37,15 @@ module.exports = createCoreController('api::video-conferencing-page.video-confer
                     },
                     SecondFeaturesSection: {
                         populate: {
-                            FeaturesList: {
-                             populate: '*'
-                         }
-                     },
-                    },
+                          features_list: {
+                            populate: {
+                              features_list_item: {
+                                populate: '*'
+                              },
+                            },
+                          },
+                        }
+                      },
                     FaqSection: {
                         populate: '*'
                       },
