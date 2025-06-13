@@ -128,6 +128,22 @@ export interface BlocksQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksTableList extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_table_lists';
+  info: {
+    displayName: 'TableList';
+  };
+  attributes: {
+    isExtraSafeChecked: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    isZoomChecked: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ComponentsCarouselList extends Struct.ComponentSchema {
   collectionName: 'components_components_carousel_lists';
   info: {
@@ -170,6 +186,21 @@ export interface ComponentsIconsBlockItem extends Struct.ComponentSchema {
     icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsIconsListSubsection extends Struct.ComponentSchema {
+  collectionName: 'components_components_icons_list_subsections';
+  info: {
+    description: '';
+    displayName: 'IconsListSubsection';
+  };
+  attributes: {
+    bottom_text: Schema.Attribute.Text;
+    CardsList: Schema.Attribute.Component<'shared.card', true> &
+      Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -548,6 +579,25 @@ export interface SectionStepsSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionTableSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_table_sections';
+  info: {
+    description: '';
+    displayName: 'TableSection';
+  };
+  attributes: {
+    IconsListSubsection: Schema.Attribute.Component<
+      'components.icons-list-subsection',
+      false
+    > &
+      Schema.Attribute.Required;
+    TableList: Schema.Attribute.Component<'blocks.table-list', true> &
+      Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionTechnologySection extends Struct.ComponentSchema {
   collectionName: 'components_section_technology_sections';
   info: {
@@ -875,10 +925,12 @@ declare module '@strapi/strapi' {
       'blocks.block-youtube': BlocksBlockYoutube;
       'blocks.faq-left': BlocksFaqLeft;
       'blocks.quote': BlocksQuote;
+      'blocks.table-list': BlocksTableList;
       'components.carousel-list': ComponentsCarouselList;
       'components.download-item': ComponentsDownloadItem;
       'components.download-list': ComponentsDownloadList;
       'components.icons-block-item': ComponentsIconsBlockItem;
+      'components.icons-list-subsection': ComponentsIconsListSubsection;
       'components.image-block': ComponentsImageBlock;
       'components.list-block': ComponentsListBlock;
       'components.media-list': ComponentsMediaList;
@@ -906,6 +958,7 @@ declare module '@strapi/strapi' {
       'section.second-features-section': SectionSecondFeaturesSection;
       'section.secure-section': SectionSecureSection;
       'section.steps-section': SectionStepsSection;
+      'section.table-section': SectionTableSection;
       'section.technology-section': SectionTechnologySection;
       'section.x-social-section': SectionXSocialSection;
       'section.youtube-social-section': SectionYoutubeSocialSection;

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_components_icons_list_subsections",
+  "info": {
+    "displayName": "IconsListSubsection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "bottom_text": {
+      "type": "text"
+    },
+    "CardsList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.card",
+      "required": true
+    }
+  }
+}

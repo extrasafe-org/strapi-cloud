@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_section_table_sections",
+  "info": {
+    "displayName": "TableSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "TableList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.table-list",
+      "required": true
+    },
+    "IconsListSubsection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.icons-list-subsection",
+      "required": true
+    }
+  }
+}

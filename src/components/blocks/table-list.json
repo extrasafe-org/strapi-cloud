@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_table_lists",
+  "info": {
+    "displayName": "TableList"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "isExtraSafeChecked": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "isZoomChecked": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

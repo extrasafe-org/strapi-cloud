@@ -1488,6 +1488,104 @@ export interface ApiVideoConferencingPageVideoConferencingPage
   };
 }
 
+export interface ApiZoomAlternativePageZoomAlternativePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'zoom_alternative_pages';
+  info: {
+    description: '';
+    displayName: 'ZoomAlternativePage';
+    pluralName: 'zoom-alternative-pages';
+    singularName: 'zoom-alternative-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::zoom-alternative-page.zoom-alternative-page'
+    >;
+    MediaHeroSection: Schema.Attribute.Component<
+      'section.media-hero-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.second-features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TableSection: Schema.Attribute.Component<'section.table-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    WideSliderSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -2013,6 +2111,7 @@ declare module '@strapi/strapi' {
       'api::support-page.support-page': ApiSupportPageSupportPage;
       'api::terms-of-use-page.terms-of-use-page': ApiTermsOfUsePageTermsOfUsePage;
       'api::video-conferencing-page.video-conferencing-page': ApiVideoConferencingPageVideoConferencingPage;
+      'api::zoom-alternative-page.zoom-alternative-page': ApiZoomAlternativePageZoomAlternativePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
