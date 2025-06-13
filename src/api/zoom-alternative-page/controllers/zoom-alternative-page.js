@@ -16,7 +16,7 @@ module.exports = createCoreController('api::zoom-alternative-page.zoom-alternati
                     },
                     TableSection: {
                         populate: {
-                            CardsList: {
+                            IconsListSubsection: {
                                 populate: '*'
                             }
                         }
