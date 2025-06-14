@@ -1,0 +1,60 @@
+{
+  "kind": "singleType",
+  "collectionName": "encrypted_messaging_pages",
+  "info": {
+    "singularName": "encrypted-messaging-page",
+    "pluralName": "encrypted-messaging-pages",
+    "displayName": "EncryptedMessagingPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_title": {
+      "type": "string",
+      "required": true
+    },
+    "meta_description": {
+      "type": "text",
+      "required": true
+    },
+    "MediaHeroSection": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "section.media-hero-section"
+    },
+    "MediaSidedSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.media-sided-section",
+      "required": true
+    },
+    "StepsSection": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "section.steps-section"
+    },
+    "CardsListSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.cards-list-section",
+      "required": true
+    },
+    "SecondFeaturesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.second-features-section",
+      "required": true
+    },
+    "FaqSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.faq-section",
+      "required": true
+    }
+  }
+}

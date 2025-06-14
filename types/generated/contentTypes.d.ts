@@ -957,6 +957,61 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEncryptedMessagingPageEncryptedMessagingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'encrypted_messaging_pages';
+  info: {
+    description: '';
+    displayName: 'EncryptedMessagingPage';
+    pluralName: 'encrypted-messaging-pages';
+    singularName: 'encrypted-messaging-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CardsListSection: Schema.Attribute.Component<
+      'section.cards-list-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::encrypted-messaging-page.encrypted-messaging-page'
+    > &
+      Schema.Attribute.Private;
+    MediaHeroSection: Schema.Attribute.Component<
+      'section.media-hero-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    MediaSidedSection: Schema.Attribute.Component<
+      'section.media-sided-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
+    meta_title: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.second-features-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -2102,6 +2157,7 @@ declare module '@strapi/strapi' {
       'api::blog-article.blog-article': ApiBlogArticleBlogArticle;
       'api::browser-lite-page.browser-lite-page': ApiBrowserLitePageBrowserLitePage;
       'api::category.category': ApiCategoryCategory;
+      'api::encrypted-messaging-page.encrypted-messaging-page': ApiEncryptedMessagingPageEncryptedMessagingPage;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-type.landing-type': ApiLandingTypeLandingType;
       'api::press-page.press-page': ApiPressPagePressPage;
