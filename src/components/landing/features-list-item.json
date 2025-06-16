@@ -8,7 +8,7 @@
   "attributes": {
     "slug": {
       "type": "string",
-      "required": true,
+      "required": false,
       "unique": true
     },
     "title": {

@@ -291,9 +291,7 @@ export interface LandingFeaturesListItem extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.Required;
-    slug: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    slug: Schema.Attribute.String & Schema.Attribute.Unique;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
