@@ -27,6 +27,16 @@
         "images",
         "videos"
       ]
+    },
+    "page_path": {
+      "type": "enumeration",
+      "enum": [
+        "secure-video-call",
+        "screen-sharing",
+        "encrypted-messaging",
+        "free-video-conferencing"
+      ],
+      "required": true
     }
   }
 }
