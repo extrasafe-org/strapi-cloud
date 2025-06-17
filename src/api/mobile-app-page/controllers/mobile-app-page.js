@@ -23,6 +23,9 @@ module.exports = createCoreController('api::mobile-app-page.mobile-app-page', ({
                     SecureSection: {
                         populate: '*'
                     },
+                    BannerWithMediaSection: {
+                         populate: '*'
+                    },
                     SoonSection: {
                         populate: '*'
                     },
