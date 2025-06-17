@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_media_hero_section_with_links",
   "info": {
-    "displayName": "MediaHeroSectionWithLinks"
+    "displayName": "MediaHeroSectionWithLinks",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -20,12 +21,13 @@
       "required": true
     },
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "app_store_link": {
       "type": "string"

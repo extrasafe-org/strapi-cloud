@@ -500,12 +500,14 @@ export interface SectionMediaHeroSectionWithLinks
   extends Struct.ComponentSchema {
   collectionName: 'components_section_media_hero_section_with_links';
   info: {
+    description: '';
     displayName: 'MediaHeroSectionWithLinks';
   };
   attributes: {
     app_store_link: Schema.Attribute.String;
     google_play_link: Schema.Attribute.String;
-    media: Schema.Attribute.Media<'images' | 'videos'>;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
     second_subtitle: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
