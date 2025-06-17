@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_section_soon_sections",
+  "info": {
+    "displayName": "SoonSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "app_store_link": {
+      "type": "string"
+    },
+    "google_play_link": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

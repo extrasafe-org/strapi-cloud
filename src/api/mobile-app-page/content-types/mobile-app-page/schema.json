@@ -1,0 +1,66 @@
+{
+  "kind": "singleType",
+  "collectionName": "mobile_app_pages",
+  "info": {
+    "singularName": "mobile-app-page",
+    "pluralName": "mobile-app-pages",
+    "displayName": "MobileAppPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_title": {
+      "type": "string",
+      "required": true
+    },
+    "meta_description": {
+      "type": "text",
+      "required": true
+    },
+    "FaqSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.faq-section",
+      "required": true
+    },
+    "SecureSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.secure-section",
+      "required": true
+    },
+    "BannerWithMediaSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.banner-with-media-section",
+      "required": true
+    },
+    "SoonSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.soon-section",
+      "required": true
+    },
+    "FeaturesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.features-section",
+      "required": true
+    },
+    "MediaHeroSectionWithLinks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.media-hero-section-with-links",
+      "required": true
+    },
+    "icons_list": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.icons-list",
+      "required": true
+    }
+  }
+}

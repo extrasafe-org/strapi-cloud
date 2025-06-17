@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_banner_with_media_sections",
+  "info": {
+    "displayName": "BannerWithMediaSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "bottom_text": {
+      "type": "text",
+      "required": false
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

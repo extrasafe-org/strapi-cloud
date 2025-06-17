@@ -1102,6 +1102,59 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMobileAppPageMobileAppPage extends Struct.SingleTypeSchema {
+  collectionName: 'mobile_app_pages';
+  info: {
+    description: '';
+    displayName: 'MobileAppPage';
+    pluralName: 'mobile-app-pages';
+    singularName: 'mobile-app-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BannerWithMediaSection: Schema.Attribute.Component<
+      'section.banner-with-media-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required;
+    FeaturesSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    icons_list: Schema.Attribute.Component<'landing.icons-list', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-app-page.mobile-app-page'
+    > &
+      Schema.Attribute.Private;
+    MediaHeroSectionWithLinks: Schema.Attribute.Component<
+      'section.media-hero-section-with-links',
+      false
+    > &
+      Schema.Attribute.Required;
+    meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
+    meta_title: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    SecureSection: Schema.Attribute.Component<'section.secure-section', false> &
+      Schema.Attribute.Required;
+    SoonSection: Schema.Attribute.Component<'section.soon-section', false> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
   collectionName: 'press_pages';
   info: {
@@ -2160,6 +2213,7 @@ declare module '@strapi/strapi' {
       'api::encrypted-messaging-page.encrypted-messaging-page': ApiEncryptedMessagingPageEncryptedMessagingPage;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-type.landing-type': ApiLandingTypeLandingType;
+      'api::mobile-app-page.mobile-app-page': ApiMobileAppPageMobileAppPage;
       'api::press-page.press-page': ApiPressPagePressPage;
       'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::screen-sharing-page.screen-sharing-page': ApiScreenSharingPageScreenSharingPage;

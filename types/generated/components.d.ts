@@ -338,6 +338,19 @@ export interface SectionBannerWithButtonSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionBannerWithMediaSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_banner_with_media_sections';
+  info: {
+    displayName: 'BannerWithMediaSection';
+  };
+  attributes: {
+    bottom_text: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionBrowserLiteHero extends Struct.ComponentSchema {
   collectionName: 'components_section_browser_lite_heroes';
   info: {
@@ -483,6 +496,23 @@ export interface SectionMediaHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionMediaHeroSectionWithLinks
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_media_hero_section_with_links';
+  info: {
+    displayName: 'MediaHeroSectionWithLinks';
+  };
+  attributes: {
+    app_store_link: Schema.Attribute.String;
+    google_play_link: Schema.Attribute.String;
+    media: Schema.Attribute.Media<'images' | 'videos'>;
+    second_subtitle: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionMediaListBlockSection extends Struct.ComponentSchema {
   collectionName: 'components_section_media_list_block_sections';
   info: {
@@ -568,6 +598,20 @@ export interface SectionSecureSection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionSoonSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_soon_sections';
+  info: {
+    displayName: 'SoonSection';
+  };
+  attributes: {
+    app_store_link: Schema.Attribute.String;
+    google_play_link: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -948,6 +992,7 @@ declare module '@strapi/strapi' {
       'landing.icons-list': LandingIconsList;
       'section.banner-section': SectionBannerSection;
       'section.banner-with-button-section': SectionBannerWithButtonSection;
+      'section.banner-with-media-section': SectionBannerWithMediaSection;
       'section.browser-lite-hero': SectionBrowserLiteHero;
       'section.cards-list-section': SectionCardsListSection;
       'section.carousel-section': SectionCarouselSection;
@@ -958,12 +1003,14 @@ declare module '@strapi/strapi' {
       'section.form-section': SectionFormSection;
       'section.linkedin-social-section': SectionLinkedinSocialSection;
       'section.media-hero-section': SectionMediaHeroSection;
+      'section.media-hero-section-with-links': SectionMediaHeroSectionWithLinks;
       'section.media-list-block-section': SectionMediaListBlockSection;
       'section.media-section': SectionMediaSection;
       'section.media-sided-section': SectionMediaSidedSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
       'section.second-features-section': SectionSecondFeaturesSection;
       'section.secure-section': SectionSecureSection;
+      'section.soon-section': SectionSoonSection;
       'section.steps-section': SectionStepsSection;
       'section.table-section': SectionTableSection;
       'section.technology-section': SectionTechnologySection;
