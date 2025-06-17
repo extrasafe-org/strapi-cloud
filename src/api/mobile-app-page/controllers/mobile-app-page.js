@@ -22,7 +22,11 @@ module.exports = createCoreController('api::mobile-app-page.mobile-app-page', ({
                           },
                     },
                     FeaturesSection: {
-                        populate: '*'
+                        populate: {
+                            FeaturesList: {
+                             populate: '*'
+                         }
+                     },
                     },
                     SecureSection: {
                         populate: '*'
