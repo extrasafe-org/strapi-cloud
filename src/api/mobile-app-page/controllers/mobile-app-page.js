@@ -15,7 +15,11 @@ module.exports = createCoreController('api::mobile-app-page.mobile-app-page', ({
                         populate: '*'
                     },
                     icons_list: {
-                        populate: '*'
+                        populate: {
+                            icons_list_item: {
+                              populate: '*'
+                            },
+                          },
                     },
                     FeaturesSection: {
                         populate: '*'
