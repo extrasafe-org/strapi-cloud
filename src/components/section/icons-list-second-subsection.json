@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_section_icons_list_second_subsections",
+  "info": {
+    "displayName": "IconsListSecondSubsection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TextBlock": {
+      "displayName": "TextBlock",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.text-block"
+    },
+    "CardsList": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "shared.card"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_section_third_features_sections",
+  "info": {
+    "displayName": "ThirdFeaturesSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TextBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.text-block",
+      "required": true
+    },
+    "FeaturesList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.features-list",
+      "required": true
+    }
+  }
+}

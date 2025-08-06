@@ -957,6 +957,153 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDevPageDevPage extends Struct.SingleTypeSchema {
+  collectionName: 'dev_pages';
+  info: {
+    description: '';
+    displayName: 'DevPage';
+    pluralName: 'dev-pages';
+    singularName: 'dev-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DevHeroSection: Schema.Attribute.Component<
+      'section.dev-hero-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::dev-page.dev-page'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    TeamSection: Schema.Attribute.Component<'section.team-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDisappearingMessagesPageDisappearingMessagesPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'disappearing_messages_pages';
+  info: {
+    description: '';
+    displayName: 'DisappearingMessagesPage';
+    pluralName: 'disappearing-messages-pages';
+    singularName: 'disappearing-messages-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    IconsListSecondSubsection: Schema.Attribute.Component<
+      'section.icons-list-second-subsection',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::disappearing-messages-page.disappearing-messages-page'
+    >;
+    MediaHeroSection: Schema.Attribute.Component<
+      'section.media-hero-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    ThirdFeaturesSection: Schema.Attribute.Component<
+      'section.third-features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEncryptedMessagingPageEncryptedMessagingPage
   extends Struct.SingleTypeSchema {
   collectionName: 'encrypted_messaging_pages';
@@ -2210,6 +2357,8 @@ declare module '@strapi/strapi' {
       'api::blog-article.blog-article': ApiBlogArticleBlogArticle;
       'api::browser-lite-page.browser-lite-page': ApiBrowserLitePageBrowserLitePage;
       'api::category.category': ApiCategoryCategory;
+      'api::dev-page.dev-page': ApiDevPageDevPage;
+      'api::disappearing-messages-page.disappearing-messages-page': ApiDisappearingMessagesPageDisappearingMessagesPage;
       'api::encrypted-messaging-page.encrypted-messaging-page': ApiEncryptedMessagingPageEncryptedMessagingPage;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-type.landing-type': ApiLandingTypeLandingType;

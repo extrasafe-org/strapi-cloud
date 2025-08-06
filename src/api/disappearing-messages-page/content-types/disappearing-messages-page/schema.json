@@ -1,0 +1,84 @@
+{
+  "kind": "singleType",
+  "collectionName": "disappearing_messages_pages",
+  "info": {
+    "singularName": "disappearing-messages-page",
+    "pluralName": "disappearing-messages-pages",
+    "displayName": "DisappearingMessagesPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "meta_title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "meta_description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
+    },
+    "MediaHeroSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.media-hero-section",
+      "required": true
+    },
+    "ThirdFeaturesSection": {
+      "displayName": "ThirdFeaturesSection",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.third-features-section",
+      "required": true
+    },
+    "IconsListSecondSubsection": {
+      "displayName": "IconsListSecondSubsection",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.icons-list-second-subsection",
+      "required": true
+    },
+    "FaqSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.faq-section",
+      "required": true
+    }
+  }
+}

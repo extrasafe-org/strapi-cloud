@@ -104,6 +104,23 @@ export interface BlocksBlockYoutube extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksCardWithImageAndLink extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_card_with_image_and_links';
+  info: {
+    description: '';
+    displayName: 'CardWithImageAndLink';
+  };
+  attributes: {
+    link_text: Schema.Attribute.String;
+    link_url: Schema.Attribute.String;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksFaqLeft extends Struct.ComponentSchema {
   collectionName: 'components_blocks_faq_lefts';
   info: {
@@ -141,6 +158,19 @@ export interface BlocksTableList extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
     text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksTextBlock extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_text_blocks';
+  info: {
+    displayName: 'TextBlock';
+  };
+  attributes: {
+    bottom_text: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -235,6 +265,18 @@ export interface ComponentsMediaList extends Struct.ComponentSchema {
     displayName: 'MediaList';
   };
   attributes: {};
+}
+
+export interface ComponentsTeamCard extends Struct.ComponentSchema {
+  collectionName: 'components_components_team_cards';
+  info: {
+    displayName: 'TeamCard';
+  };
+  attributes: {
+    avatar: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
 }
 
 export interface LandingFaqList extends Struct.ComponentSchema {
@@ -412,6 +454,24 @@ export interface SectionComingNextSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionDevHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_dev_hero_sections';
+  info: {
+    description: '';
+    displayName: 'DevHeroSection';
+  };
+  attributes: {
+    CardWithImageAndLink: Schema.Attribute.Component<
+      'blocks.card-with-image-and-link',
+      true
+    > &
+      Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionFaqSection extends Struct.ComponentSchema {
   collectionName: 'components_section_faq_sections';
   info: {
@@ -465,6 +525,20 @@ export interface SectionFormSection extends Struct.ComponentSchema {
     successfully_submission_text: Schema.Attribute.Text;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionIconsListSecondSubsection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_icons_list_second_subsections';
+  info: {
+    description: '';
+    displayName: 'IconsListSecondSubsection';
+  };
+  attributes: {
+    CardsList: Schema.Attribute.Component<'shared.card', true> &
+      Schema.Attribute.Required;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false>;
   };
 }
 
@@ -651,6 +725,20 @@ export interface SectionTableSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionTeamSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_team_sections';
+  info: {
+    displayName: 'TeamSection';
+  };
+  attributes: {
+    subtitle: Schema.Attribute.String;
+    TeamCard: Schema.Attribute.Component<'components.team-card', true> &
+      Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionTechnologySection extends Struct.ComponentSchema {
   collectionName: 'components_section_technology_sections';
   info: {
@@ -665,7 +753,22 @@ export interface SectionTechnologySection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionThirdFeaturesSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_third_features_sections';
+  info: {
+    description: '';
+    displayName: 'ThirdFeaturesSection';
+  };
+  attributes: {
+    FeaturesList: Schema.Attribute.Component<'shared.features-list', true> &
+      Schema.Attribute.Required;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -957,10 +1060,12 @@ export interface SharedTemplate extends Struct.ComponentSchema {
 export interface SharedTemplateLanding extends Struct.ComponentSchema {
   collectionName: 'components_shared_template_landings';
   info: {
+    description: '';
     displayName: 'TemplateLanding';
   };
   attributes: {
-    Template: Schema.Attribute.Enumeration<['With Video', 'Without Video']>;
+    Template: Schema.Attribute.Enumeration<['With Video', 'Without Video']> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -976,9 +1081,11 @@ declare module '@strapi/strapi' {
       'blocks.block-social-post': BlocksBlockSocialPost;
       'blocks.block-with-top-border': BlocksBlockWithTopBorder;
       'blocks.block-youtube': BlocksBlockYoutube;
+      'blocks.card-with-image-and-link': BlocksCardWithImageAndLink;
       'blocks.faq-left': BlocksFaqLeft;
       'blocks.quote': BlocksQuote;
       'blocks.table-list': BlocksTableList;
+      'blocks.text-block': BlocksTextBlock;
       'components.carousel-list': ComponentsCarouselList;
       'components.download-item': ComponentsDownloadItem;
       'components.download-list': ComponentsDownloadList;
@@ -987,6 +1094,7 @@ declare module '@strapi/strapi' {
       'components.image-block': ComponentsImageBlock;
       'components.list-block': ComponentsListBlock;
       'components.media-list': ComponentsMediaList;
+      'components.team-card': ComponentsTeamCard;
       'landing.faq-list': LandingFaqList;
       'landing.faq-list-item': LandingFaqListItem;
       'landing.features-list': LandingFeaturesList;
@@ -999,10 +1107,12 @@ declare module '@strapi/strapi' {
       'section.cards-list-section': SectionCardsListSection;
       'section.carousel-section': SectionCarouselSection;
       'section.coming-next-section': SectionComingNextSection;
+      'section.dev-hero-section': SectionDevHeroSection;
       'section.faq-section': SectionFaqSection;
       'section.faq-tab-section': SectionFaqTabSection;
       'section.features-section': SectionFeaturesSection;
       'section.form-section': SectionFormSection;
+      'section.icons-list-second-subsection': SectionIconsListSecondSubsection;
       'section.linkedin-social-section': SectionLinkedinSocialSection;
       'section.media-hero-section': SectionMediaHeroSection;
       'section.media-hero-section-with-links': SectionMediaHeroSectionWithLinks;
@@ -1015,7 +1125,9 @@ declare module '@strapi/strapi' {
       'section.soon-section': SectionSoonSection;
       'section.steps-section': SectionStepsSection;
       'section.table-section': SectionTableSection;
+      'section.team-section': SectionTeamSection;
       'section.technology-section': SectionTechnologySection;
+      'section.third-features-section': SectionThirdFeaturesSection;
       'section.x-social-section': SectionXSocialSection;
       'section.youtube-social-section': SectionYoutubeSocialSection;
       'shared.block-dot-list': SharedBlockDotList;

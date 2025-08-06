@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_section_dev_hero_sections",
+  "info": {
+    "displayName": "DevHeroSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "CardWithImageAndLink": {
+      "displayName": "CardWithImageAndLink",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.card-with-image-and-link",
+      "required": true
+    }
+  }
+}

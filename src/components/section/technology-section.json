@@ -23,6 +23,9 @@
       "repeatable": true,
       "component": "components.icons-block-item",
       "required": true
+    },
+    "subtitle": {
+      "type": "string"
     }
   }
 }
