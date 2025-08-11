@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_secure_sections",
   "info": {
-    "displayName": "SecureSection"
+    "displayName": "SecureSection",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,16 +11,16 @@
     },
     "subtitle": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "text": {
       "type": "text",

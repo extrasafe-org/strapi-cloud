@@ -1063,16 +1063,6 @@ export interface ApiDisappearingMessagesPageDisappearingMessagesPage
       'oneToMany',
       'api::disappearing-messages-page.disappearing-messages-page'
     >;
-    MediaHeroSection: Schema.Attribute.Component<
-      'section.media-hero-section',
-      false
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     meta_description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -1088,6 +1078,20 @@ export interface ApiDisappearingMessagesPageDisappearingMessagesPage
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    SecureSection: Schema.Attribute.Component<'section.secure-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SoonSection: Schema.Attribute.Component<'section.soon-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     ThirdFeaturesSection: Schema.Attribute.Component<
       'section.third-features-section',
       false

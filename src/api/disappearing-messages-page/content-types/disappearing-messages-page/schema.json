@@ -34,17 +34,6 @@
       "type": "text",
       "required": true
     },
-    "MediaHeroSection": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.media-hero-section",
-      "required": true
-    },
     "ThirdFeaturesSection": {
       "displayName": "ThirdFeaturesSection",
       "type": "component",
@@ -79,6 +68,28 @@
       },
       "component": "section.faq-section",
       "required": true
+    },
+    "SoonSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.soon-section"
+    },
+    "SecureSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.secure-section"
     }
   }
 }

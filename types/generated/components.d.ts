@@ -405,7 +405,7 @@ export interface SectionBrowserLiteHero extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -667,12 +667,13 @@ export interface SectionSecondFeaturesSection extends Struct.ComponentSchema {
 export interface SectionSecureSection extends Struct.ComponentSchema {
   collectionName: 'components_section_secure_sections';
   info: {
+    description: '';
     displayName: 'SecureSection';
   };
   attributes: {
     media: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
-    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };
@@ -681,6 +682,7 @@ export interface SectionSecureSection extends Struct.ComponentSchema {
 export interface SectionSoonSection extends Struct.ComponentSchema {
   collectionName: 'components_section_soon_sections';
   info: {
+    description: '';
     displayName: 'SoonSection';
   };
   attributes: {
@@ -688,6 +690,7 @@ export interface SectionSoonSection extends Struct.ComponentSchema {
     google_play_link: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     subtitle: Schema.Attribute.Text;
+    text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }

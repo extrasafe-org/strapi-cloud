@@ -11,16 +11,34 @@ module.exports = createCoreController('api::disappearing-messages-page.disappear
         try {
             const entity = await strapi.service('api::disappearing-messages-page.disappearing-messages-page').find({
                 populate: {
-                    MediaHeroSection: {
+                    SecureSection: {
                         populate: '*',
                     },
                     ThirdFeaturesSection: {
-                        populate: '*',
+                        populate: {
+                            FeaturesList: {
+                                populate: '*'
+                            }
+                            ,
+                              TextBlock: {
+                                populate: '*'
+                            }
+                        }
                     },
                     IconsListSecondSubsection: {
-                        populate: '*',
+                        populate: {
+                            CardsList: {
+                                populate: '*'
+                            },
+                                TextBlock: {
+                                populate: '*'
+                            }
+                        },
                     },
                     FaqSection: {
+                        populate: '*',
+                    },
+                        SoonSection: {
                         populate: '*',
                     },
                 },

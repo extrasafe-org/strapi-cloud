@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_soon_sections",
   "info": {
-    "displayName": "SoonSection"
+    "displayName": "SoonSection",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -18,12 +19,15 @@
       "type": "string"
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text": {
+      "type": "text"
     }
   }
 }
