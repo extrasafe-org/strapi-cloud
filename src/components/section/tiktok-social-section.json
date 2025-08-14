@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_section_tiktok_social_sections",
+  "info": {
+    "displayName": "TiktokSocialSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "widget_id": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

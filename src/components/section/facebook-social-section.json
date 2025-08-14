@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_section_facebook_social_sections",
+  "info": {
+    "displayName": "FacebookSocialSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "widget_id": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

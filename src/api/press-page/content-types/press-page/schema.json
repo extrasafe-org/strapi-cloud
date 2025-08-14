@@ -57,6 +57,24 @@
       "type": "component",
       "repeatable": false,
       "component": "section.youtube-social-section"
+    },
+    "TiktokSocialSection": {
+      "displayName": "TiktokSocialSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "section.tiktok-social-section"
+    },
+    "InstagramSocialSection": {
+      "displayName": "InstagramSocialSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "section.instagram-social-section"
+    },
+    "FacebookSocialSection": {
+      "displayName": "FacebookSocialSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "section.facebook-social-section"
     }
   }
 }

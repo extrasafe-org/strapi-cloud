@@ -1321,6 +1321,10 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    FacebookSocialSection: Schema.Attribute.Component<
+      'section.facebook-social-section',
+      false
+    >;
     FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
       Schema.Attribute.Required;
     FeaturesSection: Schema.Attribute.Component<
@@ -1328,6 +1332,10 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
       false
     > &
       Schema.Attribute.Required;
+    InstagramSocialSection: Schema.Attribute.Component<
+      'section.instagram-social-section',
+      false
+    >;
     LinkedinSocialSection: Schema.Attribute.Component<
       'section.linkedin-social-section',
       false
@@ -1343,6 +1351,10 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
     meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    TiktokSocialSection: Schema.Attribute.Component<
+      'section.tiktok-social-section',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

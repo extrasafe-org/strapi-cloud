@@ -472,6 +472,17 @@ export interface SectionDevHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionFacebookSocialSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_facebook_social_sections';
+  info: {
+    displayName: 'FacebookSocialSection';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    widget_id: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionFaqSection extends Struct.ComponentSchema {
   collectionName: 'components_section_faq_sections';
   info: {
@@ -539,6 +550,17 @@ export interface SectionIconsListSecondSubsection
     CardsList: Schema.Attribute.Component<'shared.card', true> &
       Schema.Attribute.Required;
     TextBlock: Schema.Attribute.Component<'blocks.text-block', false>;
+  };
+}
+
+export interface SectionInstagramSocialSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_instagram_social_sections';
+  info: {
+    displayName: 'InstagramSocialSection';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    widget_id: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -772,6 +794,17 @@ export interface SectionThirdFeaturesSection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
       Schema.Attribute.Required;
+  };
+}
+
+export interface SectionTiktokSocialSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_tiktok_social_sections';
+  info: {
+    displayName: 'TiktokSocialSection';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    widget_id: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -1111,11 +1144,13 @@ declare module '@strapi/strapi' {
       'section.carousel-section': SectionCarouselSection;
       'section.coming-next-section': SectionComingNextSection;
       'section.dev-hero-section': SectionDevHeroSection;
+      'section.facebook-social-section': SectionFacebookSocialSection;
       'section.faq-section': SectionFaqSection;
       'section.faq-tab-section': SectionFaqTabSection;
       'section.features-section': SectionFeaturesSection;
       'section.form-section': SectionFormSection;
       'section.icons-list-second-subsection': SectionIconsListSecondSubsection;
+      'section.instagram-social-section': SectionInstagramSocialSection;
       'section.linkedin-social-section': SectionLinkedinSocialSection;
       'section.media-hero-section': SectionMediaHeroSection;
       'section.media-hero-section-with-links': SectionMediaHeroSectionWithLinks;
@@ -1131,6 +1166,7 @@ declare module '@strapi/strapi' {
       'section.team-section': SectionTeamSection;
       'section.technology-section': SectionTechnologySection;
       'section.third-features-section': SectionThirdFeaturesSection;
+      'section.tiktok-social-section': SectionTiktokSocialSection;
       'section.x-social-section': SectionXSocialSection;
       'section.youtube-social-section': SectionYoutubeSocialSection;
       'shared.block-dot-list': SharedBlockDotList;
