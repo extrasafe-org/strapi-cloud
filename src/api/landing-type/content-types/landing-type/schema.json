@@ -99,7 +99,13 @@
       "type": "component",
       "repeatable": false,
       "component": "section.steps-section",
-      "required": true
+      "required": false
+    },
+    "SoonSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.soon-section",
+      "required": false
     }
   }
 }

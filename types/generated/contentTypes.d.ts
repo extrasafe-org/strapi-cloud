@@ -1235,8 +1235,8 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     Main_SubTitle: Schema.Attribute.String & Schema.Attribute.Required;
     Main_Title: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
-      Schema.Attribute.Required;
+    SoonSection: Schema.Attribute.Component<'section.soon-section', false>;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false>;
     TechnologySection: Schema.Attribute.Component<
       'section.technology-section',
       false
