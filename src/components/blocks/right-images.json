@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_right_images",
+  "info": {
+    "displayName": "RightImages"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

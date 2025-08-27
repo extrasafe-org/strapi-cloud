@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_section_animated_carousel_sections",
+  "info": {
+    "displayName": "AnimatedCarouselSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TextBlock": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "blocks.text-block"
+    },
+    "SelectionButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.selection-button"
+    },
+    "ImageCarousel": {
+      "displayName": "ImageCarousel",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.image-carousel",
+      "required": true
+    }
+  }
+}

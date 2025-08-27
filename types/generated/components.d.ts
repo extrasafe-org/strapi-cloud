@@ -1,5 +1,22 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksBackSide extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_back_sides';
+  info: {
+    displayName: 'BackSide';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    SelectionButton: Schema.Attribute.Component<
+      'blocks.selection-button',
+      false
+    >;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface BlocksBlockBigHeading extends Struct.ComponentSchema {
   collectionName: 'components_blocks_block_big_headings';
   info: {
@@ -134,6 +151,74 @@ export interface BlocksFaqLeft extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksFrontSide extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_front_sides';
+  info: {
+    description: '';
+    displayName: 'FrontSide';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'videos'>;
+    SelectionButton: Schema.Attribute.Component<
+      'blocks.selection-button',
+      false
+    >;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksImageCarousel extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_image_carousels';
+  info: {
+    description: '';
+    displayName: 'ImageCarousel';
+  };
+  attributes: {
+    LeftImages: Schema.Attribute.Component<'blocks.left-images', true> &
+      Schema.Attribute.Required;
+    RightImages: Schema.Attribute.Component<'blocks.right-images', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksLeftCarousel extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_left_carousels';
+  info: {
+    displayName: 'LeftCarousel';
+  };
+  attributes: {};
+}
+
+export interface BlocksLeftImages extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_left_images';
+  info: {
+    displayName: 'LeftImages';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksLeftSide extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_left_sides';
+  info: {
+    description: '';
+    displayName: 'LeftSide';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    SelectionButton: Schema.Attribute.Component<
+      'blocks.selection-button',
+      false
+    >;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface BlocksQuote extends Struct.ComponentSchema {
   collectionName: 'components_blocks_quotes';
   info: {
@@ -142,6 +227,31 @@ export interface BlocksQuote extends Struct.ComponentSchema {
   };
   attributes: {
     quote: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksRightImages extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_right_images';
+  info: {
+    displayName: 'RightImages';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksSelectionButton extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_selection_buttons';
+  info: {
+    description: '';
+    displayName: 'SelectionButton';
+  };
+  attributes: {
+    button: Schema.Attribute.Enumeration<
+      ['meeting', 'download', 'stores', 'socials']
+    > &
+      Schema.Attribute.Required;
   };
 }
 
@@ -353,6 +463,24 @@ export interface LandingIconsList extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionAnimatedCarouselSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_animated_carousel_sections';
+  info: {
+    description: '';
+    displayName: 'AnimatedCarouselSection';
+  };
+  attributes: {
+    ImageCarousel: Schema.Attribute.Component<'blocks.image-carousel', false> &
+      Schema.Attribute.Required;
+    SelectionButton: Schema.Attribute.Component<
+      'blocks.selection-button',
+      false
+    >;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SectionBannerSection extends Struct.ComponentSchema {
   collectionName: 'components_section_banner_sections';
   info: {
@@ -522,6 +650,22 @@ export interface SectionFeaturesSection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionFlipSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_flip_sections';
+  info: {
+    description: '';
+    displayName: 'FlipSection';
+  };
+  attributes: {
+    BackSide: Schema.Attribute.Component<'blocks.front-side', false>;
+    FrontSide: Schema.Attribute.Component<'blocks.front-side', false> &
+      Schema.Attribute.Required;
+    hasBackSide: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
   };
 }
 
@@ -805,6 +949,20 @@ export interface SectionTiktokSocialSection extends Struct.ComponentSchema {
   attributes: {
     title: Schema.Attribute.String;
     widget_id: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionTwoSidedHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_two_sided_hero_sections';
+  info: {
+    description: '';
+    displayName: 'TwoSidedHeroSection';
+  };
+  attributes: {
+    LeftSide: Schema.Attribute.Component<'blocks.left-side', false> &
+      Schema.Attribute.Required;
+    RightSide: Schema.Attribute.Component<'blocks.left-side', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -1108,6 +1266,7 @@ export interface SharedTemplateLanding extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.back-side': BlocksBackSide;
       'blocks.block-big-heading': BlocksBlockBigHeading;
       'blocks.block-dot-list': BlocksBlockDotList;
       'blocks.block-dot-list-with-title': BlocksBlockDotListWithTitle;
@@ -1119,7 +1278,14 @@ declare module '@strapi/strapi' {
       'blocks.block-youtube': BlocksBlockYoutube;
       'blocks.card-with-image-and-link': BlocksCardWithImageAndLink;
       'blocks.faq-left': BlocksFaqLeft;
+      'blocks.front-side': BlocksFrontSide;
+      'blocks.image-carousel': BlocksImageCarousel;
+      'blocks.left-carousel': BlocksLeftCarousel;
+      'blocks.left-images': BlocksLeftImages;
+      'blocks.left-side': BlocksLeftSide;
       'blocks.quote': BlocksQuote;
+      'blocks.right-images': BlocksRightImages;
+      'blocks.selection-button': BlocksSelectionButton;
       'blocks.table-list': BlocksTableList;
       'blocks.text-block': BlocksTextBlock;
       'components.carousel-list': ComponentsCarouselList;
@@ -1136,6 +1302,7 @@ declare module '@strapi/strapi' {
       'landing.features-list': LandingFeaturesList;
       'landing.features-list-item': LandingFeaturesListItem;
       'landing.icons-list': LandingIconsList;
+      'section.animated-carousel-section': SectionAnimatedCarouselSection;
       'section.banner-section': SectionBannerSection;
       'section.banner-with-button-section': SectionBannerWithButtonSection;
       'section.banner-with-media-section': SectionBannerWithMediaSection;
@@ -1148,6 +1315,7 @@ declare module '@strapi/strapi' {
       'section.faq-section': SectionFaqSection;
       'section.faq-tab-section': SectionFaqTabSection;
       'section.features-section': SectionFeaturesSection;
+      'section.flip-section': SectionFlipSection;
       'section.form-section': SectionFormSection;
       'section.icons-list-second-subsection': SectionIconsListSecondSubsection;
       'section.instagram-social-section': SectionInstagramSocialSection;
@@ -1167,6 +1335,7 @@ declare module '@strapi/strapi' {
       'section.technology-section': SectionTechnologySection;
       'section.third-features-section': SectionThirdFeaturesSection;
       'section.tiktok-social-section': SectionTiktokSocialSection;
+      'section.two-sided-hero-section': SectionTwoSidedHeroSection;
       'section.x-social-section': SectionXSocialSection;
       'section.youtube-social-section': SectionYoutubeSocialSection;
       'shared.block-dot-list': SharedBlockDotList;

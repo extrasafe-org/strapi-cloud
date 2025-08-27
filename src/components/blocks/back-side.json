@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_back_sides",
+  "info": {
+    "displayName": "BackSide"
+  },
+  "options": {},
+  "attributes": {
+    "TextBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.text-block",
+      "required": true
+    },
+    "SelectionButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.selection-button"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_section_two_sided_hero_sections",
+  "info": {
+    "displayName": "TwoSidedHeroSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "LeftSide": {
+      "displayName": "LeftSide",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.left-side",
+      "required": true
+    },
+    "RightSide": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "blocks.left-side"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_blocks_image_carousels",
+  "info": {
+    "displayName": "ImageCarousel",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "LeftImages": {
+      "displayName": "LeftImages",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.left-images",
+      "required": true
+    },
+    "RightImages": {
+      "displayName": "RightImages",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.right-images",
+      "required": true
+    }
+  }
+}

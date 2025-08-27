@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_blocks_front_sides",
+  "info": {
+    "displayName": "FrontSide",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TextBlock": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "blocks.text-block"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "SelectionButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.selection-button"
+    }
+  }
+}

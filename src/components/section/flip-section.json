@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_flip_sections",
+  "info": {
+    "displayName": "FlipSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "FrontSide": {
+      "displayName": "FrontSide",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.front-side",
+      "required": true
+    },
+    "hasBackSide": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "BackSide": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.front-side"
+    }
+  }
+}
