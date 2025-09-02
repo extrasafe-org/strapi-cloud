@@ -62,12 +62,14 @@ module.exports = createCoreController('api::press-page.press-page', ({ strapi })
           },
 
           FeaturesWithSelectionBtnSection: {
-            TextBlock: {
+            populate: {
+              TextBlock: {
               populate: '*'
             },
             MediaWithSelectionBtnList : {
               populate: '*'
             },
+            }
           }
 
         },
