@@ -377,6 +377,24 @@ export interface ComponentsMediaList extends Struct.ComponentSchema {
   attributes: {};
 }
 
+export interface ComponentsMediaWithSelectionBtnList
+  extends Struct.ComponentSchema {
+  collectionName: 'components_components_media_with_selection_btn_lists';
+  info: {
+    displayName: 'MediaWithSelectionBtnList';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    SelectionButton: Schema.Attribute.Component<
+      'blocks.selection-button',
+      false
+    >;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsTeamCard extends Struct.ComponentSchema {
   collectionName: 'components_components_team_cards';
   info: {
@@ -650,6 +668,23 @@ export interface SectionFeaturesSection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionFeaturesWithSelectionBtnSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_with_selection_btn_sections';
+  info: {
+    displayName: 'FeaturesWithSelectionBtnSection';
+  };
+  attributes: {
+    MediaWithSelectionBtnList: Schema.Attribute.Component<
+      'components.media-with-selection-btn-list',
+      true
+    > &
+      Schema.Attribute.Required;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -1296,6 +1331,7 @@ declare module '@strapi/strapi' {
       'components.image-block': ComponentsImageBlock;
       'components.list-block': ComponentsListBlock;
       'components.media-list': ComponentsMediaList;
+      'components.media-with-selection-btn-list': ComponentsMediaWithSelectionBtnList;
       'components.team-card': ComponentsTeamCard;
       'landing.faq-list': LandingFaqList;
       'landing.faq-list-item': LandingFaqListItem;
@@ -1315,6 +1351,7 @@ declare module '@strapi/strapi' {
       'section.faq-section': SectionFaqSection;
       'section.faq-tab-section': SectionFaqTabSection;
       'section.features-section': SectionFeaturesSection;
+      'section.features-with-selection-btn-section': SectionFeaturesWithSelectionBtnSection;
       'section.flip-section': SectionFlipSection;
       'section.form-section': SectionFormSection;
       'section.icons-list-second-subsection': SectionIconsListSecondSubsection;

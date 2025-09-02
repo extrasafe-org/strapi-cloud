@@ -75,6 +75,12 @@
       "type": "component",
       "repeatable": false,
       "component": "section.facebook-social-section"
+    },
+    "FeaturesWithSelectionBtnSection": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "section.features-with-selection-btn-section"
     }
   }
 }

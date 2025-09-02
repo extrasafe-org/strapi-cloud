@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_media_with_selection_btn_lists",
+  "info": {
+    "displayName": "MediaWithSelectionBtnList"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "SelectionButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.selection-button"
+    }
+  }
+}

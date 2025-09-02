@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_section_features_with_selection_btn_sections",
+  "info": {
+    "displayName": "FeaturesWithSelectionBtnSection"
+  },
+  "options": {},
+  "attributes": {
+    "TextBlock": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "blocks.text-block"
+    },
+    "MediaWithSelectionBtnList": {
+      "displayName": "MediaWithSelectionBtnList",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.media-with-selection-btn-list",
+      "required": true
+    }
+  }
+}

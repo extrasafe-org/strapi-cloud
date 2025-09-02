@@ -60,6 +60,16 @@ module.exports = createCoreController('api::press-page.press-page', ({ strapi })
                 }
             },
           },
+
+          FeaturesWithSelectionBtnSection: {
+            TextBlock: {
+              populate: '*'
+            },
+            MediaWithSelectionBtnList : {
+              populate: '*'
+            },
+          }
+
         },
       });
 
