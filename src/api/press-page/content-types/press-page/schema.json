@@ -79,7 +79,7 @@
     "FeaturesWithSelectionBtnSection": {
       "type": "component",
       "repeatable": false,
-      "required": false,
+      "required": true,
       "component": "section.features-with-selection-btn-section"
     }
   }

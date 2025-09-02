@@ -1458,7 +1458,8 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
     FeaturesWithSelectionBtnSection: Schema.Attribute.Component<
       'section.features-with-selection-btn-section',
       false
-    >;
+    > &
+      Schema.Attribute.Required;
     InstagramSocialSection: Schema.Attribute.Component<
       'section.instagram-social-section',
       false

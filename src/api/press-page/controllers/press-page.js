@@ -12,67 +12,67 @@ module.exports = createCoreController('api::press-page.press-page', ({ strapi })
       const entity = await strapi.service('api::press-page.press-page').find({
         populate: {
           MediaSection: {
+            populate: {
+              MediaListBlock: {
                 populate: {
-                  MediaListBlock: {
-                        populate: {
-                          MediaList: {
-                            populate: '*'
-                        }
-                    },
+                  MediaList: {
+                    populate: '*'
+                  }
+                },
               },
-                   DownloadList: {
-                            populate: '*'
-                        }
+              DownloadList: {
+                populate: '*'
+              }
             },
           },
-           FeaturesSection: {
-               populate: {
-                   FeaturesList: {
-                    populate: '*'
-                }
+          FeaturesSection: {
+            populate: {
+              FeaturesList: {
+                populate: '*'
+              }
             },
           },
-           XSocialSection: {
-            populate:  '*',
+          XSocialSection: {
+            populate: '*',
           },
-              LinkedinSocialSection: {
-            populate:  '*',
+          LinkedinSocialSection: {
+            populate: '*',
           },
-                 YoutubeSocialSection: {
-            populate:  '*',
+          YoutubeSocialSection: {
+            populate: '*',
           },
-                 
-                      InstagramSocialSection: {
-            populate:  '*',
+
+          InstagramSocialSection: {
+            populate: '*',
           },
-              TiktokSocialSection: {
-            populate:  '*',
+          TiktokSocialSection: {
+            populate: '*',
           },
-                 FacebookSocialSection: {
-            populate:  '*',
+          FacebookSocialSection: {
+            populate: '*',
           },
-                 
-                 
+
+
           FaqSection: {
-            populate:  {
-                   faq_list_item: {
-                    populate: '*'
-                }
+            populate: {
+              faq_list_item: {
+                populate: '*'
+              }
             },
           },
 
           FeaturesWithSelectionBtnSection: {
             populate: {
               TextBlock: {
-              populate: '*'
-            },
-            MediaWithSelectionBtnList : {
-              populate: '*'
-            },
+                populate: '*'
+              },
+              MediaWithSelectionBtnList: {
+                populate: '*'
+              },
             }
           }
 
-        },
+        }
       });
 
       if (!entity) {
