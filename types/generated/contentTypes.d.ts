@@ -1376,6 +1376,87 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMicrosoftTeamsAlternativePageMicrosoftTeamsAlternativePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'microsoft_teams_alternative_pages';
+  info: {
+    description: '';
+    displayName: 'MicrosoftTeamsAlternativePage';
+    pluralName: 'microsoft-teams-alternative-pages';
+    singularName: 'microsoft-teams-alternative-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::microsoft-teams-alternative-page.microsoft-teams-alternative-page'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.second-features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    WideSliderSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
 export interface ApiMobileAppPageMobileAppPage extends Struct.SingleTypeSchema {
   collectionName: 'mobile_app_pages';
   info: {
@@ -1713,6 +1794,87 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
   };
 }
 
+export interface ApiSignalAlternativePageSignalAlternativePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'signal_alternative_pages';
+  info: {
+    description: '';
+    displayName: 'SignalAlternativePage';
+    pluralName: 'signal-alternative-pages';
+    singularName: 'signal-alternative-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::signal-alternative-page.signal-alternative-page'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.second-features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    WideSliderSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
 export interface ApiSupportPageSupportPage extends Struct.SingleTypeSchema {
   collectionName: 'support_pages';
   info: {
@@ -1747,6 +1909,87 @@ export interface ApiSupportPageSupportPage extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTelegramAlternativePageTelegramAlternativePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'telegram_alternative_pages';
+  info: {
+    description: '';
+    displayName: 'TelegramAlternativePage';
+    pluralName: 'telegram-alternative-pages';
+    singularName: 'telegram-alternative-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::telegram-alternative-page.telegram-alternative-page'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.second-features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    WideSliderSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
@@ -1839,6 +2082,87 @@ export interface ApiVideoConferencingPageVideoConferencingPage
           localized: true;
         };
       }>;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.second-features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    WideSliderSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface ApiWhatsAppAlternativePageWhatsAppAlternativePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'whats_app_alternative_pages';
+  info: {
+    description: '';
+    displayName: 'WhatsAppAlternativePage';
+    pluralName: 'whats-app-alternative-pages';
+    singularName: 'whats-app-alternative-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::whats-app-alternative-page.whats-app-alternative-page'
+    >;
     meta_description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -2507,14 +2831,18 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::landing-type.landing-type': ApiLandingTypeLandingType;
+      'api::microsoft-teams-alternative-page.microsoft-teams-alternative-page': ApiMicrosoftTeamsAlternativePageMicrosoftTeamsAlternativePage;
       'api::mobile-app-page.mobile-app-page': ApiMobileAppPageMobileAppPage;
       'api::press-page.press-page': ApiPressPagePressPage;
       'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::screen-sharing-page.screen-sharing-page': ApiScreenSharingPageScreenSharingPage;
       'api::secure-video-call-page.secure-video-call-page': ApiSecureVideoCallPageSecureVideoCallPage;
+      'api::signal-alternative-page.signal-alternative-page': ApiSignalAlternativePageSignalAlternativePage;
       'api::support-page.support-page': ApiSupportPageSupportPage;
+      'api::telegram-alternative-page.telegram-alternative-page': ApiTelegramAlternativePageTelegramAlternativePage;
       'api::terms-of-use-page.terms-of-use-page': ApiTermsOfUsePageTermsOfUsePage;
       'api::video-conferencing-page.video-conferencing-page': ApiVideoConferencingPageVideoConferencingPage;
+      'api::whats-app-alternative-page.whats-app-alternative-page': ApiWhatsAppAlternativePageWhatsAppAlternativePage;
       'api::zoom-alternative-page.zoom-alternative-page': ApiZoomAlternativePageZoomAlternativePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
