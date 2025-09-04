@@ -12,12 +12,23 @@
       "required": true,
       "component": "blocks.text-block"
     },
-    "StepsList": {
-      "displayName": "StepsList",
+    "FirstStep": {
       "type": "component",
-      "repeatable": true,
-      "component": "components.steps-list",
-      "required": false
+      "repeatable": false,
+      "required": true,
+      "component": "components.steps-list"
+    },
+    "SecondStep": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "components.steps-list"
+    },
+    "ThirdStep": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "components.steps-list"
     }
   }
 }

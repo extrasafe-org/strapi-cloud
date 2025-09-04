@@ -407,7 +407,7 @@ export interface ComponentsStepsList extends Struct.ComponentSchema {
       'blocks.selection-button',
       false
     >;
-    text: Schema.Attribute.String;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -935,8 +935,13 @@ export interface SectionStepsWithSelectionButtonSection
     displayName: 'StepsWithSelectionButtonSection';
   };
   attributes: {
-    StepsList: Schema.Attribute.Component<'components.steps-list', true>;
+    FirstStep: Schema.Attribute.Component<'components.steps-list', false> &
+      Schema.Attribute.Required;
+    SecondStep: Schema.Attribute.Component<'components.steps-list', false> &
+      Schema.Attribute.Required;
     TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
+    ThirdStep: Schema.Attribute.Component<'components.steps-list', false> &
       Schema.Attribute.Required;
   };
 }
