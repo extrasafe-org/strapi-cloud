@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_components_steps_lists",
+  "info": {
+    "displayName": "Step",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": false
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "SelectionButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.selection-button"
+    }
+  }
+}

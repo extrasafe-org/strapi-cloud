@@ -395,6 +395,23 @@ export interface ComponentsMediaWithSelectionBtnList
   };
 }
 
+export interface ComponentsStepsList extends Struct.ComponentSchema {
+  collectionName: 'components_components_steps_lists';
+  info: {
+    description: '';
+    displayName: 'Step';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'>;
+    SelectionButton: Schema.Attribute.Component<
+      'blocks.selection-button',
+      false
+    >;
+    text: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ComponentsTeamCard extends Struct.ComponentSchema {
   collectionName: 'components_components_team_cards';
   info: {
@@ -910,6 +927,20 @@ export interface SectionStepsSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionStepsWithSelectionButtonSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_steps_with_selection_button_sections';
+  info: {
+    description: '';
+    displayName: 'StepsWithSelectionButtonSection';
+  };
+  attributes: {
+    StepsList: Schema.Attribute.Component<'components.steps-list', true>;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SectionTableSection extends Struct.ComponentSchema {
   collectionName: 'components_section_table_sections';
   info: {
@@ -1332,6 +1363,7 @@ declare module '@strapi/strapi' {
       'components.list-block': ComponentsListBlock;
       'components.media-list': ComponentsMediaList;
       'components.media-with-selection-btn-list': ComponentsMediaWithSelectionBtnList;
+      'components.steps-list': ComponentsStepsList;
       'components.team-card': ComponentsTeamCard;
       'landing.faq-list': LandingFaqList;
       'landing.faq-list-item': LandingFaqListItem;
@@ -1367,6 +1399,7 @@ declare module '@strapi/strapi' {
       'section.secure-section': SectionSecureSection;
       'section.soon-section': SectionSoonSection;
       'section.steps-section': SectionStepsSection;
+      'section.steps-with-selection-button-section': SectionStepsWithSelectionButtonSection;
       'section.table-section': SectionTableSection;
       'section.team-section': SectionTeamSection;
       'section.technology-section': SectionTechnologySection;

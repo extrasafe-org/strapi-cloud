@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_section_steps_with_selection_button_sections",
+  "info": {
+    "displayName": "StepsWithSelectionButtonSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TextBlock": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "blocks.text-block"
+    },
+    "StepsList": {
+      "displayName": "StepsList",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.steps-list",
+      "required": false
+    }
+  }
+}

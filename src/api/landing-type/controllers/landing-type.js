@@ -132,6 +132,23 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
         },
         hero_section_media: {
           populate: '*'
+        },
+        StepsWithSelectionButtonSection: {
+          populate: {
+            TextBlock: {
+              populate: '*'
+            },
+            FirstStep: {
+              populate: '*'
+            },
+            SecondStep: {
+              populate: '*'
+            },
+            ThirdStep: {
+              populate: '*'
+            },
+          
+          }
         }
       },
     });
