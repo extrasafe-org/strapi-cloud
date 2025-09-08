@@ -35,6 +35,23 @@ module.exports = createCoreController('api::zoom-alternative-page.zoom-alternati
                           },
                         },
                     },
+                        StepsWithSelectionButtonSection: {
+            populate: {
+              TextBlock: {
+                populate: '*'
+              },
+              FirstStep: {
+                populate: '*'
+              },
+              SecondStep: {
+                populate: '*'
+              },
+              ThirdStep: {
+                populate: '*'
+              },
+
+            }
+          },
                     WideSliderSection: {
                         populate: {
                             FeaturesList: {

@@ -86,7 +86,7 @@
           "localized": true
         }
       },
-      "required": true,
+      "required": false,
       "component": "section.steps-section"
     },
     "SecondCardsListSection": {
@@ -121,6 +121,16 @@
       },
       "required": true,
       "component": "section.faq-section"
+    },
+    "StepsWithSelectionButtonSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.steps-with-selection-button-section"
     }
   }
 }

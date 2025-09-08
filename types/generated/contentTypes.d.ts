@@ -1155,8 +1155,11 @@ export interface ApiEncryptedMessagingPageEncryptedMessagingPage
       false
     > &
       Schema.Attribute.Required;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
-      Schema.Attribute.Required;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false>;
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1672,8 +1675,11 @@ export interface ApiScreenSharingPageScreenSharingPage
       false
     > &
       Schema.Attribute.Required;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
-      Schema.Attribute.Required;
+    StepsSection: Schema.Attribute.Component<'section.steps-section', false>;
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1786,7 +1792,15 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
         };
       }>;
     StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
-      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2112,7 +2126,15 @@ export interface ApiVideoConferencingPageVideoConferencingPage
         };
       }>;
     StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
-      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2284,7 +2306,15 @@ export interface ApiZoomAlternativePageZoomAlternativePage
         };
       }>;
     StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
-      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

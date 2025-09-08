@@ -25,7 +25,7 @@
         }
       },
       "component": "section.steps-section",
-      "required": true
+      "required": false
     },
     "MediaHeroSection": {
       "type": "component",
@@ -99,6 +99,16 @@
       },
       "required": true,
       "component": "section.second-features-section"
+    },
+    "StepsWithSelectionButtonSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.steps-with-selection-button-section"
     }
   }
 }

@@ -38,6 +38,23 @@ module.exports = createCoreController('api::secure-video-call-page.secure-video-
               },
             },
           },
+                   StepsWithSelectionButtonSection: {
+          populate: {
+            TextBlock: {
+              populate: '*'
+            },
+            FirstStep: {
+              populate: '*'
+            },
+            SecondStep: {
+              populate: '*'
+            },
+            ThirdStep: {
+              populate: '*'
+            },
+          
+          }
+        },
           SecondCardsListSection: {
             populate: {
               CardsList: {

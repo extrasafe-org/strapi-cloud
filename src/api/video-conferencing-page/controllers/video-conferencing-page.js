@@ -20,7 +20,24 @@ module.exports = createCoreController('api::video-conferencing-page.video-confer
                             populate: '*'
                           },
                         },
-                    },
+                },
+                                 StepsWithSelectionButtonSection: {
+          populate: {
+            TextBlock: {
+              populate: '*'
+            },
+            FirstStep: {
+              populate: '*'
+            },
+            SecondStep: {
+              populate: '*'
+            },
+            ThirdStep: {
+              populate: '*'
+            },
+          
+          }
+        },
                     CardsListSection: {
                         populate: {
                           CardsList: {

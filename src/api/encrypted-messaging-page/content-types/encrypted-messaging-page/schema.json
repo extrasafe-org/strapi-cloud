@@ -35,7 +35,7 @@
     "StepsSection": {
       "type": "component",
       "repeatable": false,
-      "required": true,
+      "required": false,
       "component": "section.steps-section"
     },
     "CardsListSection": {
@@ -55,6 +55,11 @@
       "repeatable": false,
       "component": "section.faq-section",
       "required": true
+    },
+    "StepsWithSelectionButtonSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.steps-with-selection-button-section"
     }
   }
 }

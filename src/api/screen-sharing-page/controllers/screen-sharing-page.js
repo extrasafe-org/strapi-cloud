@@ -34,6 +34,23 @@ module.exports = createCoreController('api::screen-sharing-page.screen-sharing-p
               },
             },
           },
+                StepsWithSelectionButtonSection: {
+          populate: {
+            TextBlock: {
+              populate: '*'
+            },
+            FirstStep: {
+              populate: '*'
+            },
+            SecondStep: {
+              populate: '*'
+            },
+            ThirdStep: {
+              populate: '*'
+            },
+          
+          }
+        },
           CardsListSection: {
             populate: {
               CardsList: {

@@ -54,7 +54,7 @@
         }
       },
       "component": "section.steps-section",
-      "required": true
+      "required": false
     },
     "WideSliderSection": {
       "type": "component",
@@ -99,6 +99,16 @@
       },
       "component": "section.table-section",
       "required": true
+    },
+    "StepsWithSelectionButtonSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.steps-with-selection-button-section"
     }
   }
 }
