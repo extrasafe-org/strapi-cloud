@@ -878,6 +878,7 @@ export interface SectionSecondFeaturesSection extends Struct.ComponentSchema {
   attributes: {
     features_list: Schema.Attribute.Component<'landing.features-list', false> &
       Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
