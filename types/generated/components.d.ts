@@ -407,7 +407,7 @@ export interface ComponentsStepsList extends Struct.ComponentSchema {
       'blocks.selection-button',
       false
     >;
-    text: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
