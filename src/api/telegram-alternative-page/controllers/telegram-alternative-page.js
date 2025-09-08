@@ -11,12 +11,22 @@ module.exports = createCoreController('api::telegram-alternative-page.telegram-a
         try {
             const entity = await strapi.service('api::telegram-alternative-page.telegram-alternative-page').find({
                 populate: {
-                    StepsSection: {
+                             StepsWithSelectionButtonSection: {
                         populate: {
-                          CarouselList: {
-                            populate: '*'
-                          },
-                        },
+                            TextBlock: {
+                                populate: '*'
+                            },
+                            FirstStep: {
+                                populate: '*'
+                            },
+                            SecondStep: {
+                                populate: '*'
+                            },
+                            ThirdStep: {
+                                populate: '*'
+                            },
+
+                        }
                     },
                     WideSliderSection: {
                         populate: {

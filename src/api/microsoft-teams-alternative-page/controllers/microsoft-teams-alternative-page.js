@@ -11,12 +11,22 @@ module.exports = createCoreController('api::microsoft-teams-alternative-page.mic
         try {
             const entity = await strapi.service('api::microsoft-teams-alternative-page.microsoft-teams-alternative-page').find({
                 populate: {
-                    StepsSection: {
+                  StepsWithSelectionButtonSection: {
                         populate: {
-                          CarouselList: {
-                            populate: '*'
-                          },
-                        },
+                            TextBlock: {
+                                populate: '*'
+                            },
+                            FirstStep: {
+                                populate: '*'
+                            },
+                            SecondStep: {
+                                populate: '*'
+                            },
+                            ThirdStep: {
+                                populate: '*'
+                            },
+
+                        }
                     },
                     WideSliderSection: {
                         populate: {

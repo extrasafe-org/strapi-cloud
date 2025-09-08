@@ -11,12 +11,22 @@ module.exports = createCoreController('api::signal-alternative-page.signal-alter
         try {
             const entity = await strapi.service('api::signal-alternative-page.signal-alternative-page').find({
                 populate: {
-                    StepsSection: {
+                      StepsWithSelectionButtonSection: {
                         populate: {
-                          CarouselList: {
-                            populate: '*'
-                          },
-                        },
+                            TextBlock: {
+                                populate: '*'
+                            },
+                            FirstStep: {
+                                populate: '*'
+                            },
+                            SecondStep: {
+                                populate: '*'
+                            },
+                            ThirdStep: {
+                                populate: '*'
+                            },
+
+                        }
                     },
                     WideSliderSection: {
                         populate: {

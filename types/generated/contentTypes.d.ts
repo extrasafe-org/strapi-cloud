@@ -1441,7 +1441,10 @@ export interface ApiMicrosoftTeamsAlternativePageMicrosoftTeamsAlternativePage
           localized: true;
         };
       }>;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1870,7 +1873,10 @@ export interface ApiSignalAlternativePageSignalAlternativePage
           localized: true;
         };
       }>;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1988,7 +1994,10 @@ export interface ApiTelegramAlternativePageTelegramAlternativePage
           localized: true;
         };
       }>;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2214,7 +2223,10 @@ export interface ApiWhatsAppAlternativePageWhatsAppAlternativePage
           localized: true;
         };
       }>;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

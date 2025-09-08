@@ -34,17 +34,6 @@
       "type": "text",
       "required": true
     },
-    "StepsSection": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true,
-      "component": "section.steps-section"
-    },
     "WideSliderSection": {
       "type": "component",
       "repeatable": false,
@@ -77,6 +66,17 @@
       },
       "required": true,
       "component": "section.faq-section"
+    },
+    "StepsWithSelectionButtonSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "section.steps-with-selection-button-section"
     }
   }
 }

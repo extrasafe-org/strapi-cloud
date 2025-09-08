@@ -11,12 +11,22 @@ module.exports = createCoreController('api::whats-app-alternative-page.whats-app
         try {
             const entity = await strapi.service('api::whats-app-alternative-page.whats-app-alternative-page').find({
                 populate: {
-                    StepsSection: {
+                    StepsWithSelectionButtonSection: {
                         populate: {
-                          CarouselList: {
-                            populate: '*'
-                          },
-                        },
+                            TextBlock: {
+                                populate: '*'
+                            },
+                            FirstStep: {
+                                populate: '*'
+                            },
+                            SecondStep: {
+                                populate: '*'
+                            },
+                            ThirdStep: {
+                                populate: '*'
+                            },
+
+                        }
                     },
                     WideSliderSection: {
                         populate: {

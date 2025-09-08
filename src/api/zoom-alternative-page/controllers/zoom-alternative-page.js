@@ -30,49 +30,49 @@ module.exports = createCoreController('api::zoom-alternative-page.zoom-alternati
                     },
                     StepsSection: {
                         populate: {
-                          CarouselList: {
-                            populate: '*'
-                          },
+                            CarouselList: {
+                                populate: '*'
+                            },
                         },
                     },
-                        StepsWithSelectionButtonSection: {
-            populate: {
-              TextBlock: {
-                populate: '*'
-              },
-              FirstStep: {
-                populate: '*'
-              },
-              SecondStep: {
-                populate: '*'
-              },
-              ThirdStep: {
-                populate: '*'
-              },
+                    StepsWithSelectionButtonSection: {
+                        populate: {
+                            TextBlock: {
+                                populate: '*'
+                            },
+                            FirstStep: {
+                                populate: '*'
+                            },
+                            SecondStep: {
+                                populate: '*'
+                            },
+                            ThirdStep: {
+                                populate: '*'
+                            },
 
-            }
-          },
+                        }
+                    },
                     WideSliderSection: {
                         populate: {
                             FeaturesList: {
-                             populate: '*'
-                         }
-                     },
+                                populate: '*'
+                            }
+                        },
                     },
                     SecondFeaturesSection: {
                         populate: {
-                          features_list: {
-                            populate: {
-                              features_list_item: {
-                                populate: '*'
-                              },
+                            features_list: {
+                                populate: {
+                                    features_list_item: {
+                                        populate: '*'
+                                    },
+                                },
                             },
-                          },
                         }
-                      },
+                    },
                     FaqSection: {
                         populate: '*'
-                      },
+                    },
                 }
             });
 
