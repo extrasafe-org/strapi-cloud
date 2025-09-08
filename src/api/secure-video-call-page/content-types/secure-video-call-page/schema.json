@@ -78,17 +78,6 @@
       "required": true,
       "component": "section.media-list-block-section"
     },
-    "StepsSection": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": false,
-      "component": "section.steps-section"
-    },
     "SecondCardsListSection": {
       "type": "component",
       "repeatable": false,
@@ -130,7 +119,8 @@
           "localized": true
         }
       },
-      "component": "section.steps-with-selection-button-section"
+      "component": "section.steps-with-selection-button-section",
+      "required": true
     }
   }
 }

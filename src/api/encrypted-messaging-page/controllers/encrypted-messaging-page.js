@@ -17,13 +17,6 @@ module.exports = createCoreController('api::encrypted-messaging-page.encrypted-m
           MediaSidedSection: {
             populate: '*'
           },
-          StepsSection: {
-            populate: {
-              CarouselList: {
-                populate: '*'
-              },
-            },
-          },
           StepsWithSelectionButtonSection: {
             populate: {
               TextBlock: {

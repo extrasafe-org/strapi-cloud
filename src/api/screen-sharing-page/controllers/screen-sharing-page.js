@@ -27,13 +27,7 @@ module.exports = createCoreController('api::screen-sharing-page.screen-sharing-p
           SecondMediaSidedSection: {
             populate: '*'
           },
-          StepsSection: {
-            populate: {
-              CarouselList: {
-                populate: '*'
-              },
-            },
-          },
+     
                 StepsWithSelectionButtonSection: {
           populate: {
             TextBlock: {

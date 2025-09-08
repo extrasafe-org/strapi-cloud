@@ -1155,11 +1155,11 @@ export interface ApiEncryptedMessagingPageEncryptedMessagingPage
       false
     > &
       Schema.Attribute.Required;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false>;
     StepsWithSelectionButtonSection: Schema.Attribute.Component<
       'section.steps-with-selection-button-section',
       false
-    >;
+    > &
+      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1362,7 +1362,6 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     Main_Title: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     SoonSection: Schema.Attribute.Component<'section.soon-section', false>;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false>;
     StepsWithSelectionButtonSection: Schema.Attribute.Component<
       'section.steps-with-selection-button-section',
       false
@@ -1678,11 +1677,11 @@ export interface ApiScreenSharingPageScreenSharingPage
       false
     > &
       Schema.Attribute.Required;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false>;
     StepsWithSelectionButtonSection: Schema.Attribute.Component<
       'section.steps-with-selection-button-section',
       false
-    >;
+    > &
+      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1794,16 +1793,11 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
           localized: true;
         };
       }>;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     StepsWithSelectionButtonSection: Schema.Attribute.Component<
       'section.steps-with-selection-button-section',
       false
     > &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2134,16 +2128,11 @@ export interface ApiVideoConferencingPageVideoConferencingPage
           localized: true;
         };
       }>;
-    StepsSection: Schema.Attribute.Component<'section.steps-section', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     StepsWithSelectionButtonSection: Schema.Attribute.Component<
       'section.steps-with-selection-button-section',
       false
     > &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

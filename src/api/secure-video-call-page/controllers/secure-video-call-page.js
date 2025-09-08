@@ -31,13 +31,7 @@ module.exports = createCoreController('api::secure-video-call-page.secure-video-
               }
             },
           },
-          StepsSection: {
-            populate: {
-              CarouselList: {
-                populate: '*'
-              },
-            },
-          },
+       
                    StepsWithSelectionButtonSection: {
           populate: {
             TextBlock: {

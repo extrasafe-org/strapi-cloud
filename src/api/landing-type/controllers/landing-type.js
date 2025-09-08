@@ -50,16 +50,26 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
             }
           },
         },
-           StepsSection: {
-          populate: {
-            CarouselList: {
-              populate: '*'
-            },
-          },
-        },
-       SoonSection: {
+        SoonSection: {
           populate: '*'
         },
+            StepsWithSelectionButtonSection: {
+          populate: {
+            TextBlock: {
+              populate: '*'
+            },
+            FirstStep: {
+              populate: '*'
+            },
+            SecondStep: {
+              populate: '*'
+            },
+            ThirdStep: {
+              populate: '*'
+            },
+
+          }
+        }
       },
     });
 
@@ -120,14 +130,7 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
             }
           },
         },
-        StepsSection: {
-          populate: {
-            CarouselList: {
-              populate: '*'
-            },
-          },
-        },
-          SoonSection: {
+        SoonSection: {
           populate: '*'
         },
         hero_section_media: {
@@ -147,7 +150,7 @@ module.exports = createCoreController('api::landing-type.landing-type', ({ strap
             ThirdStep: {
               populate: '*'
             },
-          
+
           }
         }
       },

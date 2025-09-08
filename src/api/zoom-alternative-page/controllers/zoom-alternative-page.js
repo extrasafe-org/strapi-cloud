@@ -28,13 +28,6 @@ module.exports = createCoreController('api::zoom-alternative-page.zoom-alternati
                             }
                         }
                     },
-                    StepsSection: {
-                        populate: {
-                            CarouselList: {
-                                populate: '*'
-                            },
-                        },
-                    },
                     StepsWithSelectionButtonSection: {
                         populate: {
                             TextBlock: {
