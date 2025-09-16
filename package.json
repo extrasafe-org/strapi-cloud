@@ -13,11 +13,17 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^6.0.1",
+    "@headlockr/headlockr": "^4.2.1",
+    "@strapi/design-system": "^2.0.0-rc.9",
+    "@strapi/icons": "^2.0.0-rc.19",
     "@strapi/plugin-cloud": "5.3.0",
     "@strapi/plugin-users-permissions": "5.3.0",
-    "@strapi/strapi": "5.3.0",
+    "@strapi/strapi": "^5.23.4",
+    "@tanstack/react-query": "^5.89.0",
     "better-sqlite3": "11.3.0",
     "fs-extra": "^10.0.0",
+    "js-cookie": "^3.0.5",
     "mime-types": "^2.1.27",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -30,6 +36,7 @@
     "@types/cli-progress": "^3.11.6",
     "@types/koa__router": "^8.0.0",
     "@types/node-schedule": "^2.0.0",
+    "prettier": "^2.8.4",
     "typescript": "^5.1.6"
   },
   "engines": {
