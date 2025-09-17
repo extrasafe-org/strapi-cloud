@@ -18,86 +18,95 @@
   "attributes": {
     "HeroSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "component": "section.browser-lite-hero",
+      "repeatable": false,
       "required": true
     },
     "IconsListSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "component": "section.coming-next-section",
+      "repeatable": false,
       "required": true
     },
     "meta_title": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
       "required": true
     },
     "meta_description": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "text",
       "required": true
     },
     "BannerSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "component": "section.banner-section",
+      "repeatable": false,
       "required": true
     },
     "MediaWithTextSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "component": "section.media-with-text-section",
+      "repeatable": false,
       "required": true
     },
     "BannerWithButtonSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "component": "section.banner-with-button-section",
+      "repeatable": false,
       "required": true
     },
     "CarouselSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "component": "section.carousel-section",
+      "repeatable": false,
+      "required": true
+    },
+    "preview_slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "required": true
     }
   }

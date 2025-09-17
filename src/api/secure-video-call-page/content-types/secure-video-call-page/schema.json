@@ -17,109 +17,118 @@
   },
   "attributes": {
     "meta_title": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
       "required": true
     },
     "meta_description": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
       "required": true
     },
     "MediaHeroSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true,
-      "component": "section.media-hero-section"
+      "component": "section.media-hero-section",
+      "repeatable": false,
+      "required": true
     },
     "CardsListSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true,
-      "component": "section.cards-list-section"
+      "component": "section.cards-list-section",
+      "repeatable": false,
+      "required": true
     },
     "SecureSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true,
-      "component": "section.secure-section"
+      "component": "section.secure-section",
+      "repeatable": false,
+      "required": true
     },
     "MediaListBlockSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true,
-      "component": "section.media-list-block-section"
+      "component": "section.media-list-block-section",
+      "repeatable": false,
+      "required": true
     },
     "SecondCardsListSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true,
-      "component": "section.cards-list-section"
+      "component": "section.cards-list-section",
+      "repeatable": false,
+      "required": true
     },
     "SecondFeaturesSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true,
-      "component": "section.second-features-section"
+      "component": "section.second-features-section",
+      "repeatable": false,
+      "required": true
     },
     "FaqSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true,
-      "component": "section.faq-section"
+      "component": "section.faq-section",
+      "repeatable": false,
+      "required": true
     },
     "StepsWithSelectionButtonSection": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "component": "section.steps-with-selection-button-section",
+      "repeatable": false,
+      "required": true
+    },
+    "preview_slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "required": true
     }
   }

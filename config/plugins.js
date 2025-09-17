@@ -3,6 +3,9 @@ module.exports = {
 		enabled: true,
 		resolve: './src/plugins/multi-select',
 	},
+// 	  'clear-cache': {
+//     enabled: true,
+//     resolve: './src/plugins/clear-cache'
+//   },
 };
 
-console.log('HEADLOCKR_LICENSE_KEY:', process.env.HEADLOCKR_LICENSE_KEY);

@@ -22,8 +22,8 @@
     },
     "Template": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.template-landing"
+      "component": "shared.template-landing",
+      "repeatable": true
     },
     "ab_test_configs": {
       "type": "relation",
@@ -61,8 +61,8 @@
     },
     "icons_list": {
       "type": "component",
-      "repeatable": false,
       "component": "landing.icons-list",
+      "repeatable": false,
       "required": true
     },
     "hero_section_media": {
@@ -75,35 +75,37 @@
       ]
     },
     "features_list": {
-      "displayName": "features_list",
       "type": "component",
-      "repeatable": false,
       "component": "landing.features-list",
+      "repeatable": false,
       "required": true
     },
     "faq_list": {
-      "displayName": "faq_list",
       "type": "component",
-      "repeatable": false,
       "component": "landing.faq-list",
+      "repeatable": false,
       "required": true
     },
     "TechnologySection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.technology-section",
+      "repeatable": false,
       "required": true
     },
     "SoonSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.soon-section",
+      "repeatable": false,
       "required": false
     },
     "StepsWithSelectionButtonSection": {
       "type": "component",
-      "repeatable": false,
-      "component": "section.steps-with-selection-button-section"
+      "component": "section.steps-with-selection-button-section",
+      "repeatable": false
+    },
+    "preview_slug": {
+      "type": "uid",
+      "required": true
     }
   }
 }

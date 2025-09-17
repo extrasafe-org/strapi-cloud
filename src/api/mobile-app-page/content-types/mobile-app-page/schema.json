@@ -22,44 +22,48 @@
     },
     "FaqSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.faq-section",
+      "repeatable": false,
       "required": true
     },
     "SecureSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.secure-section",
+      "repeatable": false,
       "required": true
     },
     "BannerWithMediaSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.banner-with-media-section",
+      "repeatable": false,
       "required": true
     },
     "SoonSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.soon-section",
+      "repeatable": false,
       "required": true
     },
     "FeaturesSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.features-section",
+      "repeatable": false,
       "required": true
     },
     "MediaHeroSectionWithLinks": {
       "type": "component",
-      "repeatable": false,
       "component": "section.media-hero-section-with-links",
+      "repeatable": false,
       "required": true
     },
     "icons_list": {
       "type": "component",
-      "repeatable": false,
       "component": "landing.icons-list",
+      "repeatable": false,
+      "required": true
+    },
+    "preview_slug": {
+      "type": "uid",
       "required": true
     }
   }

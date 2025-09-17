@@ -30,6 +30,10 @@
         "blocks.block-dot-list-with-title"
       ],
       "required": true
+    },
+    "preview_slug": {
+      "type": "uid",
+      "required": true
     }
   }
 }

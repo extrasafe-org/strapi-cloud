@@ -22,38 +22,42 @@
     },
     "MediaHeroSection": {
       "type": "component",
+      "component": "section.media-hero-section",
       "repeatable": false,
-      "required": true,
-      "component": "section.media-hero-section"
+      "required": true
     },
     "MediaSidedSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.media-sided-section",
+      "repeatable": false,
       "required": true
     },
     "CardsListSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.cards-list-section",
+      "repeatable": false,
       "required": true
     },
     "SecondFeaturesSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.second-features-section",
+      "repeatable": false,
       "required": true
     },
     "FaqSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.faq-section",
+      "repeatable": false,
       "required": true
     },
     "StepsWithSelectionButtonSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.steps-with-selection-button-section",
+      "repeatable": false,
+      "required": true
+    },
+    "preview_slug": {
+      "type": "uid",
       "required": true
     }
   }

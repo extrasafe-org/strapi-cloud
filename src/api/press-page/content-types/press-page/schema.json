@@ -14,22 +14,20 @@
   "attributes": {
     "MediaSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.media-section",
+      "repeatable": false,
       "required": true
     },
     "FeaturesSection": {
-      "displayName": "FeaturesSection",
       "type": "component",
-      "repeatable": false,
       "component": "section.features-section",
+      "repeatable": false,
       "required": true
     },
     "FaqSection": {
-      "displayName": "FaqSection",
       "type": "component",
-      "repeatable": false,
       "component": "section.faq-section",
+      "repeatable": false,
       "required": true
     },
     "meta_title": {
@@ -41,46 +39,44 @@
       "required": true
     },
     "LinkedinSocialSection": {
-      "displayName": "LinkedinSocialSection",
       "type": "component",
-      "repeatable": false,
-      "component": "section.linkedin-social-section"
+      "component": "section.linkedin-social-section",
+      "repeatable": false
     },
     "XSocialSection": {
-      "displayName": "XSocialSection",
       "type": "component",
-      "repeatable": false,
-      "component": "section.x-social-section"
+      "component": "section.x-social-section",
+      "repeatable": false
     },
     "YoutubeSocialSection": {
-      "displayName": "YoutubeSocialSection",
       "type": "component",
-      "repeatable": false,
-      "component": "section.youtube-social-section"
+      "component": "section.youtube-social-section",
+      "repeatable": false
     },
     "TiktokSocialSection": {
-      "displayName": "TiktokSocialSection",
       "type": "component",
-      "repeatable": false,
-      "component": "section.tiktok-social-section"
+      "component": "section.tiktok-social-section",
+      "repeatable": false
     },
     "InstagramSocialSection": {
-      "displayName": "InstagramSocialSection",
       "type": "component",
-      "repeatable": false,
-      "component": "section.instagram-social-section"
+      "component": "section.instagram-social-section",
+      "repeatable": false
     },
     "FacebookSocialSection": {
-      "displayName": "FacebookSocialSection",
       "type": "component",
-      "repeatable": false,
-      "component": "section.facebook-social-section"
+      "component": "section.facebook-social-section",
+      "repeatable": false
     },
     "FeaturesWithSelectionBtnSection": {
       "type": "component",
+      "component": "section.features-with-selection-btn-section",
       "repeatable": false,
-      "required": true,
-      "component": "section.features-with-selection-btn-section"
+      "required": true
+    },
+    "preview_slug": {
+      "type": "uid",
+      "required": true
     }
   }
 }

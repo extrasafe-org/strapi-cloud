@@ -22,15 +22,19 @@
     },
     "FaqTabSection": {
       "type": "component",
-      "repeatable": false,
       "component": "section.faq-tab-section",
+      "repeatable": false,
       "required": true
     },
     "FormSection": {
       "type": "component",
+      "component": "section.form-section",
       "repeatable": false,
-      "required": true,
-      "component": "section.form-section"
+      "required": true
+    },
+    "preview_slug": {
+      "type": "uid",
+      "required": true
     }
   }
 }
