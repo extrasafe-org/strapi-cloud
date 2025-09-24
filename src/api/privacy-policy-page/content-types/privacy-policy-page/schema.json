@@ -31,10 +31,6 @@
     "meta_description": {
       "type": "text",
       "required": true
-    },
-    "preview_slug": {
-      "type": "uid",
-      "required": true
     }
   }
 }

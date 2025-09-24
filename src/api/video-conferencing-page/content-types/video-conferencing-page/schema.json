@@ -99,15 +99,6 @@
       "component": "section.steps-with-selection-button-section",
       "repeatable": false,
       "required": true
-    },
-    "preview_slug": {
-      "type": "uid",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
     }
   }
 }

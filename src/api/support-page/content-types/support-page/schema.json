@@ -31,10 +31,6 @@
       "component": "section.form-section",
       "repeatable": false,
       "required": true
-    },
-    "preview_slug": {
-      "type": "uid",
-      "required": true
     }
   }
 }

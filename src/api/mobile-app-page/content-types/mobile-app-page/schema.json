@@ -61,10 +61,6 @@
       "component": "landing.icons-list",
       "repeatable": false,
       "required": true
-    },
-    "preview_slug": {
-      "type": "uid",
-      "required": true
     }
   }
 }

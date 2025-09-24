@@ -932,13 +932,6 @@ export interface ApiBrowserLitePageBrowserLitePage
           localized: true;
         };
       }>;
-    preview_slug: Schema.Attribute.UID &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1027,13 +1020,6 @@ export interface ApiDevPageDevPage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    preview_slug: Schema.Attribute.UID &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
     TeamSection: Schema.Attribute.Component<'section.team-section', false> &
       Schema.Attribute.Required &
@@ -1099,13 +1085,6 @@ export interface ApiDisappearingMessagesPageDisappearingMessagesPage
         };
       }>;
     meta_title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    preview_slug: Schema.Attribute.UID &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1184,7 +1163,6 @@ export interface ApiEncryptedMessagingPageEncryptedMessagingPage
       Schema.Attribute.Required;
     meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
-    preview_slug: Schema.Attribute.UID & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     SecondFeaturesSection: Schema.Attribute.Component<
       'section.second-features-section',
@@ -1321,13 +1299,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    preview_slug: Schema.Attribute.UID &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
     SecondFlipSection: Schema.Attribute.Component<
       'section.flip-section',
@@ -1403,7 +1374,6 @@ export interface ApiLandingTypeLandingType extends Struct.CollectionTypeSchema {
     Main_Description: Schema.Attribute.Text & Schema.Attribute.Required;
     Main_SubTitle: Schema.Attribute.String & Schema.Attribute.Required;
     Main_Title: Schema.Attribute.String & Schema.Attribute.Required;
-    preview_slug: Schema.Attribute.UID & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     SoonSection: Schema.Attribute.Component<'section.soon-section', false>;
     StepsWithSelectionButtonSection: Schema.Attribute.Component<
@@ -1467,13 +1437,6 @@ export interface ApiMicrosoftTeamsAlternativePageMicrosoftTeamsAlternativePage
         };
       }>;
     meta_title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    preview_slug: Schema.Attribute.UID &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1559,7 +1522,6 @@ export interface ApiMobileAppPageMobileAppPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Required;
     meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
-    preview_slug: Schema.Attribute.UID & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     SecureSection: Schema.Attribute.Component<'section.secure-section', false> &
       Schema.Attribute.Required;
@@ -1620,7 +1582,6 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Required;
     meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
-    preview_slug: Schema.Attribute.UID & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     TiktokSocialSection: Schema.Attribute.Component<
       'section.tiktok-social-section',
@@ -1668,7 +1629,6 @@ export interface ApiPrivacyPolicyPagePrivacyPolicyPage
       Schema.Attribute.Private;
     meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
-    preview_slug: Schema.Attribute.UID & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1720,7 +1680,6 @@ export interface ApiScreenSharingPageScreenSharingPage
       Schema.Attribute.Required;
     meta_description: Schema.Attribute.String & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
-    preview_slug: Schema.Attribute.UID & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     SecondFeaturesSection: Schema.Attribute.Component<
       'section.second-features-section',
@@ -1820,13 +1779,6 @@ export interface ApiSecureVideoCallPageSecureVideoCallPage
           localized: true;
         };
       }>;
-    preview_slug: Schema.Attribute.UID &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
     SecondCardsListSection: Schema.Attribute.Component<
       'section.cards-list-section',
@@ -1918,13 +1870,6 @@ export interface ApiSignalAlternativePageSignalAlternativePage
           localized: true;
         };
       }>;
-    preview_slug: Schema.Attribute.UID &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
     SecondFeaturesSection: Schema.Attribute.Component<
       'section.second-features-section',
@@ -1992,7 +1937,6 @@ export interface ApiSupportPageSupportPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
-    preview_slug: Schema.Attribute.UID & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2041,13 +1985,6 @@ export interface ApiTelegramAlternativePageTelegramAlternativePage
         };
       }>;
     meta_title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    preview_slug: Schema.Attribute.UID &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2119,7 +2056,6 @@ export interface ApiTermsOfUsePageTermsOfUsePage
       Schema.Attribute.Private;
     meta_description: Schema.Attribute.Text & Schema.Attribute.Required;
     meta_title: Schema.Attribute.String & Schema.Attribute.Required;
-    preview_slug: Schema.Attribute.UID & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -2189,13 +2125,6 @@ export interface ApiVideoConferencingPageVideoConferencingPage
         };
       }>;
     meta_title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    preview_slug: Schema.Attribute.UID &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2280,13 +2209,6 @@ export interface ApiWhatsAppAlternativePageWhatsAppAlternativePage
         };
       }>;
     meta_title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    preview_slug: Schema.Attribute.UID &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2381,13 +2303,6 @@ export interface ApiZoomAlternativePageZoomAlternativePage
         };
       }>;
     meta_title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    preview_slug: Schema.Attribute.UID &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

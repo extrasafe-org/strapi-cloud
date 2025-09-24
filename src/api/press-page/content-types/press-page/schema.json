@@ -73,10 +73,6 @@
       "component": "section.features-with-selection-btn-section",
       "repeatable": false,
       "required": true
-    },
-    "preview_slug": {
-      "type": "uid",
-      "required": true
     }
   }
 }
