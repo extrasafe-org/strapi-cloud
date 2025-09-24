@@ -75,6 +75,7 @@ module.exports = ({ env }) => {
           }
 
           const pathname = getPreviewPathname(uid, { locale, document })
+          console.log('⚡️⚡️⚡️', pathname)
           if (!pathname) return null
 
           const urlSearchParams = new URLSearchParams({

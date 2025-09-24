@@ -1,0 +1,103 @@
+{
+  "kind": "singleType",
+  "collectionName": "private_video_call_pages",
+  "info": {
+    "singularName": "private-video-call-page",
+    "pluralName": "private-video-call-pages",
+    "displayName": "PrivateVideoCallPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "meta_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "meta_description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "StepsWithSelectionButtonSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.steps-with-selection-button-section",
+      "repeatable": false,
+      "required": true
+    },
+    "TechnologySection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.technology-section",
+      "repeatable": false,
+      "required": true
+    },
+    "SecondFeaturesSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.second-features-section",
+      "repeatable": false,
+      "required": true
+    },
+    "FaqSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.faq-section",
+      "repeatable": false,
+      "required": true
+    },
+    "SoonSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.soon-section",
+      "repeatable": false,
+      "required": true
+    },
+    "SecondMediaHeroSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.second-media-hero-section",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

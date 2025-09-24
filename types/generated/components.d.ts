@@ -883,6 +883,28 @@ export interface SectionSecondFeaturesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionSecondMediaHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_second_media_hero_sections';
+  info: {
+    displayName: 'SecondMediaHeroSection';
+  };
+  attributes: {
+    framed_text: Schema.Attribute.Text;
+    IconsList: Schema.Attribute.Component<'landing.icons-list', false> &
+      Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
+    withDownloadBtns: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    withMeetingBtn: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+  };
+}
+
 export interface SectionSecureSection extends Struct.ComponentSchema {
   collectionName: 'components_section_secure_sections';
   info: {
@@ -1402,6 +1424,7 @@ declare module '@strapi/strapi' {
       'section.media-sided-section': SectionMediaSidedSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
       'section.second-features-section': SectionSecondFeaturesSection;
+      'section.second-media-hero-section': SectionSecondMediaHeroSection;
       'section.secure-section': SectionSecureSection;
       'section.soon-section': SectionSoonSection;
       'section.steps-section': SectionStepsSection;

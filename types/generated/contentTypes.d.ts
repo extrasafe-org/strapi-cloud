@@ -1637,6 +1637,106 @@ export interface ApiPrivacyPolicyPagePrivacyPolicyPage
   };
 }
 
+export interface ApiPrivateVideoCallPagePrivateVideoCallPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'private_video_call_pages';
+  info: {
+    displayName: 'PrivateVideoCallPage';
+    pluralName: 'private-video-call-pages';
+    singularName: 'private-video-call-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::private-video-call-page.private-video-call-page'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.second-features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SecondMediaHeroSection: Schema.Attribute.Component<
+      'section.second-media-hero-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SoonSection: Schema.Attribute.Component<'section.soon-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TechnologySection: Schema.Attribute.Component<
+      'section.technology-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiScreenSharingPageScreenSharingPage
   extends Struct.SingleTypeSchema {
   collectionName: 'screen_sharing_pages';
@@ -3045,6 +3145,7 @@ declare module '@strapi/strapi' {
       'api::mobile-app-page.mobile-app-page': ApiMobileAppPageMobileAppPage;
       'api::press-page.press-page': ApiPressPagePressPage;
       'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
+      'api::private-video-call-page.private-video-call-page': ApiPrivateVideoCallPagePrivateVideoCallPage;
       'api::screen-sharing-page.screen-sharing-page': ApiScreenSharingPageScreenSharingPage;
       'api::secure-video-call-page.secure-video-call-page': ApiSecureVideoCallPageSecureVideoCallPage;
       'api::signal-alternative-page.signal-alternative-page': ApiSignalAlternativePageSignalAlternativePage;

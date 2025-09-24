@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_section_second_media_hero_sections",
+  "info": {
+    "displayName": "SecondMediaHeroSection"
+  },
+  "options": {},
+  "attributes": {
+    "TextBlock": {
+      "type": "component",
+      "component": "blocks.text-block",
+      "repeatable": false,
+      "required": true
+    },
+    "withMeetingBtn": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "withDownloadBtns": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "IconsList": {
+      "type": "component",
+      "component": "landing.icons-list",
+      "repeatable": false,
+      "required": true
+    },
+    "framed_text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
