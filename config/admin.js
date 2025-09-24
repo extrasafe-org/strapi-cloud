@@ -1,7 +1,6 @@
 module.exports = ({ env }) => {
 
   const getPreviewPathname = (uid, { locale, document }) => {
-    console.log("🔥 uid", uid);
     const ct = strapi.contentTypes[uid];
 
     if (ct?.kind === "collectionType") {
@@ -10,7 +9,7 @@ module.exports = ({ env }) => {
     }
 
     if (ct?.kind === "singleType") {
-      const base = `/${uid.split(".")[1]}`;
+     const base = `/${uid.split(".")[1].replace(/-page$/, '')}`;
       return base;
     }
 
@@ -47,18 +46,10 @@ module.exports = ({ env }) => {
 
           const ct = strapi.contentTypes[uid]
 
-          // console.log("🔥 ct?.kind === collectionType", ct?.kind === "collectionType")
-          // console.log("🔥 ct?.kind === singleType", ct?.kind === "singleType")
-
           let document
 
           try {
             if (ct?.kind === "collectionType") {
-              // document = await strapi.documents(uid).findOne({
-              //   documentId,
-              //   populate: null,
-              //   fields: ["slug"],
-              // })
               const hasSlug = Boolean(ct?.attributes?.slug)
 
               document = await strapi.documents(uid).findOne({
@@ -66,35 +57,24 @@ module.exports = ({ env }) => {
                 populate: null,
                 fields: hasSlug ? ["id", "slug"] : ["id"],
               });
-              // console.log("🔥 Collection type", hasSlug);
             } else if (ct?.kind === "singleType") {
-              // const results = await strapi.entityService.findMany(uid, {
-              //   fields: ["slug"],
-              //   populate: {},
-              // })
-              // document = Array.isArray(results) ? results[0] : results
               const hasSlug = Boolean(ct?.attributes?.slug)
               const results = await strapi.entityService.findMany(uid, {
                 fields: hasSlug ? ["id", "slug"] : ["id"],
                 populate: {},
               });
               document = Array.isArray(results) ? results[0] : results;
-              console.log("🔥 Single type results", results);
             }
           }
           catch (err) {
             console.error("❌ ❌ ❌", err)
           }
 
-
-          //  console.log('🔥🔥🔥🔥 🔥🔥🔥🔥 ', document)
-
           if (!document) {
             return null
           }
 
           const pathname = getPreviewPathname(uid, { locale, document })
-          console.log('🔥🔥🔥🔥 pathname ', pathname)
           if (!pathname) return null
 
           const urlSearchParams = new URLSearchParams({
@@ -103,10 +83,6 @@ module.exports = ({ env }) => {
             status,
           })
 
-          // if (document.slug) {
-          //   urlSearchParams.set("slug", document.slug)
-          // }
-
           if (document.slug) {
             urlSearchParams.set("slug", document.slug);
           } else {
@@ -114,6 +90,8 @@ module.exports = ({ env }) => {
           }
 
           const previewURL = `${env("CLIENT_URL")}/api/preview?${urlSearchParams}&url=${pathname}`
+
+          console.log('!!!!! ⚡️⚡️⚡️⚡️⚡️⚡️', previewURL)
 
           return previewURL
         },
