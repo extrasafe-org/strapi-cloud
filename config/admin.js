@@ -1,24 +1,25 @@
 module.exports = ({ env }) => {
 
-    const getPreviewPathname = (uid, { locale, document }) => {
-    // Example: handle single types by their UID
-    switch (uid) {
-      case "api::press-page.press-page":
-        return "/press";
-      case "api::mobile-app-page.mobile-app-page":
-        return "/mobile-app";
-      // Add more single types as needed
+  const getPreviewPathname = (uid, { locale, document }) => {
+    console.log("🔥 uid", uid);
+    const ct = strapi.contentTypes[uid];
 
-      // Example for a collection type with slug
-      case "api::blog-article.blog-article":
-        return document.slug ? `/blog/${document.slug}` : "/blog";
-      default:
-        return null; // disables preview if not applicable
+    if (ct?.kind === "collectionType") {
+      const base = `/${uid.split(".")[1]}`;
+      return document?.slug ? `${base}/${document.slug}` : `${base}/${document.id}`;
     }
+
+    if (ct?.kind === "singleType") {
+      const base = `/${uid.split(".")[1]}`;
+      return base;
+    }
+
+    return null;
   };
-  
+
+
   return {
-  
+
     auth: {
       // secret: env('ADMIN_JWT_SECRET'),
       secret: env('ADMIN_JWT_SECRET', '3d50f023f1e3d96ab2576637e592463cfc5112d8f1f0f72b18a20f34eb40d597'),
@@ -38,97 +39,86 @@ module.exports = ({ env }) => {
       nps: env.bool('FLAG_NPS', true),
       promoteEE: env.bool('FLAG_PROMOTE_EE', true),
     },
-        preview: {
+    preview: {
       enabled: true,
       config: {
         allowedOrigins: [env("CLIENT_URL")],
         async handler(uid, { documentId, locale, status }) {
-          const document = await strapi.documents(uid).findOne({
-            documentId,
-            populate: null,
-            fields: ["slug"],
-          });
 
-          const pathname = getPreviewPathname(uid, { locale, document });
-          console.log('🔥🔥🔥🔥', pathname)
-          if (!pathname) return null; 
+          const ct = strapi.contentTypes[uid]
+
+          // console.log("🔥 ct?.kind === collectionType", ct?.kind === "collectionType")
+          // console.log("🔥 ct?.kind === singleType", ct?.kind === "singleType")
+
+          let document
+
+          try {
+            if (ct?.kind === "collectionType") {
+              // document = await strapi.documents(uid).findOne({
+              //   documentId,
+              //   populate: null,
+              //   fields: ["slug"],
+              // })
+              const hasSlug = Boolean(ct?.attributes?.slug)
+
+              document = await strapi.documents(uid).findOne({
+                documentId,
+                populate: null,
+                fields: hasSlug ? ["id", "slug"] : ["id"],
+              });
+              // console.log("🔥 Collection type", hasSlug);
+            } else if (ct?.kind === "singleType") {
+              // const results = await strapi.entityService.findMany(uid, {
+              //   fields: ["slug"],
+              //   populate: {},
+              // })
+              // document = Array.isArray(results) ? results[0] : results
+              const hasSlug = Boolean(ct?.attributes?.slug)
+              const results = await strapi.entityService.findMany(uid, {
+                fields: hasSlug ? ["id", "slug"] : ["id"],
+                populate: {},
+              });
+              document = Array.isArray(results) ? results[0] : results;
+              console.log("🔥 Single type results", results);
+            }
+          }
+          catch (err) {
+            console.error("❌ ❌ ❌", err)
+          }
+
+
+          //  console.log('🔥🔥🔥🔥 🔥🔥🔥🔥 ', document)
+
+          if (!document) {
+            return null
+          }
+
+          const pathname = getPreviewPathname(uid, { locale, document })
+          console.log('🔥🔥🔥🔥 pathname ', pathname)
+          if (!pathname) return null
 
           const urlSearchParams = new URLSearchParams({
             secret: env("PREVIEW_SECRET"),
             uid,
             status,
-          });
+          })
 
-          // Add slug if available
+          // if (document.slug) {
+          //   urlSearchParams.set("slug", document.slug)
+          // }
+
           if (document.slug) {
             urlSearchParams.set("slug", document.slug);
+          } else {
+            urlSearchParams.set("id", document.id);
           }
 
-          const previewURL = `${env("CLIENT_URL")}/api/preview?${urlSearchParams}&url=${pathname}`;
-          return previewURL;
+          const previewURL = `${env("CLIENT_URL")}/api/preview?${urlSearchParams}&url=${pathname}`
+
+          return previewURL
         },
       },
-    },
-    // V1
-    // preview: {
-    //   enabled: true,
-    //   config: {
-    //     allowedOrigins: [env("CLIENT_URL")],
-    //     async handler(uid, { documentId, locale, status }) {
-    //       const document = await strapi.documents(uid).findOne({
-    //         documentId,
-    //         populate: null,
-    //         fields: ["slug"],
-    //       });
-    //       const { preview_slug } = document;
-
-    //       const urlSearchParams = new URLSearchParams({
-    //         secret: env("PREVIEW_SECRET"),
-    //         ...(preview_slug && { slug: preview_slug }),
-    //         uid,
-    //         status,
-    //       });
-
-    //       const previewURL = `${env("CLIENT_URL")}/api/preview?${urlSearchParams}`;
-    //       return previewURL;
-    //     },
-    //   },
-    // },
-    // V2
-    //  preview: {
-    //     enabled: true,
-    //     config: {
-    //       allowedOrigins: [env("CLIENT_URL")],
-    //       async handler(uid, { documentId, locale, status }) {
-    //         const document = await strapi.documents(uid).findOne({
-    //           documentId,
-    //           fields: ["slug", "preview_slug"],
-    //         });
-
-    //         let pathname = null;
-
-    //         if (strapi.contentTypes[uid]?.kind === "singleType") {
-    //           pathname = `/${document.preview_slug || uid.split(".")[1]}`;
-    //         } else {
-    //           pathname = `/${document.slug}`;
-    //         }
-
-    //         if (!pathname) return null;
-
-    //         console.log("Preview Pathname for", uid, "→", pathname);
-
-    //         const params = new URLSearchParams({
-    //           secret: env("PREVIEW_SECRET"),
-    //           uid,
-    //           status,
-    //           ...(document.slug && { slug: document.slug }),
-    //         });
-
-    //         return `${env("CLIENT_URL")}${pathname}?${params}`;
-    //       },
-    //     },
-    //   },
-    // V3
+    }
 
   }
 };
