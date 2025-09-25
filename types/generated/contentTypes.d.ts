@@ -2164,6 +2164,34 @@ export interface ApiTermsOfUsePageTermsOfUsePage
   };
 }
 
+export interface ApiTestPageTestPage extends Struct.SingleTypeSchema {
+  collectionName: 'test_pages';
+  info: {
+    displayName: 'TestPage';
+    pluralName: 'test-pages';
+    singularName: 'test-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::test-page.test-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    test: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiVideoConferencingPageVideoConferencingPage
   extends Struct.SingleTypeSchema {
   collectionName: 'video_conferencing_pages';
@@ -3152,6 +3180,7 @@ declare module '@strapi/strapi' {
       'api::support-page.support-page': ApiSupportPageSupportPage;
       'api::telegram-alternative-page.telegram-alternative-page': ApiTelegramAlternativePageTelegramAlternativePage;
       'api::terms-of-use-page.terms-of-use-page': ApiTermsOfUsePageTermsOfUsePage;
+      'api::test-page.test-page': ApiTestPageTestPage;
       'api::video-conferencing-page.video-conferencing-page': ApiVideoConferencingPageVideoConferencingPage;
       'api::whats-app-alternative-page.whats-app-alternative-page': ApiWhatsAppAlternativePageWhatsAppAlternativePage;
       'api::zoom-alternative-page.zoom-alternative-page': ApiZoomAlternativePageZoomAlternativePage;

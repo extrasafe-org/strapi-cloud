@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "test_pages",
+  "info": {
+    "singularName": "test-page",
+    "pluralName": "test-pages",
+    "displayName": "TestPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "test": {
+      "type": "string"
+    }
+  }
+}
