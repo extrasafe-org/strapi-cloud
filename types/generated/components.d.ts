@@ -36,9 +36,9 @@ export interface BlocksBlockDotList extends Struct.ComponentSchema {
     displayName: 'Block-dot-list';
   };
   attributes: {
-    block_dot_list: Schema.Attribute.Component<'shared.block-dot-list', true> &
+    list_item: Schema.Attribute.Component<'shared.list-item', true> &
       Schema.Attribute.Required;
-    list_subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -82,6 +82,18 @@ export interface BlocksBlockList extends Struct.ComponentSchema {
   info: {
     description: '';
     displayName: 'block-list';
+  };
+  attributes: {
+    list_item: Schema.Attribute.Component<'shared.list-item', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksBlockOrderedList extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_ordered_lists';
+  info: {
+    displayName: 'block-ordered-list';
   };
   attributes: {
     list_item: Schema.Attribute.Component<'shared.list-item', true> &
@@ -1367,6 +1379,7 @@ declare module '@strapi/strapi' {
       'blocks.block-heading': BlocksBlockHeading;
       'blocks.block-image': BlocksBlockImage;
       'blocks.block-list': BlocksBlockList;
+      'blocks.block-ordered-list': BlocksBlockOrderedList;
       'blocks.block-social-post': BlocksBlockSocialPost;
       'blocks.block-with-top-border': BlocksBlockWithTopBorder;
       'blocks.block-youtube': BlocksBlockYoutube;

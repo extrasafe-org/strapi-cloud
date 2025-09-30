@@ -752,6 +752,9 @@ export interface ApiBlogArticleBlogArticle extends Struct.CollectionTypeSchema {
         'blocks.block-image',
         'blocks.block-youtube',
         'blocks.block-social-post',
+        'blocks.selection-button',
+        'blocks.block-dot-list',
+        'blocks.block-ordered-list',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1324,6 +1327,167 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'section.two-sided-hero-section',
       false
     > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiKnowledgeHubArticleKnowledgeHubArticle
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'knowledge_hub_articles';
+  info: {
+    displayName: 'KnowledgeHubArticle';
+    pluralName: 'knowledge-hub-articles';
+    singularName: 'knowledge-hub-article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Schema.Attribute.DynamicZone<
+      [
+        'blocks.quote',
+        'blocks.block-heading',
+        'blocks.block-big-heading',
+        'blocks.block-list',
+        'blocks.block-image',
+        'blocks.block-social-post',
+        'blocks.block-dot-list',
+        'blocks.selection-button',
+        'blocks.block-ordered-list',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    is_production: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::knowledge-hub-article.knowledge-hub-article'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    published_date: Schema.Attribute.Date &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    short_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    thumbnail: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiKnowledgeHubPageKnowledgeHubPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'knowledge_hub_pages';
+  info: {
+    displayName: 'KnowledgeHubPage';
+    pluralName: 'knowledge-hub-pages';
+    singularName: 'knowledge-hub-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::knowledge-hub-page.knowledge-hub-page'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -3140,6 +3304,8 @@ declare module '@strapi/strapi' {
       'api::encrypted-messaging-page.encrypted-messaging-page': ApiEncryptedMessagingPageEncryptedMessagingPage;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::knowledge-hub-article.knowledge-hub-article': ApiKnowledgeHubArticleKnowledgeHubArticle;
+      'api::knowledge-hub-page.knowledge-hub-page': ApiKnowledgeHubPageKnowledgeHubPage;
       'api::landing-type.landing-type': ApiLandingTypeLandingType;
       'api::microsoft-teams-alternative-page.microsoft-teams-alternative-page': ApiMicrosoftTeamsAlternativePageMicrosoftTeamsAlternativePage;
       'api::mobile-app-page.mobile-app-page': ApiMobileAppPageMobileAppPage;

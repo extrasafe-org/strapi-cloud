@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "blog_articles",
+  "collectionName": "knowledge_hub_articles",
   "info": {
-    "singularName": "blog-article",
-    "pluralName": "blog-articles",
-    "displayName": "BlogArticle",
-    "description": ""
+    "singularName": "knowledge-hub-article",
+    "pluralName": "knowledge-hub-articles",
+    "displayName": "KnowledgeHubArticle"
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +15,24 @@
     }
   },
   "attributes": {
+    "meta_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "meta_description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
     "published_date": {
       "type": "date",
       "pluginOptions": {
@@ -32,8 +49,7 @@
           "localized": true
         }
       },
-      "required": true,
-      "unique": false
+      "required": true
     },
     "thumbnail": {
       "type": "media",
@@ -55,28 +71,7 @@
           "localized": true
         }
       },
-      "maxLength": 300,
       "required": true
-    },
-    "content": {
-      "type": "dynamiczone",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "components": [
-        "blocks.quote",
-        "blocks.block-heading",
-        "blocks.block-big-heading",
-        "blocks.block-list",
-        "blocks.block-image",
-        "blocks.block-youtube",
-        "blocks.block-social-post",
-        "blocks.selection-button",
-        "blocks.block-dot-list",
-        "blocks.block-ordered-list"
-      ]
     },
     "is_production": {
       "type": "boolean",
@@ -98,23 +93,24 @@
       "required": true,
       "unique": true
     },
-    "meta_title": {
-      "type": "string",
+    "content": {
+      "type": "dynamiczone",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true
-    },
-    "meta_description": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
+      "components": [
+        "blocks.quote",
+        "blocks.block-heading",
+        "blocks.block-big-heading",
+        "blocks.block-list",
+        "blocks.block-image",
+        "blocks.block-social-post",
+        "blocks.block-dot-list",
+        "blocks.selection-button",
+        "blocks.block-ordered-list"
+      ]
     }
   }
 }

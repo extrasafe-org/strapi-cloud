@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_blocks_block_dot_lists",
+  "collectionName": "components_blocks_block_ordered_lists",
   "info": {
-    "displayName": "Block-dot-list",
-    "description": ""
+    "displayName": "block-ordered-list"
   },
   "options": {},
   "attributes": {
@@ -15,5 +14,6 @@
       "repeatable": true,
       "required": true
     }
-  }
+  },
+  "config": {}
 }

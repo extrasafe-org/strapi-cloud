@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "knowledge_hub_pages",
+  "info": {
+    "singularName": "knowledge-hub-page",
+    "pluralName": "knowledge-hub-pages",
+    "displayName": "KnowledgeHubPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "meta_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "meta_description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "TextBlock": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "blocks.text-block",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}
