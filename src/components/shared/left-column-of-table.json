@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_left_column_of_tables",
+  "info": {
+    "displayName": "LeftColumnOfTable"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "textList": {
+      "type": "component",
+      "component": "shared.text",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

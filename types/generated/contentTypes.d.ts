@@ -1367,6 +1367,7 @@ export interface ApiKnowledgeHubArticleKnowledgeHubArticle
         'blocks.block-dot-list',
         'blocks.selection-button',
         'blocks.block-ordered-list',
+        'blocks.block-table',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

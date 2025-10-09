@@ -112,6 +112,23 @@ export interface BlocksBlockSocialPost extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksBlockTable extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_tables';
+  info: {
+    displayName: 'block-table';
+  };
+  attributes: {
+    LeftColumnOfTable: Schema.Attribute.Component<
+      'shared.left-column-of-table',
+      false
+    > &
+      Schema.Attribute.Required;
+    Option: Schema.Attribute.Component<'shared.option', true> &
+      Schema.Attribute.Required;
+    tableTitle: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksBlockWithTopBorder extends Struct.ComponentSchema {
   collectionName: 'components_blocks_block_with_top_borders';
   info: {
@@ -1186,6 +1203,18 @@ export interface SharedIconsListItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedLeftColumnOfTable extends Struct.ComponentSchema {
+  collectionName: 'components_shared_left_column_of_tables';
+  info: {
+    displayName: 'LeftColumnOfTable';
+  };
+  attributes: {
+    textList: Schema.Attribute.Component<'shared.text', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedListBlock extends Struct.ComponentSchema {
   collectionName: 'components_shared_list_blocks';
   info: {
@@ -1285,6 +1314,20 @@ export interface SharedMenuItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedOption extends Struct.ComponentSchema {
+  collectionName: 'components_shared_options';
+  info: {
+    displayName: 'Option';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'>;
+    isHighlighted: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    textList: Schema.Attribute.Component<'shared.text', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -1369,6 +1412,16 @@ export interface SharedTemplateLanding extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_texts';
+  info: {
+    displayName: 'textList';
+  };
+  attributes: {
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -1381,6 +1434,7 @@ declare module '@strapi/strapi' {
       'blocks.block-list': BlocksBlockList;
       'blocks.block-ordered-list': BlocksBlockOrderedList;
       'blocks.block-social-post': BlocksBlockSocialPost;
+      'blocks.block-table': BlocksBlockTable;
       'blocks.block-with-top-border': BlocksBlockWithTopBorder;
       'blocks.block-youtube': BlocksBlockYoutube;
       'blocks.card-with-image-and-link': BlocksCardWithImageAndLink;
@@ -1458,6 +1512,7 @@ declare module '@strapi/strapi' {
       'shared.features-list': SharedFeaturesList;
       'shared.header-a': SharedHeaderA;
       'shared.icons-list-item': SharedIconsListItem;
+      'shared.left-column-of-table': SharedLeftColumnOfTable;
       'shared.list-block': SharedListBlock;
       'shared.list-item': SharedListItem;
       'shared.logo': SharedLogo;
@@ -1466,12 +1521,14 @@ declare module '@strapi/strapi' {
       'shared.media-list-item': SharedMediaListItem;
       'shared.menu': SharedMenu;
       'shared.menu-item': SharedMenuItem;
+      'shared.option': SharedOption;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.template': SharedTemplate;
       'shared.template-landing': SharedTemplateLanding;
+      'shared.text': SharedText;
     }
   }
 }
