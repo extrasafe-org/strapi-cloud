@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_options",
+  "info": {
+    "displayName": "Option"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "textList": {
+      "type": "component",
+      "component": "shared.text",
+      "repeatable": true,
+      "required": true
+    },
+    "isHighlighted": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    }
+  },
+  "config": {}
+}

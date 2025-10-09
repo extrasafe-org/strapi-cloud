@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_blocks_block_tables",
+  "info": {
+    "displayName": "block-table"
+  },
+  "options": {},
+  "attributes": {
+    "tableTitle": {
+      "type": "string"
+    },
+    "LeftColumnOfTable": {
+      "type": "component",
+      "component": "shared.left-column-of-table",
+      "repeatable": false,
+      "required": true
+    },
+    "Option": {
+      "type": "component",
+      "component": "shared.option",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}
