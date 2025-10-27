@@ -1428,6 +1428,25 @@ export interface ApiKnowledgeHubArticleKnowledgeHubArticle
           localized: true;
         };
       }>;
+    summary_blocks: Schema.Attribute.DynamicZone<
+      [
+        'blocks.block-dot-list',
+        'blocks.block-heading',
+        'blocks.block-list',
+        'blocks.block-ordered-list',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    summary_info: Schema.Attribute.Component<'blocks.summary-info', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     thumbnail: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_summary_infos",
+  "info": {
+    "displayName": "summary_info"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "withBottomText": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "config": {}
+}

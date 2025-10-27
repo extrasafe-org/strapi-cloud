@@ -112,6 +112,30 @@
         "blocks.block-ordered-list",
         "blocks.block-table"
       ]
+    },
+    "summary_info": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "blocks.summary-info",
+      "repeatable": false
+    },
+    "summary_blocks": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "blocks.block-dot-list",
+        "blocks.block-heading",
+        "blocks.block-list",
+        "blocks.block-ordered-list"
+      ]
     }
   }
 }

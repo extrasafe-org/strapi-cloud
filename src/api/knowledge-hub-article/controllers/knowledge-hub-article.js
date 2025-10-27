@@ -30,13 +30,13 @@ module.exports = createCoreController('api::knowledge-hub-article.knowledge-hub-
               },
             },
             'blocks.block-list': {
-                populate: '*',
+              populate: '*',
             },
             'blocks.block-heading': {
-                populate: '*',
+              populate: '*',
             },
             'blocks.block-big-heading': {
-                populate: '*',
+              populate: '*',
             },
             'blocks.quote': {
               populate: '*',
@@ -59,6 +59,23 @@ module.exports = createCoreController('api::knowledge-hub-article.knowledge-hub-
           },
         },
         thumbnail: { populate: '*' },
+        summary_info: { populate: '*' },
+        summary_blocks: {
+          on: {
+            'blocks.block-ordered-list': {
+              populate: '*',
+            },
+            'blocks.block-list': {
+              populate: '*',
+            },
+            'blocks.block-heading': {
+              populate: '*',
+            },
+            'blocks.block-dot-list': {
+              populate: '*',
+            },
+          },
+        },
       },
     };
 
@@ -87,7 +104,7 @@ module.exports = createCoreController('api::knowledge-hub-article.knowledge-hub-
       ...ctx.query,
       populate: {
         content: {
-                 on: {
+          on: {
             'blocks.block-table': {
               populate: {
                 LeftColumnOfTable: {
@@ -104,13 +121,13 @@ module.exports = createCoreController('api::knowledge-hub-article.knowledge-hub-
               },
             },
             'blocks.block-list': {
-                populate: '*',
+              populate: '*',
             },
             'blocks.block-heading': {
-                populate: '*',
+              populate: '*',
             },
             'blocks.block-big-heading': {
-                populate: '*',
+              populate: '*',
             },
             'blocks.quote': {
               populate: '*',
@@ -133,6 +150,23 @@ module.exports = createCoreController('api::knowledge-hub-article.knowledge-hub-
           },
         },
         thumbnail: { populate: '*' },
+                summary_info: { populate: '*' },
+        summary_blocks: {
+          on: {
+            'blocks.block-ordered-list': {
+              populate: '*',
+            },
+            'blocks.block-list': {
+              populate: '*',
+            },
+            'blocks.block-heading': {
+              populate: '*',
+            },
+            'blocks.block-dot-list': {
+              populate: '*',
+            },
+          },
+        },
       },
     };
 

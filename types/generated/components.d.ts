@@ -284,6 +284,27 @@ export interface BlocksSelectionButton extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksSummaryBlocks extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_summary_blocks';
+  info: {
+    displayName: 'summary_blocks';
+  };
+  attributes: {};
+}
+
+export interface BlocksSummaryInfo extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_summary_infos';
+  info: {
+    displayName: 'summary_info';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    withBottomText: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+  };
+}
+
 export interface BlocksTableList extends Struct.ComponentSchema {
   collectionName: 'components_blocks_table_lists';
   info: {
@@ -1447,6 +1468,8 @@ declare module '@strapi/strapi' {
       'blocks.quote': BlocksQuote;
       'blocks.right-images': BlocksRightImages;
       'blocks.selection-button': BlocksSelectionButton;
+      'blocks.summary-blocks': BlocksSummaryBlocks;
+      'blocks.summary-info': BlocksSummaryInfo;
       'blocks.table-list': BlocksTableList;
       'blocks.text-block': BlocksTextBlock;
       'components.carousel-list': ComponentsCarouselList;
