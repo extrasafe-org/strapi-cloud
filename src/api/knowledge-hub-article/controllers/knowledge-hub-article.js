@@ -56,6 +56,9 @@ module.exports = createCoreController('api::knowledge-hub-article.knowledge-hub-
             'blocks.selection-button': {
               populate: '*',
             },
+            'blocks.meeting-and-download-btns': {
+              populate: '*',
+            },
           },
         },
         thumbnail: { populate: '*' },
@@ -145,6 +148,9 @@ module.exports = createCoreController('api::knowledge-hub-article.knowledge-hub-
               populate: '*',
             },
             'blocks.selection-button': {
+              populate: '*',
+            },
+               'blocks.meeting-and-download-btns': {
               populate: '*',
             },
           },

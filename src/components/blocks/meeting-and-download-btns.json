@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_meeting_and_download_btns",
+  "info": {
+    "displayName": "meeting_and_download_btns"
+  },
+  "options": {},
+  "attributes": {
+    "meeting_and_download_btns": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "config": {}
+}

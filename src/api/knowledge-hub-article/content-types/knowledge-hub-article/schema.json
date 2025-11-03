@@ -110,7 +110,8 @@
         "blocks.block-dot-list",
         "blocks.selection-button",
         "blocks.block-ordered-list",
-        "blocks.block-table"
+        "blocks.block-table",
+        "blocks.meeting-and-download-btns"
       ]
     },
     "summary_info": {

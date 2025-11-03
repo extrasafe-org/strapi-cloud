@@ -248,6 +248,18 @@ export interface BlocksLeftSide extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksMeetingAndDownloadBtns extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_meeting_and_download_btns';
+  info: {
+    displayName: 'meeting_and_download_btns';
+  };
+  attributes: {
+    meeting_and_download_btns: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+  };
+}
+
 export interface BlocksQuote extends Struct.ComponentSchema {
   collectionName: 'components_blocks_quotes';
   info: {
@@ -1465,6 +1477,7 @@ declare module '@strapi/strapi' {
       'blocks.left-carousel': BlocksLeftCarousel;
       'blocks.left-images': BlocksLeftImages;
       'blocks.left-side': BlocksLeftSide;
+      'blocks.meeting-and-download-btns': BlocksMeetingAndDownloadBtns;
       'blocks.quote': BlocksQuote;
       'blocks.right-images': BlocksRightImages;
       'blocks.selection-button': BlocksSelectionButton;

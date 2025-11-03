@@ -1368,6 +1368,7 @@ export interface ApiKnowledgeHubArticleKnowledgeHubArticle
         'blocks.selection-button',
         'blocks.block-ordered-list',
         'blocks.block-table',
+        'blocks.meeting-and-download-btns',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
