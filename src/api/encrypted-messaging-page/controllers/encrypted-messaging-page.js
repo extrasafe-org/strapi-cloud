@@ -42,16 +42,16 @@ module.exports = createCoreController('api::encrypted-messaging-page.encrypted-m
             }
           },
           SecondFeaturesSection: {
-            populate: {
-              features_list: {
-                populate: {
-                  features_list_item: {
-                    populate: '*'
-                  },
-                },
-              },
-            }
-          },
+                        populate: {
+                          features_list: {
+                            populate: {
+                              features_list_item: {
+                                populate: '*'
+                              },
+                            },
+                          },
+                        }
+                      },
           FaqSection: {
             populate: '*'
           },

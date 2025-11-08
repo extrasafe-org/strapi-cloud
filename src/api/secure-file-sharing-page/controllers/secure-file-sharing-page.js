@@ -1,32 +1,32 @@
 'use strict';
 
 /**
- * private-video-call-page controller
+ * secure-file-sharing-page controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::private-video-call-page.private-video-call-page', ({ strapi }) => ({
+module.exports = createCoreController('api::secure-file-sharing-page.secure-file-sharing-page', ({ strapi }) => ({
     async find(ctx) {
         try {
-            const entity = await strapi.service('api::private-video-call-page.private-video-call-page').find({
+            const entity = await strapi.service('api::secure-file-sharing-page.secure-file-sharing-page').find({
                 populate: {
-                    SecondMediaHeroSection: {
+                       MediaHeroSection: {
+            populate: '*'
+          },
+                            icons_list: {
+                populate: {
+                  icons_list_item: {
+                    populate: '*'
+                  },
+                },
+              },
+                    FeaturesSection: {
                         populate: {
-                                  TextBlock: {
+                            FeaturesList: {
                                 populate: '*'
-                            },
-                            media: {
-                                 populate: '*'
-                            },
-                                 IconsList: {
-                                     populate: {
-                                         icons_list_item: {
-                                        populate: '*'
-                                    }
-                                }
-                            },
-                        }
+                            }
+                        },
                     },
                     StepsWithSelectionButtonSection: {
                         populate: {
@@ -45,28 +45,43 @@ module.exports = createCoreController('api::private-video-call-page.private-vide
 
                         }
                     },
-                    TechnologySection: {
+                  SecondFeaturesSection: {
                         populate: {
-                            IconsBlockItem: {
+                          features_list: {
+                            populate: {
+                              features_list_item: {
                                 populate: '*'
+                              },
                             },
-                            media: {
-                                populate: '*'
-                            }
-                        },
-                    },
-                    SecondFeaturesSection: {
+                          },
+                        }
+                      },
+                    SecondTableSection: {
                         populate: {
-                            features_list: {
+                            TextBlock: {
+                               populate: '*'
+                            },
+                             Table: {
+                        populate: {
+                            LeftColumnOfTable: {
                                 populate: {
-                                    features_list_item: {
-                                        populate: '*'
-                                    },
+                                    textList: true,
                                 },
                             },
-                        }
+                            Option: {
+                                populate: {
+                                    textList: true,
+                                    icon: true
+                                },
+                            },
+                        },
                     },
-                        SoonWithBtnsSection: {
+                       }
+                   },
+                    FaqSection: {
+                        populate: '*'
+                    },
+                    SoonWithBtnsSection: {
                         populate: {
                             TextBlock: {
                                 populate: '*'
@@ -79,13 +94,7 @@ module.exports = createCoreController('api::private-video-call-page.private-vide
                             }
                         }
                     },
-                    FaqSection: {
-                        populate: '*'
-                    },
-                            SoonSection: {
-          populate: '*'
-        },
-                }
+                },
             });
 
             if (!entity) {

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_section_soon_with_btns_sections",
+  "info": {
+    "displayName": "SoonWithBtnsSection"
+  },
+  "options": {},
+  "attributes": {
+    "TextBlock": {
+      "type": "component",
+      "component": "blocks.text-block",
+      "repeatable": false,
+      "required": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "SelectionButton": {
+      "type": "component",
+      "component": "blocks.selection-button",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

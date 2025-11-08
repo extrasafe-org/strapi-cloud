@@ -88,6 +88,17 @@
       "component": "section.secure-section",
       "repeatable": false,
       "required": true
+    },
+    "SoonWithBtnsSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.soon-with-btns-section",
+      "repeatable": false,
+      "required": true
     }
   }
 }

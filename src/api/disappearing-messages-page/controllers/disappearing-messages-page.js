@@ -41,6 +41,19 @@ module.exports = createCoreController('api::disappearing-messages-page.disappear
                         SoonSection: {
                         populate: '*',
                     },
+                           SoonWithBtnsSection: {
+                        populate: {
+                            TextBlock: {
+                                populate: '*'
+                            },
+                            SelectionButton: {
+                                populate: '*'
+                            },
+                            media: {
+                                 populate: '*'
+                            }
+                        }
+                    },
                 },
             });
 

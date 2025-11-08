@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_btns_blocks",
+  "info": {
+    "displayName": "BtnsBlock"
+  },
+  "options": {},
+  "attributes": {
+    "withMeetingBtn": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "withDownloadBtns": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "config": {}
+}

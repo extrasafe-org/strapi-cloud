@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_second_table_sections",
+  "info": {
+    "displayName": "SecondTableSection"
+  },
+  "options": {},
+  "attributes": {
+    "TextBlock": {
+      "type": "component",
+      "component": "blocks.text-block",
+      "repeatable": false,
+      "required": true
+    },
+    "Table": {
+      "type": "component",
+      "component": "blocks.block-table",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

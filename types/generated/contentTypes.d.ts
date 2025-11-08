@@ -1109,6 +1109,16 @@ export interface ApiDisappearingMessagesPageDisappearingMessagesPage
           localized: true;
         };
       }>;
+    SoonWithBtnsSection: Schema.Attribute.Component<
+      'section.soon-with-btns-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     ThirdFeaturesSection: Schema.Attribute.Component<
       'section.third-features-section',
       false
@@ -1896,6 +1906,16 @@ export interface ApiPrivateVideoCallPagePrivateVideoCallPage
           localized: true;
         };
       }>;
+    SoonWithBtnsSection: Schema.Attribute.Component<
+      'section.soon-with-btns-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     StepsWithSelectionButtonSection: Schema.Attribute.Component<
       'section.steps-with-selection-button-section',
       false
@@ -1981,6 +2001,126 @@ export interface ApiScreenSharingPageScreenSharingPage
       false
     > &
       Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSecureFileSharingPageSecureFileSharingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'secure_file_sharing_pages';
+  info: {
+    displayName: 'SecureFileSharingPage';
+    pluralName: 'secure-file-sharing-pages';
+    singularName: 'secure-file-sharing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FeaturesSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    icons_list: Schema.Attribute.Component<'landing.icons-list', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::secure-file-sharing-page.secure-file-sharing-page'
+    >;
+    MediaHeroSection: Schema.Attribute.Component<
+      'section.media-hero-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.second-features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SecondTableSection: Schema.Attribute.Component<
+      'section.second-table-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SoonWithBtnsSection: Schema.Attribute.Component<
+      'section.soon-with-btns-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -3334,6 +3474,7 @@ declare module '@strapi/strapi' {
       'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::private-video-call-page.private-video-call-page': ApiPrivateVideoCallPagePrivateVideoCallPage;
       'api::screen-sharing-page.screen-sharing-page': ApiScreenSharingPageScreenSharingPage;
+      'api::secure-file-sharing-page.secure-file-sharing-page': ApiSecureFileSharingPageSecureFileSharingPage;
       'api::secure-video-call-page.secure-video-call-page': ApiSecureVideoCallPageSecureVideoCallPage;
       'api::signal-alternative-page.signal-alternative-page': ApiSignalAlternativePageSignalAlternativePage;
       'api::support-page.support-page': ApiSupportPageSupportPage;

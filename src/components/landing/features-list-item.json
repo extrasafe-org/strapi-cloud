@@ -30,13 +30,15 @@
     },
     "page_path": {
       "type": "enumeration",
+      "required": true,
       "enum": [
         "secure-video-call",
         "screen-sharing",
         "encrypted-messaging",
-        "free-video-conferencing"
-      ],
-      "required": true
+        "free-video-conferencing",
+        "private-video-call",
+        "group-video-call"
+      ]
     }
   }
 }

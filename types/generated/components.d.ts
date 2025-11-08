@@ -150,6 +150,19 @@ export interface BlocksBlockYoutube extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksBtnsBlock extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_btns_blocks';
+  info: {
+    displayName: 'BtnsBlock';
+  };
+  attributes: {
+    withDownloadBtns: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+    withMeetingBtn: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 export interface BlocksCardWithImageAndLink extends Struct.ComponentSchema {
   collectionName: 'components_blocks_card_with_image_and_links';
   info: {
@@ -537,6 +550,8 @@ export interface LandingFeaturesListItem extends Struct.ComponentSchema {
         'screen-sharing',
         'encrypted-messaging',
         'free-video-conferencing',
+        'private-video-call',
+        'group-video-call',
       ]
     > &
       Schema.Attribute.Required;
@@ -967,6 +982,18 @@ export interface SectionSecondMediaHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionSecondTableSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_second_table_sections';
+  info: {
+    displayName: 'SecondTableSection';
+  };
+  attributes: {
+    Table: Schema.Attribute.Component<'blocks.block-table', false>;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SectionSecureSection extends Struct.ComponentSchema {
   collectionName: 'components_section_secure_sections';
   info: {
@@ -995,6 +1022,24 @@ export interface SectionSoonSection extends Struct.ComponentSchema {
     subtitle: Schema.Attribute.Text;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionSoonWithBtnsSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_soon_with_btns_sections';
+  info: {
+    displayName: 'SoonWithBtnsSection';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
+      Schema.Attribute.Required;
+    SelectionButton: Schema.Attribute.Component<
+      'blocks.selection-button',
+      false
+    > &
+      Schema.Attribute.Required;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -1470,6 +1515,7 @@ declare module '@strapi/strapi' {
       'blocks.block-table': BlocksBlockTable;
       'blocks.block-with-top-border': BlocksBlockWithTopBorder;
       'blocks.block-youtube': BlocksBlockYoutube;
+      'blocks.btns-block': BlocksBtnsBlock;
       'blocks.card-with-image-and-link': BlocksCardWithImageAndLink;
       'blocks.faq-left': BlocksFaqLeft;
       'blocks.front-side': BlocksFrontSide;
@@ -1528,8 +1574,10 @@ declare module '@strapi/strapi' {
       'section.media-with-text-section': SectionMediaWithTextSection;
       'section.second-features-section': SectionSecondFeaturesSection;
       'section.second-media-hero-section': SectionSecondMediaHeroSection;
+      'section.second-table-section': SectionSecondTableSection;
       'section.secure-section': SectionSecureSection;
       'section.soon-section': SectionSoonSection;
+      'section.soon-with-btns-section': SectionSoonWithBtnsSection;
       'section.steps-section': SectionStepsSection;
       'section.steps-with-selection-button-section': SectionStepsWithSelectionButtonSection;
       'section.table-section': SectionTableSection;

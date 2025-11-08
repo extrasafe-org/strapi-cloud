@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "private_video_call_pages",
+  "collectionName": "secure_file_sharing_pages",
   "info": {
-    "singularName": "private-video-call-page",
-    "pluralName": "private-video-call-pages",
-    "displayName": "PrivateVideoCallPage"
+    "singularName": "secure-file-sharing-page",
+    "pluralName": "secure-file-sharing-pages",
+    "displayName": "SecureFileSharingPage"
   },
   "options": {
     "draftAndPublish": true
@@ -33,6 +33,28 @@
       },
       "required": true
     },
+    "icons_list": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "landing.icons-list",
+      "repeatable": false,
+      "required": true
+    },
+    "FeaturesSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.features-section",
+      "repeatable": false,
+      "required": true
+    },
     "StepsWithSelectionButtonSection": {
       "type": "component",
       "pluginOptions": {
@@ -41,17 +63,6 @@
         }
       },
       "component": "section.steps-with-selection-button-section",
-      "repeatable": false,
-      "required": true
-    },
-    "TechnologySection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.technology-section",
       "repeatable": false,
       "required": true
     },
@@ -77,28 +88,6 @@
       "repeatable": false,
       "required": true
     },
-    "SoonSection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.soon-section",
-      "repeatable": false,
-      "required": true
-    },
-    "SecondMediaHeroSection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.second-media-hero-section",
-      "repeatable": false,
-      "required": true
-    },
     "SoonWithBtnsSection": {
       "type": "component",
       "pluginOptions": {
@@ -107,6 +96,28 @@
         }
       },
       "component": "section.soon-with-btns-section",
+      "repeatable": false,
+      "required": true
+    },
+    "SecondTableSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.second-table-section",
+      "repeatable": false,
+      "required": true
+    },
+    "MediaHeroSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.media-hero-section",
       "repeatable": false,
       "required": true
     }
