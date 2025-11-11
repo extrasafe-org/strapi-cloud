@@ -470,6 +470,19 @@ export interface ComponentsMediaWithSelectionBtnList
   };
 }
 
+export interface ComponentsQuoteCarousel extends Struct.ComponentSchema {
+  collectionName: 'components_components_quote_carousels';
+  info: {
+    displayName: 'QuoteCarousel';
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    background_img: Schema.Attribute.Media<'images'>;
+    media: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    quote: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface ComponentsStepsList extends Struct.ComponentSchema {
   collectionName: 'components_components_steps_lists';
   info: {
@@ -552,6 +565,7 @@ export interface LandingFeaturesListItem extends Struct.ComponentSchema {
         'free-video-conferencing',
         'private-video-call',
         'group-video-call',
+        'disappearing-messages',
       ]
     > &
       Schema.Attribute.Required;
@@ -943,6 +957,22 @@ export interface SectionMediaWithTextSection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionQuoteCarouselSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_quote_carousel_sections';
+  info: {
+    displayName: 'QuoteCarouselSection';
+  };
+  attributes: {
+    QuoteCarousel: Schema.Attribute.Component<
+      'components.quote-carousel',
+      true
+    > &
+      Schema.Attribute.Required;
+    TextBlock: Schema.Attribute.Component<'blocks.text-block', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -1540,6 +1570,7 @@ declare module '@strapi/strapi' {
       'components.list-block': ComponentsListBlock;
       'components.media-list': ComponentsMediaList;
       'components.media-with-selection-btn-list': ComponentsMediaWithSelectionBtnList;
+      'components.quote-carousel': ComponentsQuoteCarousel;
       'components.steps-list': ComponentsStepsList;
       'components.team-card': ComponentsTeamCard;
       'landing.faq-list': LandingFaqList;
@@ -1572,6 +1603,7 @@ declare module '@strapi/strapi' {
       'section.media-section': SectionMediaSection;
       'section.media-sided-section': SectionMediaSidedSection;
       'section.media-with-text-section': SectionMediaWithTextSection;
+      'section.quote-carousel-section': SectionQuoteCarouselSection;
       'section.second-features-section': SectionSecondFeaturesSection;
       'section.second-media-hero-section': SectionSecondMediaHeroSection;
       'section.second-table-section': SectionSecondTableSection;

@@ -1,0 +1,125 @@
+{
+  "kind": "singleType",
+  "collectionName": "group_video_call_pages",
+  "info": {
+    "singularName": "group-video-call-page",
+    "pluralName": "group-video-call-pages",
+    "displayName": "GroupVideoCallPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "meta_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "meta_description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "MediaHeroSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.media-hero-section",
+      "repeatable": false,
+      "required": true
+    },
+    "CardsListSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.cards-list-section",
+      "repeatable": false,
+      "required": true
+    },
+    "FeaturesSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.features-section",
+      "repeatable": false,
+      "required": true
+    },
+    "QuoteCarouselSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.quote-carousel-section",
+      "repeatable": false,
+      "required": true
+    },
+    "StepsWithSelectionButtonSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.steps-with-selection-button-section",
+      "repeatable": false,
+      "required": true
+    },
+    "SecondFeaturesSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.second-features-section",
+      "repeatable": false,
+      "required": true
+    },
+    "FaqSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.faq-section",
+      "repeatable": false,
+      "required": true
+    },
+    "SoonWithBtnsSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "section.soon-with-btns-section",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

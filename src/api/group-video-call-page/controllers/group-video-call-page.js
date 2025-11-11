@@ -1,25 +1,25 @@
 'use strict';
 
 /**
- * secure-file-sharing-page controller
+ * group-video-call-page controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::secure-file-sharing-page.secure-file-sharing-page', ({ strapi }) => ({
+module.exports = createCoreController('api::group-video-call-page.group-video-call-page', ({ strapi }) => ({
     async find(ctx) {
         try {
-            const entity = await strapi.service('api::secure-file-sharing-page.secure-file-sharing-page').find({
-                populate: {
+            const entity = await strapi.service('api::group-video-call-page.group-video-call-page').find({
+                               populate: {
                     MediaHeroSection: {
                         populate: '*'
                     },
-                    icons_list: {
+                    CardsListSection: {
                         populate: {
-                            icons_list_item: {
+                            CardsList: {
                                 populate: '*'
-                            },
-                        },
+                            }
+                        }
                     },
                     FeaturesSection: {
                         populate: {
@@ -27,6 +27,17 @@ module.exports = createCoreController('api::secure-file-sharing-page.secure-file
                                 populate: '*'
                             }
                         },
+                    },
+                     QuoteCarouselSection: {
+                        populate: {
+                            TextBlock: {
+                                populate: '*'
+                            },
+                            QuoteCarousel: {
+                                populate: '*'
+                            },
+
+                        }
                     },
                     StepsWithSelectionButtonSection: {
                         populate: {
@@ -51,28 +62,6 @@ module.exports = createCoreController('api::secure-file-sharing-page.secure-file
                                 populate: {
                                     features_list_item: {
                                         populate: '*'
-                                    },
-                                },
-                            },
-                        }
-                    },
-                    SecondTableSection: {
-                        populate: {
-                            TextBlock: {
-                                populate: '*'
-                            },
-                            Table: {
-                                populate: {
-                                    LeftColumnOfTable: {
-                                        populate: {
-                                            textList: true,
-                                        },
-                                    },
-                                    Option: {
-                                        populate: {
-                                            textList: true,
-                                            icon: true
-                                        },
                                     },
                                 },
                             },

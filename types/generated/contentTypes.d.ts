@@ -1226,6 +1226,129 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGroupVideoCallPageGroupVideoCallPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'group_video_call_pages';
+  info: {
+    displayName: 'GroupVideoCallPage';
+    pluralName: 'group-video-call-pages';
+    singularName: 'group-video-call-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    CardsListSection: Schema.Attribute.Component<
+      'section.cards-list-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqSection: Schema.Attribute.Component<'section.faq-section', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FeaturesSection: Schema.Attribute.Component<
+      'section.features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::group-video-call-page.group-video-call-page'
+    >;
+    MediaHeroSection: Schema.Attribute.Component<
+      'section.media-hero-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    QuoteCarouselSection: Schema.Attribute.Component<
+      'section.quote-carousel-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SecondFeaturesSection: Schema.Attribute.Component<
+      'section.second-features-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SoonWithBtnsSection: Schema.Attribute.Component<
+      'section.soon-with-btns-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StepsWithSelectionButtonSection: Schema.Attribute.Component<
+      'section.steps-with-selection-button-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
@@ -3464,6 +3587,7 @@ declare module '@strapi/strapi' {
       'api::disappearing-messages-page.disappearing-messages-page': ApiDisappearingMessagesPageDisappearingMessagesPage;
       'api::encrypted-messaging-page.encrypted-messaging-page': ApiEncryptedMessagingPageEncryptedMessagingPage;
       'api::global.global': ApiGlobalGlobal;
+      'api::group-video-call-page.group-video-call-page': ApiGroupVideoCallPageGroupVideoCallPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::knowledge-hub-article.knowledge-hub-article': ApiKnowledgeHubArticleKnowledgeHubArticle;
       'api::knowledge-hub-page.knowledge-hub-page': ApiKnowledgeHubPageKnowledgeHubPage;

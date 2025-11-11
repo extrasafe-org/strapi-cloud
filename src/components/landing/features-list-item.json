@@ -37,7 +37,8 @@
         "encrypted-messaging",
         "free-video-conferencing",
         "private-video-call",
-        "group-video-call"
+        "group-video-call",
+        "disappearing-messages"
       ]
     }
   }

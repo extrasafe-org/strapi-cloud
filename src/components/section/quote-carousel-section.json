@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_section_quote_carousel_sections",
+  "info": {
+    "displayName": "QuoteCarouselSection"
+  },
+  "options": {},
+  "attributes": {
+    "TextBlock": {
+      "type": "component",
+      "component": "blocks.text-block",
+      "repeatable": false,
+      "required": true
+    },
+    "QuoteCarousel": {
+      "type": "component",
+      "component": "components.quote-carousel",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}
