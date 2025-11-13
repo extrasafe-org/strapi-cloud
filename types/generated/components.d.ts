@@ -330,6 +330,18 @@ export interface BlocksSelectionButton extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksSocialLinks extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_social_links';
+  info: {
+    displayName: 'SocialLinks';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface BlocksSummaryBlocks extends Struct.ComponentSchema {
   collectionName: 'components_blocks_summary_blocks';
   info: {
@@ -1579,6 +1591,7 @@ declare module '@strapi/strapi' {
       'blocks.quote': BlocksQuote;
       'blocks.right-images': BlocksRightImages;
       'blocks.selection-button': BlocksSelectionButton;
+      'blocks.social-links': BlocksSocialLinks;
       'blocks.summary-blocks': BlocksSummaryBlocks;
       'blocks.summary-info': BlocksSummaryInfo;
       'blocks.table-list': BlocksTableList;

@@ -23,15 +23,9 @@
       "repeatable": false,
       "required": true
     },
-    "BlogTags": {
+    "SocialLinks": {
       "type": "component",
-      "component": "blocks.filter-tags",
-      "repeatable": true,
-      "required": true
-    },
-    "KnowledgeHubTags": {
-      "type": "component",
-      "component": "blocks.filter-tags",
+      "component": "blocks.social-links",
       "repeatable": true,
       "required": true
     }
