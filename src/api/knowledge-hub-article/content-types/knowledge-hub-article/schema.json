@@ -137,6 +137,12 @@
         "blocks.block-list",
         "blocks.block-ordered-list"
       ]
+    },
+    "knowledge_hub_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::knowledge-hub-category.knowledge-hub-category",
+      "mappedBy": "knowledge_hub_articles"
     }
   }
 }

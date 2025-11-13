@@ -743,6 +743,10 @@ export interface ApiBlogArticleBlogArticle extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    blog_categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::blog-category.blog-category'
+    >;
     content: Schema.Attribute.DynamicZone<
       [
         'blocks.quote',
@@ -826,6 +830,49 @@ export interface ApiBlogArticleBlogArticle extends Struct.CollectionTypeSchema {
         };
       }>;
     title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBlogCategoryBlogCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'blog_categories';
+  info: {
+    displayName: 'BlogCategory';
+    pluralName: 'blog-categories';
+    singularName: 'blog-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    blog_articles: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::blog-article.blog-article'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blog-category.blog-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    tag: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1205,12 +1252,16 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    BlogTags: Schema.Attribute.Component<'blocks.filter-tags', true> &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
-    favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    Header: Schema.Attribute.Component<'shared.header-a', false>;
+    DownloadLinks: Schema.Attribute.Component<'blocks.download-links', false> &
+      Schema.Attribute.Required;
+    KnowledgeHubTags: Schema.Attribute.Component<'blocks.filter-tags', true> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1218,8 +1269,6 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    siteName: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1520,6 +1569,10 @@ export interface ApiKnowledgeHubArticleKnowledgeHubArticle
         };
       }> &
       Schema.Attribute.DefaultTo<false>;
+    knowledge_hub_categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::knowledge-hub-category.knowledge-hub-category'
+    >;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1589,6 +1642,49 @@ export interface ApiKnowledgeHubArticleKnowledgeHubArticle
         };
       }>;
     title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiKnowledgeHubCategoryKnowledgeHubCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'knowledge_hub_categories';
+  info: {
+    displayName: 'KnowledgeHubCategory';
+    pluralName: 'knowledge-hub-categories';
+    singularName: 'knowledge-hub-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    knowledge_hub_articles: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::knowledge-hub-article.knowledge-hub-article'
+    >;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::knowledge-hub-category.knowledge-hub-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    tag: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -3581,6 +3677,7 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::blog-article.blog-article': ApiBlogArticleBlogArticle;
+      'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::browser-lite-page.browser-lite-page': ApiBrowserLitePageBrowserLitePage;
       'api::category.category': ApiCategoryCategory;
       'api::dev-page.dev-page': ApiDevPageDevPage;
@@ -3590,6 +3687,7 @@ declare module '@strapi/strapi' {
       'api::group-video-call-page.group-video-call-page': ApiGroupVideoCallPageGroupVideoCallPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::knowledge-hub-article.knowledge-hub-article': ApiKnowledgeHubArticleKnowledgeHubArticle;
+      'api::knowledge-hub-category.knowledge-hub-category': ApiKnowledgeHubCategoryKnowledgeHubCategory;
       'api::knowledge-hub-page.knowledge-hub-page': ApiKnowledgeHubPageKnowledgeHubPage;
       'api::landing-type.landing-type': ApiLandingTypeLandingType;
       'api::microsoft-teams-alternative-page.microsoft-teams-alternative-page': ApiMicrosoftTeamsAlternativePageMicrosoftTeamsAlternativePage;

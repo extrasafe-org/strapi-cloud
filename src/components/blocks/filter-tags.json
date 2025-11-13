@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_filter_tags",
+  "info": {
+    "displayName": "FilterTags"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_download_links",
+  "info": {
+    "displayName": "DownloadLinks"
+  },
+  "options": {},
+  "attributes": {
+    "AppStoreLink": {
+      "type": "text",
+      "required": true
+    },
+    "GooglePlayLink": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

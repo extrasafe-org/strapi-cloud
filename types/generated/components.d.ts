@@ -180,6 +180,17 @@ export interface BlocksCardWithImageAndLink extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksDownloadLinks extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_download_links';
+  info: {
+    displayName: 'DownloadLinks';
+  };
+  attributes: {
+    AppStoreLink: Schema.Attribute.Text & Schema.Attribute.Required;
+    GooglePlayLink: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface BlocksFaqLeft extends Struct.ComponentSchema {
   collectionName: 'components_blocks_faq_lefts';
   info: {
@@ -190,6 +201,16 @@ export interface BlocksFaqLeft extends Struct.ComponentSchema {
     faq_list_item: Schema.Attribute.Component<'landing.faq-list-item', true> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksFilterTags extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_filter_tags';
+  info: {
+    displayName: 'FilterTags';
+  };
+  attributes: {
+    tag: Schema.Attribute.String;
   };
 }
 
@@ -1471,7 +1492,6 @@ export interface SharedSeo extends Struct.ComponentSchema {
   attributes: {
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    shareImage: Schema.Attribute.Media<'images'>;
   };
 }
 
@@ -1547,7 +1567,9 @@ declare module '@strapi/strapi' {
       'blocks.block-youtube': BlocksBlockYoutube;
       'blocks.btns-block': BlocksBtnsBlock;
       'blocks.card-with-image-and-link': BlocksCardWithImageAndLink;
+      'blocks.download-links': BlocksDownloadLinks;
       'blocks.faq-left': BlocksFaqLeft;
+      'blocks.filter-tags': BlocksFilterTags;
       'blocks.front-side': BlocksFrontSide;
       'blocks.image-carousel': BlocksImageCarousel;
       'blocks.left-carousel': BlocksLeftCarousel;

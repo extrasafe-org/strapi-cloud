@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "knowledge_hub_categories",
+  "info": {
+    "singularName": "knowledge-hub-category",
+    "pluralName": "knowledge-hub-categories",
+    "displayName": "KnowledgeHubCategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "tag": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "knowledge_hub_articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::knowledge-hub-article.knowledge-hub-article",
+      "inversedBy": "knowledge_hub_categories"
+    }
+  }
+}
