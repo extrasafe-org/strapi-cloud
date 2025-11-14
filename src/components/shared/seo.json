@@ -8,11 +8,11 @@
   },
   "options": {},
   "attributes": {
-    "metaTitle": {
+    "meta_title": {
       "type": "string",
       "required": true
     },
-    "metaDescription": {
+    "meta_description": {
       "type": "text",
       "required": true
     }

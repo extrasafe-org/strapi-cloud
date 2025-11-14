@@ -11,7 +11,7 @@ module.exports = createCoreController('api::global.global', ({ strapi }) => ({
         try {
             const entity = await strapi.service('api::global.global').find({
                 populate: {
-                    defaultSeo: {
+                    DefaultSeo: {
                         populate: '*'
                     },
                       DownloadLinks: {
