@@ -79,6 +79,9 @@ module.exports = createCoreController('api::knowledge-hub-article.knowledge-hub-
             },
           },
         },
+        knowledge_hub_categories: {
+          populate: '*'
+        }
       },
     };
 
@@ -173,6 +176,9 @@ module.exports = createCoreController('api::knowledge-hub-article.knowledge-hub-
             },
           },
         },
+             knowledge_hub_categories: {
+          populate: '*'
+        }
       },
     };
 

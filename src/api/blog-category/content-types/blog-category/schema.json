@@ -22,7 +22,8 @@
           "localized": true
         }
       },
-      "required": true
+      "required": true,
+      "unique": true
     },
     "blog_articles": {
       "type": "relation",

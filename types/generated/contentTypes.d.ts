@@ -874,6 +874,7 @@ export interface ApiBlogCategoryBlogCategory
     publishedAt: Schema.Attribute.DateTime;
     tag: Schema.Attribute.String &
       Schema.Attribute.Required &
+      Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1307,7 +1308,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
+    DefaultSeo: Schema.Attribute.Component<'shared.seo', false>;
     DownloadLinks: Schema.Attribute.Component<'blocks.download-links', false> &
       Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1736,6 +1737,7 @@ export interface ApiKnowledgeHubCategoryKnowledgeHubCategory
     publishedAt: Schema.Attribute.DateTime;
     tag: Schema.Attribute.String &
       Schema.Attribute.Required &
+      Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

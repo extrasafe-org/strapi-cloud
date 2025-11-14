@@ -22,7 +22,8 @@
           "localized": true
         }
       },
-      "required": true
+      "required": true,
+      "unique": true
     },
     "knowledge_hub_articles": {
       "type": "relation",
