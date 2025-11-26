@@ -75,7 +75,7 @@ module.exports = ({ env }) => {
           }
 
           const pathname = getPreviewPathname(uid, { locale, document })
-          console.log('⚡️⚡️⚡️', pathname)
+
           if (!pathname) return null
 
           const urlSearchParams = new URLSearchParams({
@@ -91,8 +91,6 @@ module.exports = ({ env }) => {
           }
 
           const previewURL = `${env("CLIENT_URL")}/api/preview?${urlSearchParams}&url=${pathname}`
-
-          console.log('!!!!! ⚡️⚡️⚡️⚡️⚡️⚡️', previewURL)
 
           return previewURL
         },

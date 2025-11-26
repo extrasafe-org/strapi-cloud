@@ -121,6 +121,14 @@
       "relation": "manyToMany",
       "target": "api::blog-category.blog-category",
       "mappedBy": "blog_articles"
+    },
+    "search_key_words": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

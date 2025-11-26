@@ -143,6 +143,14 @@
       "relation": "manyToMany",
       "target": "api::knowledge-hub-category.knowledge-hub-category",
       "mappedBy": "knowledge_hub_articles"
+    },
+    "search_key_words": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
