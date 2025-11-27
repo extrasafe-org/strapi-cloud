@@ -203,6 +203,63 @@ export interface AdminRole extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface AdminSession extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_sessions';
+  info: {
+    description: 'Session Manager storage';
+    displayName: 'Session';
+    name: 'Session';
+    pluralName: 'sessions';
+    singularName: 'session';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+    i18n: {
+      localized: false;
+    };
+  };
+  attributes: {
+    absoluteExpiresAt: Schema.Attribute.DateTime & Schema.Attribute.Private;
+    childId: Schema.Attribute.String & Schema.Attribute.Private;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deviceId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    expiresAt: Schema.Attribute.DateTime &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'admin::session'> &
+      Schema.Attribute.Private;
+    origin: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sessionId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private &
+      Schema.Attribute.Unique;
+    status: Schema.Attribute.String & Schema.Attribute.Private;
+    type: Schema.Attribute.String & Schema.Attribute.Private;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    userId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface AdminTransferToken extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_transfer_tokens';
   info: {
@@ -328,11 +385,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    authenticators: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::headlockr.authenticator'
-    >;
-    avatar: Schema.Attribute.String & Schema.Attribute.DefaultTo<'avatar-1'>;
     blocked: Schema.Attribute.Boolean &
       Schema.Attribute.Private &
       Schema.Attribute.DefaultTo<false>;
@@ -346,8 +398,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
-    encryptionStrategy: Schema.Attribute.Enumeration<['hashed', 'encrypted']> &
-      Schema.Attribute.DefaultTo<'encrypted'>;
     firstname: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
@@ -362,14 +412,11 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'admin::user'> &
       Schema.Attribute.Private;
-    otps: Schema.Attribute.Relation<'oneToMany', 'plugin::headlockr.otp'>;
     password: Schema.Attribute.Password &
       Schema.Attribute.Private &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
-    phone: Schema.Attribute.String;
-    phoneVerified: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     preferedLanguage: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     registrationToken: Schema.Attribute.String & Schema.Attribute.Private;
@@ -3159,161 +3206,6 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
-export interface PluginHeadlockrAuthenticator
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'authenticators';
-  info: {
-    description: '';
-    displayName: 'Authenticators';
-    pluralName: 'authenticators';
-    singularName: 'authenticator';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    backupCodes: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::headlockr.backup-code'
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'default';
-        }
-      >;
-    encryptionTag: Schema.Attribute.String &
-      Schema.Attribute.Private &
-      Schema.Attribute.Unique;
-    impact: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<0>;
-    lastUsedAt: Schema.Attribute.DateTime;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::headlockr.authenticator'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    niceName: Schema.Attribute.String & Schema.Attribute.Required;
-    publishedAt: Schema.Attribute.DateTime;
-    secret: Schema.Attribute.String & Schema.Attribute.Private;
-    status: Schema.Attribute.Enumeration<['existing', 'new', 'disabled']> &
-      Schema.Attribute.DefaultTo<'new'>;
-    type: Schema.Attribute.Enumeration<
-      ['totp', 'sms', 'email', 'backupcodes']
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'totp'>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    user: Schema.Attribute.Relation<'morphToOne'>;
-  };
-}
-
-export interface PluginHeadlockrBackupCode extends Struct.CollectionTypeSchema {
-  collectionName: 'backup-codes';
-  info: {
-    displayName: 'Backup Codes';
-    pluralName: 'backup-codes';
-    singularName: 'backup-code';
-  };
-  options: {
-    comment: '';
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    authenticator: Schema.Attribute.Relation<
-      'manyToOne',
-      'plugin::headlockr.authenticator'
-    >;
-    code: Schema.Attribute.String & Schema.Attribute.Private;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    encryptedCode: Schema.Attribute.String & Schema.Attribute.Private;
-    encryptionTag: Schema.Attribute.String &
-      Schema.Attribute.Private &
-      Schema.Attribute.Unique;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::headlockr.backup-code'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    used: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-  };
-}
-
-export interface PluginHeadlockrOtp extends Struct.CollectionTypeSchema {
-  collectionName: 'otps';
-  info: {
-    description: '';
-    displayName: 'Otp';
-    pluralName: 'otps';
-    singularName: 'otp';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    code: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    delivery_method: Schema.Attribute.Enumeration<['sms', 'email', 'whatsapp']>;
-    expiresAt: Schema.Attribute.DateTime;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::headlockr.otp'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    purpose: Schema.Attribute.Enumeration<['registration', 'mfa', 'reset']>;
-    recipient: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    user: Schema.Attribute.Relation<'morphToOne'>;
-    verified: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-  };
-}
-
 export interface PluginI18NLocale extends Struct.CollectionTypeSchema {
   collectionName: 'i18n_locale';
   info: {
@@ -3690,8 +3582,6 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
-    encryptionStrategy: Schema.Attribute.Enumeration<['hashed', 'encrypted']> &
-      Schema.Attribute.DefaultTo<'encrypted'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -3703,10 +3593,6 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
-    phone: Schema.Attribute.String & Schema.Attribute.Configurable;
-    phoneVerified: Schema.Attribute.Boolean &
-      Schema.Attribute.Configurable &
-      Schema.Attribute.DefaultTo<false>;
     provider: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     resetPasswordToken: Schema.Attribute.String & Schema.Attribute.Private;
@@ -3733,6 +3619,7 @@ declare module '@strapi/strapi' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::permission': AdminPermission;
       'admin::role': AdminRole;
+      'admin::session': AdminSession;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
@@ -3772,9 +3659,6 @@ declare module '@strapi/strapi' {
       'api::zoom-alternative-page.zoom-alternative-page': ApiZoomAlternativePageZoomAlternativePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
-      'plugin::headlockr.authenticator': PluginHeadlockrAuthenticator;
-      'plugin::headlockr.backup-code': PluginHeadlockrBackupCode;
-      'plugin::headlockr.otp': PluginHeadlockrOtp;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
       'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
