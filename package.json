@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^6.0.1",
-    "@headlockr/headlockr": "^4.2.5",
+  "@headlockr/headlockr": "4.2.1",
     "@strapi/design-system": "^2.0.0-rc.9",
     "@strapi/icons": "^2.0.0-rc.19",
     "@strapi/plugin-cloud": "5.3.0",
